@@ -1,0 +1,265 @@
+:root {
+  /* 更新配色方案 */
+  --primary-color: #1e3d59;      /* 深蓝色 */
+  --secondary-color: #ff6e40;    /* 珊瑚橙 */
+  --accent-color: #ffc13b;       /* 金黄色 */
+  --text-light: #ffffff;
+  --text-dark: #1e3d59;
+  --text-gray: #6c757d;
+  --light-bg: #f8f9fa;
+  --border-color: #dee2e6;
+}
+
+/* 全局背景和文字样式 */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* 英雄区背景图片通用样式 */
+.page-hero {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  text-align: center;
+  padding: 0 20px;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(30, 61, 89, 0.7), rgba(30, 61, 89, 0.85));
+  z-index: 1;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+/* 标题样式 */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* 按钮样式 */
+.btn {
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  color: var(--text-light);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+  color: var(--text-light);
+}
+
+/* 导航栏样式 */
+.main-header {
+  background: linear-gradient(rgba(30, 61, 89, 0.95), rgba(30, 61, 89, 0.95));
+  padding: 15px 0;
+}
+
+/* 更新各页面的背景图 */
+.home-hero {
+  background-image: url('../images/backgrounds/home-bg.jpg');
+}
+
+.about-hero {
+  background-image: url('../images/backgrounds/about-bg.jpg');
+}
+
+.products-hero {
+  background-image: url('../images/backgrounds/products-bg.jpg');
+}
+
+.services-hero {
+  background-image: url('../images/backgrounds/services-bg.jpg');
+}
+
+.projects-hero {
+  background-image: url('../images/backgrounds/projects-bg.jpg');
+}
+
+.blog-hero {
+  background-image: url('../images/backgrounds/blog-bg.jpg');
+}
+
+.contact-hero {
+  background-image: url('../images/backgrounds/contact-bg.jpg');
+}
+
+/* 卡片样式更新 */
+.card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* 文字样式更新 */
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--secondary-color);
+}
+
+/* 页脚样式更新 */
+.main-footer {
+  background: linear-gradient(rgba(30, 61, 89, 0.95), rgba(30, 61, 89, 0.95));
+  color: var(--text-light);
+  padding: 4rem 0 0;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;  /* 从3rem减少到1.5rem */
+  padding-bottom: 3rem;
+  max-width: 1000px; /* 限制最大宽度 */
+  margin: 0 auto; /* 居中对齐 */
+}
+
+.footer-column {
+  text-align: center; /* 文字居中对齐 */
+}
+
+.footer-column h3 {
+  color: var(--text-light);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.footer-column h3::after {
+  content: '';
+  position: absolute;
+  left: 50%; /* 从0改为50% */
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transform: translateX(-50%); /* 添加居中变换 */
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center; /* 列表项居中对齐 */
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--secondary-color);
+}
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center; /* 联系信息居中对齐 */
+}
+
+.contact-info li {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info i {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  margin-top: 0.25rem;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 图标和文字居中对齐 */
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-bottom {
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+/* 移除特定页面的页脚样式覆盖 */
+.compact-footer {
+  background: linear-gradient(rgba(30, 61, 89, 0.95), rgba(30, 61, 89, 0.95)) !important;
+}
+
+@media (max-width: 768px) {
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem; /* 添加移动端边距 */
+  }
+}

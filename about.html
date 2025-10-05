@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TideMaster Marine Technology</title>
+    <meta name="description" content="Learn about TideMaster Marine Technology, our history, team, and commitment to excellence in aluminum boat manufacturing.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #1e3c8c;
+            --secondary-color: #3a86ff;
+            --dark-bg: #0a1931;
+            --light-bg: #f8f9fa;
+            --text-light: #ffffff;
+            --text-gray: #6c757d;
+            --text-dark: #333333;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        .main-header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-list a:hover,
+        .nav-list .active a {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .language-selector {
+            background: transparent;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .search-toggle, 
+        .mobile-menu-toggle {
+            background: transparent;
+            border: none;
+            color: #333;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+        }
+
+        /* Page Hero Styles */
+        .page-hero {
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+        
+        .about-hero {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/about/about-hero.jpg');
+        }
+        
+        .page-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .page-hero-content p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* 公司简介 */
+        .company-intro {
+            padding: 6rem 0;
+        }
+        
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .intro-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .intro-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .intro-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* 发展历程 */
+        .timeline-section {
+            padding: 6rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 20px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: calc(50% - 1px);
+            width: 2px;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            padding-right: calc(50% + 30px);
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            padding-left: calc(50% + 30px);
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: calc(50% - 10px);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: calc(50% - 10px);
+        }
+        
+        .timeline-date {
+            display: inline-block;
+            padding: 4px 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-content {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        /* 技术实力 */
+        .tech-capabilities {
+            padding: 6rem 0;
+        }
+        
+        .capability-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .capability-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .capability-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .capability-icon {
+            height: 180px;
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .capability-icon i {
+            font-size: 4rem;
+            color: white;
+        }
+        
+        .capability-content {
+            padding: 1.5rem;
+        }
+        
+        .capability-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* 团队介绍 */
+        .team-section {
+            padding: 6rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-photo {
+            height: 280px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .team-photo img {
+            transform: scale(1.05);
+        }
+        
+        .team-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .team-info h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-position {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        .team-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.05);
+            color: var(--text-gray);
+            transition: all 0.3s ease;
+        }
+        
+        .team-social a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* 铝合金船优势 */
+        .aluminum-advantages {
+            padding: 6rem 0;
+        }
+        
+        .advantages-flex {
+            display: flex;
+            margin-top: 3rem;
+        }
+        
+        .advantages-image {
+            flex: 1;
+            padding-right: 3rem;
+        }
+        
+        .advantages-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .advantages-list {
+            flex: 1;
+        }
+        
+        .advantage-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+        
+        .advantage-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-right: 1rem;
+        }
+        
+        .advantage-text h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer Styles */
+        .compact-footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-brand {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo img {
+            max-width: 180px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-about {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #eaeaea;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+        }
+        
+        .contact-info p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            min-width: 16px;
+            margin-top: 2px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            opacity: 0.7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .intro-content,
+            .advantages-flex {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .capability-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .advantages-flex {
+                flex-direction: column;
+            }
+            
+            .advantages-image {
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-list {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .capability-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 10px;
+                right: auto;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .page-hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .page-hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .footer-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <!-- Placeholder for logo -->
+                    <div style="height: 40px; width: 150px; background-color: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">TIDEMASTER</div>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="services-support.html">Services & Support</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog-news.html">Blog & News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <select class="language-selector">
+                    <option value="en">EN</option>
+                    <option value="ar">AR</option>
+                </select>
+                <button class="search-toggle"><i class="fas fa-search"></i></button>
+                <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="page-content">
+        <!-- 关于我们英雄区 -->
+        <section class="page-hero about-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1>About TideMaster</h1>
+                    <p>Setting new standards in aluminum boat manufacturing</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 公司简介 -->
+        <section class="company-intro">
+            <div class="container">
+                <div class="intro-content">
+                    <div class="intro-text">
+                        <h2>Who We Are</h2>
+                        <p>TideMaster was established to answer the specific demands of the Middle Eastern boating market. Since our founding in 2010, we have quickly risen to prominence by marrying innovative design and cutting-edge technology with time-honored craftsmanship in our state-of-the-art facility. The result is a fleet of premium aluminum vessels that delivers beyond expectation.</p>
+                        <p>Our mission is to design and build aluminum boats that offer unparalleled performance, durability, and comfort. We understand the unique demands of marine environments in the Middle East and tailor our vessels to meet these specific requirements.</p>
+                        <p>With a team of experienced naval architects, engineers, and craftsmen, we deliver boats that meet the highest standards of quality and performance.</p>
+                    </div>
+                    <div class="intro-image">
+                        <div class="image-slider">
+                            <div class="slider-container">
+                                <img src="assets/images/brand/navier factory.jpg" alt="TideMaster Manufacturing Facility" class="slider-image active">
+                                <img src="assets/images/brand/factory inside.jpg" alt="TideMaster Factory Interior" class="slider-image">
+                                <img src="assets/images/brand/boat building.jpg" alt="TideMaster Factory Boat building" class="slider-image">
+                            </div>
+                            <div class="slider-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+
+                        <style>
+                            .image-slider {
+                                width: 100%;
+                                position: relative;
+                                border-radius: 8px;
+                                overflow: hidden;
+                                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                            }
+                            
+                            .slider-container {
+                                position: relative;
+                                width: 100%;
+                                height: 400px;
+                            }
+                            
+                            .slider-image {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                opacity: 0;
+                                transition: opacity 1s ease-in-out;
+                            }
+                            
+                            .slider-image.active {
+                                opacity: 1;
+                            }
+                            
+                            .slider-dots {
+                                position: absolute;
+                                bottom: 15px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                display: flex;
+                                gap: 10px;
+                            }
+                            
+                            .dot {
+                                width: 12px;
+                                height: 12px;
+                                background-color: rgba(255,255,255,0.5);
+                                border-radius: 50%;
+                                cursor: pointer;
+                                transition: background-color 0.3s ease;
+                            }
+                            
+                            .dot.active {
+                                background-color: white;
+                            }
+                        </style>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const images = document.querySelectorAll('.slider-image');
+                                const dots = document.querySelectorAll('.dot');
+                                let currentIndex = 0;
+                                
+                                function showImage(index) {
+                                    // Hide all images
+                                    images.forEach(img => img.classList.remove('active'));
+                                    dots.forEach(dot => dot.classList.remove('active'));
+                                    
+                                    // Show selected image
+                                    images[index].classList.add('active');
+                                    dots[index].classList.add('active');
+                                    currentIndex = index;
+                                }
+                                
+                                // Set up auto rotation
+                                setInterval(() => {
+                                    currentIndex = (currentIndex + 1) % images.length;
+                                    showImage(currentIndex);
+                                }, 5000);
+                                
+                                // Set up dot clicks
+                                dots.forEach((dot, index) => {
+                                    dot.addEventListener('click', () => showImage(index));
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 发展历程 -->
+        <section class="timeline-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Journey</h2>
+                    <p>The evolution of TideMaster Technology</p>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2010</div>
+                        <div class="timeline-content">
+                            <h3>The Beginning</h3>
+                            <p>TideMaster was founded in city of Longkou, Shandong province China by the Chi family with a vision to create high-quality aluminum boats, tailored to meet global demand and diverse maritime conditions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2013</div>
+                        <div class="timeline-content">
+                            <h3>First Commercial Fleet</h3>
+                            <p>Completed our first major commercial order - a fleet of 26 tourism vessels for a prominent tourism operation company.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2020</div>
+                        <div class="timeline-content">
+                            <h3>New Facility</h3>
+                            <p>Expanded into a state-of-the-art 35,000 sqm production facility in Longkou City, increasing our production capacity by 600%.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2022</div>
+                        <div class="timeline-content">
+                            <h3>Production Milestone Reached</h3>
+                            <p>We set a new annual record by manufacturing 150 boats in our new state-of-the-art facility this year.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2023</div>
+                        <div class="timeline-content">
+                            <h3>AI Integration</h3>
+                            <p>Revolutionized the regional boating industry with the introduction of our AI-integrated navigation and safty systems.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-content">
+                            <h3>Strategic Patrol Boat Export</h3>
+                            <p>Marking a significant milestone, we have designed, built, and exported four distinct patrol boat variants for deployment with the Malaysian Coast Guard.</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-content">
+                            <h3>GCC Expansion</h3>
+                            <p>We have extended our reach into the GCC with operations in the UAE and new service centers on the horizon in Qatar and Oman.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2025</div>
+                        <div class="timeline-content">
+                            <h3>Present Day</h3>
+                            <p>Continuing to innovate with new models, expanded services, and our commitment to sustainable marine technology.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技术实力 -->
+        <section class="tech-capabilities">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Capabilities</h2>
+                    <p>The advanced technologies and methodologies that set TideMaster apart</p>
+                </div>
+                
+                <div class="capability-grid">
+                    <div class="capability-card">
+                        <div class="capability-icon">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <div class="capability-content">
+                            <h3>Advanced Design</h3>
+                            <p>Our team of naval architects utilizes 3D modeling and hydrodynamic simulation software to optimize hull designs for performance, stability, and fuel efficiency.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-card">
+                        <div class="capability-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="capability-content">
+                            <h3>Precision Manufacturing</h3>
+                            <p>Using CNC plasma cutting technology and robotic welding systems, we ensure consistent quality and precision in every boat we produce.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="capability-card">
+                        <div class="capability-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="capability-content">
+                            <h3>Material Innovation</h3>
+                            <p>Our research team continuously tests and implements the latest aluminum alloys and composite materials to improve durability and reduce weight.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 团队介绍 -->
+        <section class="team-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Team</h2>
+                    <p>Meet the experts behind TideMaster's success</p>
+                </div>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <!-- Placeholder for team member photo -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                Joey Junjie Bao
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Joey Junjie Bao</h3>
+                            <div class="team-position">Founder & CEO</div>
+                            <p>With over 25 years of experience in marine and boat related business, Joey's vision drives TideMaster's innovation.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <!-- Placeholder for team member photo -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                Sarah Johnson
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Sarah Johnson</h3>
+                            <div class="team-position">Head Naval Architect</div>
+                            <p>Sarah leads our design team with innovative approaches to marine architecture.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <!-- Placeholder for team member photo -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                Cyrus Shiqi Chi
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Cyrus Shiqi Chi</h3>
+                            <div class="team-position">Production Director</div>
+                            <p>Cyrus oversees our supply chain and manufacturing process, ensuring quality at every stage.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <!-- Placeholder for team member photo -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                RuoChen Lv
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>RuoChen Lv</h3>
+                            <div class="team-position">Technology Officer</div>
+                            <p>Chen leads our innovations in latest material, navigation systems and smart boat technology.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 铝合金船优势 -->
+        <section class="aluminum-advantages">
+            <div class="container">
+                <div class="section-title">
+                    <h2>The TideMaster Aluminum Advantage</h2>
+                    <p>Why aluminum boats by TideMaster stand apart</p>
+                </div>
+                
+                <div class="advantages-flex">
+                    <div class="advantages-image">
+                        <img src="assets/images/about/aluminum advantages.png" alt="TideMaster Aluminum Boat Advantages" class="advantage-image">
+                    </div>
+                    <div class="advantages-list">
+                        <div class="advantage-item">
+                            <div class="advantage-number">01</div>
+                            <div class="advantage-text">
+                                <h3>Superior Durability</h3>
+                                <p>Our marine-grade aluminum alloys offer exceptional resistance to corrosion and impact, ensuring a longer lifespan compared to traditional fiberglass boats.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="advantage-item">
+                            <div class="advantage-number">02</div>
+                            <div class="advantage-text">
+                                <h3>Lightweight Efficiency</h3>
+                                <p>The lightweight nature of aluminum results in greater fuel efficiency, increased speed, and reduced operational costs over time.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="advantage-item">
+                            <div class="advantage-number">03</div>
+                            <div class="advantage-text">
+                                <h3>Customizable Designs</h3>
+                                <p>Aluminum's versatility allows for highly customized designs to meet specific operational requirements and personal preferences.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="advantage-item">
+                            <div class="advantage-number">04</div>
+                            <div class="advantage-text">
+                                <h3>Environmentally Friendly</h3>
+                                <p>Aluminum boats are 100% recyclable, making them an environmentally responsible choice for the conscious boat owner.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="ai-integration">
+            <div class="container">
+                <div class="section-title">
+                    <h2>TideMaster AI Integration</h2>
+                    <p>Intelligent navigation technology for safer, more efficient voyages</p>
+                </div>
+                
+                <div class="ai-intro-container">
+                    <div class="ai-intro-image">
+                        <div class="ai-image-carousel">
+                            <div class="carousel-container">
+                                <img src="assets\images\about\AI Control.webp" alt="AI Navigation System" class="carousel-image active">
+                                <img src="assets\images\about\AI camera.webp" alt="AI Visual System" class="carousel-image">
+                                <img src="assets\images\about\center control unit.webp" alt="Center processing unit" class="carousel-image">
+                                <img src="assets\images\about\Hesai-Fully-solid-state-lidar-2.jpg" alt="Solid State LiDAR" class="carousel-image">
+                                <img src="assets\images\about\MDF screen.webp" alt="Marine Intelligence Interface" class="carousel-image">
+                                <img src="assets\images\about\Millimeter Wave Radar.webp" alt="Advanced Millimeter Radar" class="carousel-image">
+                            </div>
+                            <div class="carousel-nav">
+                                <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                                <div class="carousel-indicators">
+                                    <span class="indicator active"></span>
+                                    <span class="indicator"></span>
+                                    <span class="indicator"></span>
+                                    <span class="indicator"></span>
+                                    <span class="indicator"></span>
+                                    <span class="indicator"></span>
+                                </div>
+                                <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                        
+                        <style>
+                            .ai-image-carousel {
+                                position: relative;
+                                border-radius: 12px;
+                                overflow: hidden;
+                                box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+                            }
+                            
+                            .carousel-container {
+                                position: relative;
+                                width: 100%;
+                                height: 400px;
+                                overflow: hidden;
+                            }
+                            
+                            .carousel-image {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                opacity: 0;
+                                transition: opacity 0.8s ease;
+                            }
+                            
+                            .carousel-image.active {
+                                opacity: 1;
+                            }
+                            
+                            .carousel-nav {
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                padding: 15px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+                            }
+                            
+                            .carousel-prev,
+                            .carousel-next {
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 50%;
+                                background: rgba(255,255,255,0.2);
+                                border: none;
+                                color: white;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                cursor: pointer;
+                                transition: background 0.3s ease;
+                            }
+                            
+                            .carousel-prev:hover,
+                            .carousel-next:hover {
+                                background: rgba(255,255,255,0.3);
+                            }
+                            
+                            .carousel-indicators {
+                                display: flex;
+                                gap: 8px;
+                            }
+                            
+                            .indicator {
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background: rgba(255,255,255,0.4);
+                                cursor: pointer;
+                                transition: background 0.3s ease;
+                            }
+                            
+                            .indicator.active {
+                                background: white;
+                            }
+                        </style>
+                        
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const images = document.querySelectorAll('.carousel-image');
+                                const indicators = document.querySelectorAll('.indicator');
+                                const prevBtn = document.querySelector('.carousel-prev');
+                                const nextBtn = document.querySelector('.carousel-next');
+                                let currentIndex = 0;
+                                let interval;
+                                
+                                function showImage(index) {
+                                    // Reset all images and indicators
+                                    images.forEach(img => img.classList.remove('active'));
+                                    indicators.forEach(dot => dot.classList.remove('active'));
+                                    
+                                    // Show the selected image and indicator
+                                    images[index].classList.add('active');
+                                    indicators[index].classList.add('active');
+                                    currentIndex = index;
+                                }
+                                
+                                function nextImage() {
+                                    currentIndex = (currentIndex + 1) % images.length;
+                                    showImage(currentIndex);
+                                }
+                                
+                                function prevImage() {
+                                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                                    showImage(currentIndex);
+                                }
+                                
+                                // Set up auto rotation
+                                function startInterval() {
+                                    interval = setInterval(nextImage, 5000);
+                                }
+                                
+                                function resetInterval() {
+                                    clearInterval(interval);
+                                    startInterval();
+                                }
+                                
+                                // Initialize auto rotation
+                                startInterval();
+                                
+                                // Set up event listeners
+                                prevBtn.addEventListener('click', () => {
+                                    prevImage();
+                                    resetInterval();
+                                });
+                                
+                                nextBtn.addEventListener('click', () => {
+                                    nextImage();
+                                    resetInterval();
+                                });
+                                
+                                indicators.forEach((indicator, index) => {
+                                    indicator.addEventListener('click', () => {
+                                        showImage(index);
+                                        resetInterval();
+                                    });
+                                });
+                                
+                                // Pause rotation when hovering over carousel
+                                const carousel = document.querySelector('.ai-image-carousel');
+                                carousel.addEventListener('mouseenter', () => clearInterval(interval));
+                                carousel.addEventListener('mouseleave', startInterval);
+                            });
+                        </script>
+                    </div>
+                    <div class="ai-intro-text">
+                        <h3>Next-Generation Marine Intelligence</h3>
+                        <p>TideMaster's proprietary AI system transforms the boating experience through advanced machine learning algorithms that continuously adapt to changing marine conditions. Our integrated technology suite combines sensor data with predictive analytics to provide unparalleled situational awareness and control.</p>
+                        <p>By harnessing the power of artificial intelligence, our vessels offer enhanced safety features, optimized fuel consumption, and intuitive operation that makes advanced boating accessible to captains of all experience levels.</p>
+                    </div>
+                </div>
+                
+                <style>
+                    .ai-intro-container {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 40px;
+                        margin-bottom: 60px;
+                        align-items: center;
+                    }
+                    
+                    .ai-intro-image img {
+                        width: 100%;
+                        border-radius: 12px;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                        transition: transform 0.3s ease;
+                    }
+                    
+                    .ai-intro-image img:hover {
+                        transform: scale(1.02);
+                    }
+                    
+                    .ai-intro-text h3 {
+                        font-size: 1.8rem;
+                        margin-bottom: 20px;
+                        color: var(--primary-color);
+                    }
+                    
+                    .ai-intro-text p {
+                        margin-bottom: 15px;
+                        line-height: 1.7;
+                    }
+                    
+                    @media (max-width: 992px) {
+                        .ai-intro-container {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+                </style></div>
+                
+                <div class="ai-features-grid">
+                    <div class="ai-feature-list">
+                        <div class="ai-feature-item">
+                            <div class="ai-feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M19.4 15C19.2669 15.6175 19.033 16.2082 18.708 16.75C18.383 17.2918 17.9719 17.777 17.4922 18.1856C17.0125 18.5942 16.471 18.9205 15.89 19.151C15.309 19.3815 14.6967 19.5133 14.075 19.5413C13.4533 19.5692 12.831 19.4929 12.2335 19.3155C11.636 19.1381 11.0715 18.8621 10.564 18.4987C10.0565 18.1353 9.61314 17.6898 9.2525 17.181C8.89186 16.6722 8.61905 16.1073 8.4455 15.51" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M4.6 15C4.73311 14.3825 4.96701 13.7918 5.29201 13.25C5.61701 12.7082 6.02814 12.223 6.50782 11.8144C6.9875 11.4058 7.52905 11.0795 8.11001 10.849C8.69097 10.6185 9.3033 10.4867 9.92501 10.4587C10.5467 10.4308 11.169 10.5071 11.7665 10.6845C12.364 10.8619 12.9285 11.1379 13.436 11.5013C13.9435 11.8647 14.3869 12.3102 14.7475 12.819C15.1081 13.3278 15.3809 13.8927 15.5545 14.49" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="ai-feature-text">
+                                <h3>Autonomous Navigation</h3>
+                                <p>Intelligent course keeping and route tracking with real-time adjustments for optimal path following.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-feature-item">
+                            <div class="ai-feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 7V13" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 16V17" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="ai-feature-text">
+                                <h3>Collision Avoidance</h3>
+                                <p>Advanced AI algorithms automatically identify and navigate around obstacles for enhanced safety.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-feature-item">
+                            <div class="ai-feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L20 7V17L12 22L4 17V7L12 2Z" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 22V12" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M20 7L12 12" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M4 7L12 12" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="ai-feature-text">
+                                <h3>Automated Docking</h3>
+                                <p>Intelligent assistance for docking and undocking operations, making challenging maneuvers effortless.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-feature-item">
+                            <div class="ai-feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 12H22" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 2L12 22" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M20 16C20 18.2091 18.2091 20 16 20C13.7909 20 12 18.2091 12 16C12 13.7909 13.7909 12 16 12C18.2091 12 20 13.7909 20 16Z" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M4 8C4 10.2091 5.79086 12 8 12C10.2091 12 12 10.2091 12 8C12 5.79086 10.2091 4 8 4C5.79086 4 4 5.79086 4 8Z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="ai-feature-text">
+                                <h3>Dynamic Positioning</h3>
+                                <p>Maintain vessel position automatically in changing conditions for precision operations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-tech-display">
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L20 7V17L12 22L4 17V7L12 2Z" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 22V12" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <h4>Advanced MFD</h4>
+                            <p>Integrates multi-source data for comprehensive situational awareness and intuitive control.</p>
+                        </div>
+                        
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 7V13" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <h4>4D Millimeter Wave Radar</h4>
+                            <p>High-resolution detection for precise object identification in all weather conditions.</p>
+                        </div>
+                        
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M19.4 15C19.2669 15.6175 19.033 16.2082 18.708 16.75C18.383 17.2918 17.9719 17.777 17.4922 18.1856C17.0125 18.5942 16.471 18.9205 15.89 19.151C15.309 19.3815 14.6967 19.5133 14.075 19.5413C13.4533 19.5692 12.831 19.4929 12.2335 19.3155C11.636 19.1381 11.0715 18.8621 10.564 18.4987C10.0565 18.1353 9.61314 17.6898 9.2525 17.181C8.89186 16.6722 8.61905 16.1073 8.4455 15.51" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <h4>High-Performance LiDAR</h4>
+                            <p>Advanced laser scanning for accurate 3D environmental mapping and obstacle detection.</p>
+                        </div>
+                        
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L20 7V17L12 22L4 17V7L12 2Z" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 22V12" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M20 7L12 12" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <h4>Marine Infrared Camera</h4>
+                            <p>AI-enhanced object recognition and tracking for enhanced visibility in low-light conditions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <style>
+                /* Override styles to center content */
+                .ai-features-grid {
+                    max-width: 1000px;
+                    margin: 0 auto;
+                    gap: 40px;
+                }
+                
+                .ai-feature-item {
+                    align-items: center;
+                    text-align: center;
+                }
+                
+                .ai-feature-icon {
+                    margin: 0 auto 15px auto;
+                }
+                
+                .tech-item {
+                    text-align: center;
+                }
+                
+                .tech-icon {
+                    margin: 0 auto 15px auto;
+                }
+                </style>
+            </div>
+        </section>
+        
+        <style>
+        .ai-integration {
+            padding: 80px 0;
+            background-color: #f8fafc;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .ai-features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .ai-feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .ai-feature-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .ai-feature-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background-color: #e0f2fe;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0369a1;
+        }
+        
+        .ai-feature-text h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #1e293b;
+        }
+        
+        .ai-feature-text p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        .ai-tech-display {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .tech-item {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .tech-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tech-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #e0f2fe;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0369a1;
+            margin-bottom: 15px;
+        }
+        
+        .tech-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #1e293b;
+        }
+        
+        .tech-item p {
+            color: #64748b;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .ai-features-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .ai-tech-display {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .ai-feature-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .ai-feature-icon {
+                align-self: center;
+            }
+        }
+        </style>
+
+    </main>
+
+ 
+                 <!-- WhatsApp Floating Button -->
+                 <a href="https://wa.me/971528724455?text=Hello%20TideMaster%2C%20I%20would%20like%20to%20get%20more%20information%20about%20your%20boats" class="whatsapp-float" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+                <style>
+                    .whatsapp-float {
+                        position: fixed;
+                        right: 20px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 60px;
+                        height: 60px;
+                        background-color: #25D366;
+                        color: white;
+                        border-radius: 50%;
+                        text-align: center;
+                        font-size: 30px;
+                        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+                        z-index: 1000;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: all 0.3s;
+                    }
+
+                    .whatsapp-float:hover {
+                        background-color: #1da851;
+                        transform: translateY(-50%) scale(1.1);
+                    }
+                </style>
+    <!-- 页脚 -->
+    <footer class="compact-footer">
+        <div class="container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <!-- Placeholder for logo -->
+                    <div style="height: 40px; width: 200px; background-color: white; color: var(--dark-bg); display: flex; align-items: center; justify-content: center; font-weight: bold;">TIDEMASTER</div>
+                </div>
+                <p class="footer-about">TideMaster specializes in high-quality aluminum boat design and manufacturing, serving commercial and recreational markets worldwide.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services-support.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog-news.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="products.html">TideMaster Ninja 18</a></li>
+                        <li><a href="products.html">TideMaster Hunter 28</a></li>
+                        <li><a href="products.html">TideMaster Cat 38</a></li>
+                        <li><a href="products.html">TideMaster Lounge 38</a></li>
+                        <li><a href="products.html">TideMaster Big Cat 60</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i>Integrated Business Zone, Dubai Silicon Oasis, Dubai, UAE</p>
+                        <p><i class="fas fa-phone"></i> +971 52 872 4455</p>
+                        <p><i class="fas fa-envelope"></i> info@navieryacht.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TideMaster is a brand distributed by NAIVER YACHTS FZCO. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Simple mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navList = document.querySelector('.nav-list');
+            
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    navList.style.display = 'flex';
+                } else {
+                    navList.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

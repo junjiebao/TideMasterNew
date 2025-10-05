@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TideMaster Marine Technology</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #1e3c8c;
+            --secondary-color: #3a86ff;
+            --dark-bg: #0a1931;
+            --light-bg: #f8f9fa;
+            --text-light: #ffffff;
+            --text-gray: #6c757d;
+            --text-dark: #333333;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header Styles */
+        .main-header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-list a:hover,
+        .nav-list .active a {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .language-selector {
+            background: transparent;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .search-toggle, 
+        .mobile-menu-toggle {
+            background: transparent;
+            border: none;
+            color: #333;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+        }
+
+        /* Page Content Styles */
+        .page-content {
+            min-height: calc(100vh - 400px);
+        }
+
+        /* Footer Styles */
+        .main-footer {
+            background-color: var(--dark-bg);
+            color: white;
+        }
+
+        .footer-top {
+            padding: 3rem 0;
+        }
+
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .footer-logo img {
+            max-width: 180px;
+            filter: brightness(0) invert(1);
+            margin-bottom: 1rem;
+        }
+
+        .company-desc {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .company-id {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #eaeaea;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            opacity: 0.8;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            min-width: 16px;
+            margin-top: 2px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 1rem;
+        }
+
+        .newsletter-form input {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-family: inherit;
+        }
+
+        .newsletter-form button {
+            padding: 10px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            opacity: 0.7;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float i {
+            font-size: 28px;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .footer-columns {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-list {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .footer-columns {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float i {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <!-- Company Logo -->
+                    <img src="assets/images/brand/black logo white bg.png" alt="TideMaster Logo">
+                    <div style="height: 40px; width: 150px; background-color: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">TIDEMASTER</div>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="services-support.html">Services & Support</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog-news.html">Blog & News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <select class="language-selector">
+                    <option value="en">EN</option>
+                    <option value="ar">AR</option>
+                </select>
+                <button class="search-toggle"><i class="fas fa-search"></i></button>
+                <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 页面内容 -->
+    <main class="page-content">
+        <!-- 页面特定内容在这里 -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Welcome to TideMaster Marine Technology</h2>
+                    <p>Your premier partner for high-quality aluminum boats and marine solutions</p>
+                </div>
+                <div class="text-center">
+                    <p>This is a template page. Content will be loaded based on the specific page.</p>
+                    <a href="index.html" class="btn btn-primary">Go to Homepage</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+       <!-- WhatsApp Floating Button -->
+       <a href="https://wa.me/9714008889999?text=Hello%20TideMaster%2C%20I%20would%20like%20to%20get%20more%20information%20about%20your%20boats" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #1da851;
+            transform: translateY(-50%) scale(1.1);
+        }
+    </style>
+
+    <!-- 页脚 -->
+    <footer class="compact-footer">
+        <div class="container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <!-- Placeholder for logo -->
+                    <div style="height: 40px; width: 200px; background-color: white; color: var(--dark-bg); display: flex; align-items: center; justify-content: center; font-weight: bold;">TIDEMASTER</div>
+                </div>
+                <p class="footer-about">TideMaster specializes in high-quality aluminum boat design and manufacturing, serving commercial, military, and recreational markets worldwide.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services-support.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog-news.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="product-category.html">TideMaster Ninja 18</a></li>
+                        <li><a href="product-category.html">TideMaster Hunter 28</a></li>
+                        <li><a href="product-category.html">TideMaster Cat 38</a></li>
+                        <li><a href="product-category.html">TideMaster Lounge 38</a></li>
+                        <li><a href="product-category.html">TideMaster Big Cat 60</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Industrial Zone, Abu Dhabi, UAE</p>
+                        <p><i class="fas fa-phone"></i> +971 2 123 4567</p>
+                        <p><i class="fas fa-envelope"></i> info@tidemastermarine.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 TideMaster Marine Technology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navList = document.querySelector('.nav-list');
+            
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    navList.style.display = 'flex';
+                } else {
+                    navList.style.display = 'none';
+                }
+            });
+
+            // Newsletter form submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    // Here you would normally send the email to your server
+                    alert('Thank you for subscribing to our newsletter!');
+                    this.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - TideMaster Marine Technology</title>
+    <meta name="description" content="Explore TideMaster's premium lineup of aluminum boats, including the revolutionary Ninja 18, Hunter 28, and Cat 38 series.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #1e3c8c;
+            --secondary-color: #3a86ff;
+            --dark-bg: #0a1931;
+            --light-bg: #f8f9fa;
+            --text-light: #ffffff;
+            --text-gray: #6c757d;
+            --text-dark: #333333;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header Styles */
+        .main-header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-list a:hover,
+        .nav-list .active a {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .language-selector {
+            background: transparent;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .search-toggle, 
+        .mobile-menu-toggle {
+            background: transparent;
+            border: none;
+            color: #333;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+        }
+
+        /* Page Hero Styles */
+        .page-hero {
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+        
+        .products-hero {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/products/hero-bg.jpg');
+        }
+        
+        .page-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .page-hero-content p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* 产品页特定样式 */
+        .product-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: transparent;
+            border: 1px solid var(--text-gray);
+            color: var(--text-dark);
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .product-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 240px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-item:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-category {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        .product-specs span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .product-specs i {
+            color: var(--primary-color);
+        }
+        
+        .product-info p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .product-price {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary-color);
+        }
+        
+        /* 产品模态框 */
+        .product-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .product-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 1000px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .modal-body {
+            padding: 0;
+        }
+        
+        .product-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .product-detail-images {
+            position: relative;
+        }
+        
+        .product-main-image {
+            height: 400px;
+        }
+        
+        .product-main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-thumbnails {
+            display: flex;
+            gap: 10px;
+            padding: 15px;
+            background-color: rgba(0,0,0,0.05);
+        }
+        
+        .product-thumbnail {
+            width: 80px;
+            height: 60px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .product-thumbnail.active, .product-thumbnail:hover {
+            border-color: var(--primary-color);
+        }
+        
+        .product-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-detail-info {
+            padding: 2rem;
+        }
+        
+        .product-detail-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .product-price-lg {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-description {
+            margin-bottom: 2rem;
+            color: var(--text-gray);
+        }
+        
+        .product-features {
+            margin-bottom: 2rem;
+        }
+        
+        .product-features h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .product-actions-lg {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .product-tabs {
+            margin-top: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 2rem;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .tab-btn {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            font-weight: 500;
+            color: var(--text-gray);
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .tab-btn.active {
+            color: var(--text-dark);
+        }
+        
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .specs-table tr {
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .specs-table th, .specs-table td {
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .specs-table th {
+            font-weight: 500;
+            width: 40%;
+        }
+
+        /* Footer Styles */
+        .compact-footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-brand {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo img {
+            max-width: 180px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-about {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #eaeaea;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+        }
+        
+        .contact-info p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            min-width: 16px;
+            margin-top: 2px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            opacity: 0.7;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float i {
+            font-size: 28px;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .product-detail {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-list {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .page-hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .page-hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .footer-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float i {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <!-- Placeholder for logo -->
+                    <div style="height: 40px; width: 150px; background-color: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">TIDEMASTER</div>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="active"><a href="products.html">Products</a></li>
+                    <li><a href="services-support.html">Services & Support</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog-news.html">Blog & News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <select class="language-selector">
+                    <option value="en">EN</option>
+                    <option value="ar">AR</option>
+                </select>
+                <button class="search-toggle"><i class="fas fa-search"></i></button>
+                <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="page-content">
+        <!-- 产品页英雄区 -->
+        <section class="page-hero products-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1>Our Products</h1>
+                    <p>Discover TideMaster's premium lineup of aluminum boats, designed for performance and durability</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 产品过滤和展示区 -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="product-filters">
+                    <button class="filter-btn active" data-filter="all">All Products</button>
+                    <button class="filter-btn" data-filter="performance">Performance</button>
+                    <button class="filter-btn" data-filter="fishing">Fishing</button>
+                    <button class="filter-btn" data-filter="family">Family</button>
+                    <button class="filter-btn" data-filter="custom">Custom</button>
+                </div>
+
+                <div class="product-grid">
+                    <!-- Ninja 18 -->
+                    <div class="product-item" data-category="performance" id="ninja-18">
+                        <div class="product-image" style="height: 180px;">
+                            <img src="assets/images/products/ninja-18ft/Ninja 18 starboard.jpg" alt="TideMaster Ninja 18 boat">
+                            <div class="product-category">Easy Tow Model</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>TideMaster Ninja 18</h3>
+                            <div class="product-specs">
+                                <span><i class="fas fa-ruler-horizontal"></i> 18ft</span>
+                                <span><i class="fas fa-tachometer-alt"></i> 30+ knots</span>
+                                <span><i class="fas fa-user"></i> 5 persons</span>
+                            </div>
+                            <p>The ultimate performance towable boat, featuring a spacious design and cutting-edge stability technology. Perfect for towing to remote adventures—whether it's diving, sea fishing, or exploring uncharted islands.</p>
+                            <div class="product-actions">
+                                <div class="product-price">Starting from $35,000</div>
+                                <button class="btn btn-primary open-modal" data-product="ninja-18">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+ <!-- Hunter 28 -->
+ <div class="product-item" data-category="performance" id="Hunter-28">
+    <div class="product-image" style="height: 180px;">
+        <img src="assets/images/products/hunter-28ft/Hunter 28 port.JPG" alt="TideMaster Hunter 28 boat">
+        <div class="product-category">Professional</div>
+    </div>
+    <div class="product-info">
+        <h3>TideMaster Hunter 28</h3>
+        <div class="product-specs">
+            <span><i class="fas fa-ruler-horizontal"></i> 28ft</span>
+            <span><i class="fas fa-tachometer-alt"></i> 35+ knots</span>
+            <span><i class="fas fa-user"></i> 6 persons</span>
+        </div>
+        <p>This professional inshore/offshore fishing boat delivers outstanding performance, exceptional fuel efficiency, and ample storage—engineered for the serious angler.</p>
+        <div class="product-actions">
+            <div class="product-price">Starting from $52,000</div>
+            <button class="btn btn-primary open-modal" data-product="hunter-28">View Details</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+                    <!-- Cat 38 -->
+                    <div class="product-item" data-category="family" id="cat-38">
+                        <div class="product-image">
+                            <img src="assets/images/products/cat-38ft/cat 38 starboard.JPG" alt="TideMaster Cat 38 boat">
+                            <div class="product-category">Family & Luxury</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>TideMaster Cat 38</h3>
+                            <div class="product-specs">
+                                <span><i class="fas fa-ruler-horizontal"></i> 38ft</span>
+                                <span><i class="fas fa-tachometer-alt"></i> 40+ knots</span>
+                                <span><i class="fas fa-user"></i> 12 persons</span>
+                            </div>
+                            <p>Craft unforgettable memories, from leisurely family cruises to exciting fishing trips. This spacious catamaran ensures every journey is one of remarkable comfort and stability.</p>
+                            <div class="product-actions">
+                                <div class="product-price">Starting from $280,000</div>
+                                <button class="btn btn-primary open-modal" data-product="cat-38">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lounge 38 -->
+                    <div class="product-item" data-category="family" id="lounge-38">
+                        <div class="product-image">
+                            <img src="assets\images\products\lounge-38ft\lounge 38 starboard.PNG" alt="TideMaster Lounge 38 boat">
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                Lounge 38
+                            </div>
+                            <div class="product-category">Family</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>TideMaster Lounge 38</h3>
+                            <div class="product-specs">
+                                <span><i class="fas fa-ruler-horizontal"></i> 38ft</span>
+                                <span><i class="fas fa-tachometer-alt"></i> 20+ knots</span>
+                                <span><i class="fas fa-user"></i> 12 persons</span>
+                            </div>
+                            <p>Luxury lounge boat designed for entertaining and comfort on the water.</p>
+                            <div class="product-actions">
+                                <div class="product-price">Starting from $480,000</div>
+                                <button class="btn btn-primary open-modal" data-product="lounge-38">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Big Cat 60 -->
+                    <div class="product-item" data-category="custom" id="big-cat-60">
+                        <div class="product-image">
+                            <img src="assets\images\products\big cat-60ft\big cat 60.JPG" alt="TideMaster Big Cat 60 catamaran yacht">
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                Big Cat 60
+                            </div>
+                            <div class="product-category">Custom Catamaran</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>TideMaster Big Cat 60</h3>
+                            <div class="product-specs">
+                                <span><i class="fas fa-ruler-horizontal"></i> 60ft</span>
+                                <span><i class="fas fa-tachometer-alt"></i> 18+ knots</span>
+                                <span><i class="fas fa-user"></i> 12+ persons</span>
+                            </div>
+                            <p>Our flagship catamaran designed for extended voyages with all the comforts of home.</p>
+                            <div class="product-actions">
+                                <div class="product-price">Starting from $950,000</div>
+                                <button class="btn btn-primary open-modal" data-product="big-cat-60">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 产品模态框 -->
+        <div class="product-modal" id="productModal">
+            <div class="modal-content">
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+                <div class="modal-body">
+                    <!-- 动态加载产品详情 -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+                <!-- WhatsApp Floating Button -->
+                <a href="https://wa.me/971528724455?text=Hello%20TideMaster%2C%20I%20would%20like%20to%20get%20more%20information%20about%20your%20boats" class="whatsapp-float" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+                <style>
+                    .whatsapp-float {
+                        position: fixed;
+                        right: 20px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 60px;
+                        height: 60px;
+                        background-color: #25D366;
+                        color: white;
+                        border-radius: 50%;
+                        text-align: center;
+                        font-size: 30px;
+                        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+                        z-index: 1000;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: all 0.3s;
+                    }
+
+                    .whatsapp-float:hover {
+                        background-color: #1da851;
+                        transform: translateY(-50%) scale(1.1);
+                    }
+                </style>
+    <!-- 页脚 -->
+    <footer class="compact-footer">
+        <div class="container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <!-- Placeholder for logo -->
+                    <div style="height: 40px; width: 200px; background-color: white; color: var(--dark-bg); display: flex; align-items: center; justify-content: center; font-weight: bold;">TIDEMASTER</div>
+                </div>
+                <p class="footer-about">TideMaster specializes in high-quality aluminum boat design and manufacturing, serving commercial and recreational markets worldwide.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services-support.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog-news.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="products.html">TideMaster Ninja 18</a></li>
+                        <li><a href="products.html">TideMaster Hunter 28</a></li>
+                        <li><a href="products.html">TideMaster Cat 38</a></li>
+                        <li><a href="products.html">TideMaster Lounge 38</a></li>
+                        <li><a href="products.html">TideMaster Big Cat 60</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i>Integrated Business Zone, Dubai Silicon Oasis, Dubai, UAE</p>
+                        <p><i class="fas fa-phone"></i> +971 52 872 4455</p>
+                        <p><i class="fas fa-envelope"></i> info@navieryacht.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TideMaster is a brand distributed by NAIVER YACHTS FZCO. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navList = document.querySelector('.nav-list');
+            
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    navList.style.display = 'flex';
+                } else {
+                    navList.style.display = 'none';
+                }
+            });
+
+            // Product filter functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productItems = document.querySelectorAll('.product-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.getAttribute('data-filter');
+                    
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to current button
+                    button.classList.add('active');
+                    
+                    // Filter product items
+                    productItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Product modal functionality
+            const modal = document.getElementById('productModal');
+            const modalBody = modal.querySelector('.modal-body');
+            const modalClose = modal.querySelector('.modal-close');
+            const openButtons = document.querySelectorAll('.open-modal');
+            
+            // Product data - Updated with homepage information
+            const products = {
+                'ninja-18': {
+                    name: 'TideMaster Ninja 18',
+                    price: 'Starting from $85,000',
+                    description: 'The ultimate performance towable boat, featuring a spacious design and cutting-edge stability technology. Perfect for towing to remote adventures—whether it\'s diving, sea fishing, or exploring uncharted islands, this compact vessel is your ideal companion.',
+                    features: [
+                        'Towable design - easy transport to remote locations',
+                        'Superior performance with 90-150hp engines delivering 30+ knots',
+                        'Exceptional stability and handling technology',
+                        'Spacious layout for 5 passengers',
+                        'Premium 5083-H116 aluminum alloy construction',
+                        'Modular structure with customizable options',
+                        'Ergonomic interior layout for maximum comfort',
+                        'Unmatched durability and corrosion resistance'
+                    ],
+                    specs: {
+                        'Length Overall': '18ft',
+                        'Beam': '7.5ft',
+                        'Max Speed': '30+ knots',
+                        'Seating Capacity': '5 persons',
+                        'Fuel Capacity': '200 liters',
+                        'Hull Material': '5083-H116 Aluminum',
+                        'Engine Options': '90-150HP Outboard',
+                        'Special Feature': 'Towable Design'
+                    },
+                    images: [
+                        'assets/images/products/ninja-18ft/Ninja 18 starboard.jpg',
+                        'assets/images/products/ninja-18ft/Ninja 18 running.png',
+                        'assets/images/products/ninja-18ft/Ninja 18 blue.jpg'
+                    ]
+                },
+                'hunter-28': {
+                    name: 'TideMaster Hunter 28',
+                    price: 'Starting from $120,000',
+                    description: 'This professional inshore/offshore fishing boat delivers outstanding performance, exceptional fuel efficiency, and ample storage—engineered for the serious angler. Rock-solid stability in rough conditions inspires total confidence.',
+                    features: [
+                        'Professional-grade fishing boat design',
+                        'Outstanding stability in rough water conditions',
+                        'Exceptional fuel efficiency for extended trips',
+                        'Ample storage for fishing equipment and gear',
+                        'Lightweight aluminum build for better performance',
+                        'Designed for both inshore and offshore fishing',
+                        'Superior strength and corrosion resistance',
+                        'Business-worthy reliability for charter operations'
+                    ],
+                    specs: {
+                        'Length Overall': '28ft',
+                        'Beam': '9ft',
+                        'Max Speed': '35+ knots',
+                        'Seating Capacity': '6 persons',
+                        'Fuel Capacity': '400 liters',
+                        'Hull Material': '5083-H116 Aluminum',
+                        'Engine Options': 'Single or twin outboard options',
+                        'Special Feature': 'Professional Fishing Configuration'
+                    },
+                    images: [
+                        'assets/images/products/hunter-28ft/Hunter 28 port.JPG',
+                        'assets/images/products/hunter-28ft/side-view.jpg',
+                        'assets/images/products/hunter-28ft/fishing-deck.jpg'
+                    ]
+                },
+                'cat-38': {
+                    name: 'TideMaster Cat 38',
+                    price: 'Starting from $210,000',
+                    description: 'Craft unforgettable memories, from leisurely family cruises to exciting fishing trips. This spacious catamaran ensures every journey is one of remarkable comfort and stability, perfect for family adventures and exploring hidden islands.',
+                    features: [
+                        'Spacious catamaran design for family comfort',
+                        'Exceptional stability for smooth cruising',
+                        'Perfect for leisurely family cruises and fishing trips',
+                        'Comfortable accommodation for up to 12 persons',
+                        'Ideal for weekend explorations to remote islands',
+                        'Superior fuel efficiency for longer journeys',
+                        'Premium aluminum construction for durability',
+                        'Versatile layout for various water activities'
+                    ],
+                    specs: {
+                        'Length Overall': '38ft',
+                        'Beam': '12ft',
+                        'Max Speed': '40+ knots',
+                        'Seating Capacity': '12 persons',
+                        'Fuel Capacity': '600 liters',
+                        'Hull Material': '5083-H116 Aluminum',
+                        'Engine Options': 'Twin outboard configuration',
+                        'Special Feature': 'Family Catamaran Design'
+                    },
+                    images: [
+                        'assets/images/products/cat-38ft/cat 38 starboard.JPG',
+                        'assets/images/products/cat-38ft/Cat 38 running in Dubai.png',
+                        'assets/images/products/cat-38ft/interior.jpg'
+                    ]
+                }
+            };
+
+            openButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = this.getAttribute('data-product');
+                    const product = products[productId];
+                    
+                    if (product) {
+                        let modalContent = `
+                            <div class="product-detail">
+                                <div class="product-detail-images">
+                                    <div class="product-main-image">
+                                        <!-- Placeholder for main image -->
+                                        <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                            ${product.name}
+                                        </div>
+                                    </div>
+                                    <div class="product-thumbnails">
+                                        ${product.images.map((image, index) => `
+                                            <div class="product-thumbnail ${index === 0 ? 'active' : ''}" data-image="${image}">
+                                                <!-- Placeholder for thumbnail -->
+                                                <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;">
+                                                    View ${index + 1}
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                                
+                                <div class="product-detail-info">
+                                    <h2>${product.name}</h2>
+                                    <div class="product-price-lg">${product.price}</div>
+                                    <div class="product-description">${product.description}</div>
+                                    
+                                    <div class="product-features">
+                                        <h3>Key Features</h3>
+                                        <ul class="feature-list">
+                                            ${product.features.map(feature => `
+                                                <li>${feature}</li>
+                                            `).join('')}
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="product-actions-lg">
+                                        <a href="contact.html?product=${productId}" class="btn btn-primary">Request Quote</a>
+                                        <a href="#" class="btn btn-secondary">Download Brochure</a>
+                                    </div>
+                                    
+                                    <div class="product-tabs">
+                                        <div class="tab-buttons">
+                                            <button class="tab-btn active" data-tab="specs">Specifications</button>
+                                            <button class="tab-btn" data-tab="gallery">Gallery</button>
+                                        </div>
+                                        
+                                        <div class="tab-content active" id="specs">
+                                            <table class="specs-table">
+                                                ${Object.entries(product.specs).map(([key, value]) => `
+                                                    <tr>
+                                                        <th>${key}</th>
+                                                        <td>${value}</td>
+                                                    </tr>
+                                                `).join('')}
+                                            </table>
+                                        </div>
+                                        
+                                        <div class="tab-content" id="gallery">
+                                            <p>Additional images and videos will be available soon.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        
+                        modalBody.innerHTML = modalContent;
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                        
+                        // Bind tab events
+                        const tabButtons = modal.querySelectorAll('.tab-btn');
+                        const tabContents = modal.querySelectorAll('.tab-content');
+                        
+                        tabButtons.forEach(tabBtn => {
+                            tabBtn.addEventListener('click', function() {
+                                const tabId = this.getAttribute('data-tab');
+                                
+                                tabButtons.forEach(btn => btn.classList.remove('active'));
+                                tabContents.forEach(content => content.classList.remove('active'));
+                                
+                                this.classList.add('active');
+                                modal.querySelector(`#${tabId}`).classList.add('active');
+                            });
+                        });
+                    }
+                });
+            });
+
+            // Close modal
+            modalClose.addEventListener('click', () => {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close modal when clicking outside
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

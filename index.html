@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TideMaster Marine Technology - Premium Aluminum Boats</title>
+    <meta name="description" content="TideMaster Marine Technology specializes in premium aluminum yachts and fishing boats, featuring the revolutionary Ninja 18 series.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #1e3c8c;
+            --secondary-color: #3a86ff;
+            --dark-bg: #0a1931;
+            --light-bg: #f8f9fa;
+            --text-light: #ffffff;
+            --text-gray: #6c757d;
+            --text-dark: #333333;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header Styles */
+        .main-header {
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-list a:hover,
+        .nav-list .active a {
+            color: var(--secondary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .language-selector {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .search-toggle, 
+        .mobile-menu-toggle {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+        }
+
+        /* 首页特定样式 */
+        .home-hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            color: var(--text-light);
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%);
+            z-index: 0;
+        }
+        
+        .home-hero-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .home-hero-content h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .home-hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        /* 产品展示区 */
+        .featured-products {
+            padding: 6rem 0;
+        }
+        
+        .product-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .product-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 240px;
+            position: relative;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-image .product-tag {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        
+        .product-content {
+            padding: 1.5rem;
+        }
+        
+        .product-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-specs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        .product-specs span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .product-specs i {
+            color: var(--primary-color);
+        }
+        
+        .product-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+        
+        /* 特色产品 */
+        .hero-product {
+            padding: 6rem 0;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+        }
+        
+        .hero-product-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-product-image {
+            position: relative;
+        }
+        
+        .hero-product-image img {
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 100%;
+            height: auto;
+        }
+        
+        .hero-product-text h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+        
+        .hero-product-features {
+            margin: 2rem 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .feature-icon i {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+        }
+        
+        /* 公司优势 */
+        .company-advantages {
+            padding: 6rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .advantage-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .advantage-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: rgba(58, 134, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .advantage-icon i {
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+        
+        .advantage-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .advantage-card p {
+            color: var(--text-gray);
+        }
+        
+        /* 客户见证 */
+        .testimonials {
+            padding: 6rem 0;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            position: relative;
+        }
+        
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/images/pattern-bg.png');
+            opacity: 0.05;
+            background-size: cover;
+        }
+        
+        .testimonial-slider {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-item {
+            padding: 0 1.5rem;
+        }
+        
+        .testimonial-content {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 2.5rem;
+            position: relative;
+        }
+        
+        .testimonial-content::before {
+            content: '\201C';
+            font-size: 6rem;
+            font-family: Georgia, serif;
+            color: rgba(255, 255, 255, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .author-info p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* 联系区 */
+        .contact-section {
+            padding: 6rem 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-methods {
+            margin-top: 2rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(58, 134, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-icon i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        /* Footer Styles */
+        .compact-footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-brand {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo img {
+            max-width: 180px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-about {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #eaeaea;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+        }
+        
+        .contact-info p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            min-width: 16px;
+            margin-top: 2px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            opacity: 0.7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .home-hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-product-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .product-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .advantages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-list {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .home-hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .home-hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .product-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-columns {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <!-- Placeholder for logo -->
+                    <div style="height: 40px; width: 150px; background-color: transparent; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.5rem;">TIDEMASTER</div>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="services-support.html">Services & Support</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog-news.html">Blog & News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <select class="language-selector">
+                    <option value="en">EN</option>
+                    <option value="ar">AR</option>
+                </select>
+                <button class="search-toggle"><i class="fas fa-search"></i></button>
+                <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main>
+        <!-- Hero区域 -->
+        <section class="home-hero">
+            <!-- Background image -->
+            <img src="assets\images\index\Cat 38 running in Dubai.png" alt="Cat 38 in rough sea" class="hero-video">
+            <div class="hero-overlay"></div>
+            <div class="home-hero-content">
+            <h1>Master The Tides</h1>
+            <p>Experience unmatched performance and luxury with TideMaster's premium aluminum boats, designed for those who demand the best and dare the challenges.</p>
+            <div class="hero-btns">
+                <a href="products.html" class="btn btn-primary">Explore Products</a>
+                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+            </div>
+            </div>
+        </section>
+
+        <!-- 产品展示区 -->
+        <section class="featured-products section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Premium Fleet</h2>
+                    <p>Discover our range of high-performance aluminum boats designed for various marine activities</p>
+                </div>
+                <div class="product-cards">
+                    <!-- Ninja 18 - 主打产品 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/images/products/ninja-18ft/Ninja 18 starboard.jpg" alt="TideMaster Ninja 18 boat">
+                            <div class="product-tag">Easy Tow Model</div>
+                        </div>
+                        <div class="product-content">
+                            <h3>TideMaster Ninja 18</h3>
+                            <div class="product-specs">
+                                <span><i class="fas fa-ruler-horizontal"></i> 18ft</span>
+                                <span><i class="fas fa-tachometer-alt"></i> 30+ knots</span>
+                                <span><i class="fas fa-user"></i> 5 persons</span>
+                            </div>
+                            <p>The ultimate performance towable boat, featuring a spacious design and cutting-edge stability technology. Perfect for towing to remote adventures—whether it's diving, sea fishing, or exploring uncharted islands, this compact vessel is your ideal companion.</p>
+                            <a href="products.html#ninja-18" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Hunter 28 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/images/products/hunter-28ft/Hunter 28 port.JPG" alt="TideMaster Hunter 28 boat">
+                            <div class="product-tag">Professional</div>
+                        </div>
+                        <div class="product-content">
+                            <h3>TideMaster Hunter 28</h3>
+                            <div class="product-specs">
+                                <span><i class="fas fa-ruler-horizontal"></i> 28ft</span>
+                                <span><i class="fas fa-tachometer-alt"></i> 35+ knots</span>
+                                <span><i class="fas fa-user"></i> 6 persons</span>
+                            </div>
+                            <p>This professional inshore/offshore fishing boat delivers outstanding performance, exceptional fuel efficiency, and ample storage—engineered for the serious angler.</p>
+                            <a href="products.html#hunter-28" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Cat 38 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/images/products/cat-38ft/cat 38 starboard.JPG" alt="TideMaster Cat 38 boat">
+                            <div class="product-tag">Family & Luxury</div>
+                        </div>
+                        <div class="product-content">
+                            <h3>TideMaster Cat 38</h3>
+                            <div class="product-specs">
+                                <span><i class="fas fa-ruler-horizontal"></i> 38ft</span>
+                                <span><i class="fas fa-tachometer-alt"></i> 40+ knots</span>
+                                <span><i class="fas fa-user"></i> 12 persons</span>
+                            </div>
+                            <p>Craft unforgettable memories, from leisurely family cruises to exciting fishing trips. This spacious catamaran ensures every journey is one of remarkable comfort and stability.</p>
+                            <a href="products.html#cat-38" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center" style="margin-top: 3rem;">
+                    <a href="products.html" class="btn btn-primary">View All Products</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 特色产品区 - Ninja 18 -->
+        <section class="hero-product">
+            <div class="container">
+                <div class="hero-product-content">
+                    <div class="hero-product-image">
+                        <!-- Placeholder for product image -->
+                        <img src="assets/images/products/ninja-18ft/Ninja 18 running.png" alt="TideMaster Ninja 18 boat - Running on water" />
+                        <div style="width: 100%; height: 400px; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; border-radius: 8px;">
+                            <img src="assets/images/products/ninja-18ft/Ninja 18 blue.jpg" alt="TideMaster Ninja 18 - Side View" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                        </div>
+                    </div>
+                    <div class="hero-product-text">
+                        <h2>TideMaster Ninja 18</h2>
+                        <p>Experience the ultimate performance with our towable model, combining speed, agility, and cutting-edge technology.</p>
+                        
+                        <div class="hero-product-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Superior Performance</h4>
+                                    <p>Powered by 90-150hp engines delivering up to 40+ knots with remarkable handling.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Superior customization</h4>
+                                    <p>Modular structure，customizable options and Ergonomic interior layout. </p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Unmatched Durability</h4>
+                                    <p>Built with premium 5083-H116 aluminum alloy for superior strength and corrosion resistance.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="products.html#ninja-18" class="btn btn-primary">Explore Ninja 18</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 公司优势 -->
+        <section class="company-advantages">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Why Choose TideMaster</h2>
+                    <p>Our commitment to excellence sets us apart from the competition</p>
+                </div>
+                
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Premium Quality</h3>
+                        <p>Our vessels are crafted using only the highest quality materials and components, ensuring longevity, performance, and unmatched value.</p>
+                    </div>
+                    
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Expert Craftsmanship</h3>
+                        <p>Our team of skilled craftsmen combine traditional boatbuilding techniques with modern precision technology for superior results.</p>
+                    </div>
+                    
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Innovative Technology</h3>
+                        <p>TideMaster is at the forefront of marine technology, incorporating AI systems and smart features across our product lineup.</p>
+                    </div>
+                    
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <h3>Customizable Options</h3>
+                        <p>From hull configurations to interior layouts, we offer extensive customization to ensure your boat perfectly matches your needs.</p>
+                    </div>
+                    
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <i class="fas fa-life-ring"></i>
+                        </div>
+                        <h3>Exceptional Support</h3>
+                        <p>Our relationship with customers doesn't end at purchase. We provide comprehensive service and support throughout your ownership.</p>
+                    </div>
+                    
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Industry-Leading Warranty</h3>
+                        <p>We stand behind our products with confidence, offering one of the most comprehensive warranty packages in the marine industry.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- 客户见证区 -->
+<section class="testimonials">
+    <div class="container">
+        <div class="section-title">
+            <h2>What Our Clients Say</h2>
+            <p>Hear from boat owners who have experienced the TideMaster difference</p>
+        </div>
+        
+        <div class="testimonial-slider">
+            <!-- First Testimonial -->
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">"After a lifetime at the helm as a charter captain, I can say the TideMaster Hunter 28 stands apart. Its rock-solid stability in rough conditions inspires total confidence. The aluminum hull is a brilliant investment—it holds its value over time and, combined with the lighter build, puts money back in my pocket with every trip thanks to its remarkable fuel efficiency. This boat isn't just a purchase; it's a business partner."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <!-- Placeholder for author image -->
+                            <div style="width: 100%; height: 100%; background: #3a86ff; display: flex; align-items: center; justify-content: center; color: white;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="author-info">
+                            <h4>Captain Abdullah</h4>
+                            <p>Professional Charter Captain</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Testimonial -->
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">"As a marine biologist who spends countless hours on the water for research, my TideMaster Ninja 18 has been an exceptional investment. Its lightweight design makes it easy to trailer to different research sites, while the remarkable stability allows for precise data collection even in challenging conditions. The fuel efficiency means more time in the field and less time refueling. TideMaster has truly revolutionized how we conduct our coastal ecosystem studies."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <!-- Placeholder for author image -->
+                            <div style="width: 100%; height: 100%; background: #3a86ff; display: flex; align-items: center; justify-content: center; color: white;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="author-info">
+                            <h4>Dr. Muhammad Afzal</h4>
+                            <p>Marine Biologist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third Testimonial - Zhang Zhengyang -->
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <p class="testimonial-text">"Living in Abu Dhabi, our TideMaster CAT 38 has transformed how we enjoy the Arabian Gulf. The spacious layout comfortably accommodates family and friends for fishing trips, while its exceptional stability makes even the longer journeys to remote islands smooth and secure. Weekend explorations to discover hidden islands have become our favorite family adventure. This boat isn't just a vessel—it's where we create our most cherished memories."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <!-- Placeholder for author image -->
+                            <div style="width: 100%; height: 100%; background: #3a86ff; display: flex; align-items: center; justify-content: center; color: white;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="author-info">
+                            <h4>Zhang Zhengyang</h4>
+                            <p>TideMaster CAT 38 Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- 联系区 -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Get In Touch</h2>
+                    <p>Have questions or ready to explore which TideMaster is right for you?</p>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Ready to Experience the TideMaster Difference?</h3>
+                        <p>Our team is here to answer your questions, provide detailed information about our boats, and help you find the perfect vessel for your needs.</p>
+                        <p>Whether you're interested in a test ride, want to discuss customization options, or simply need more information, we're just a call or email away.</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Call Us</h4>
+                                    <p>+971 52-872-4455</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4>Email Us</h4>
+                                    <p>info@navieryacht.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Visit Our Showroom</h4>
+                                    <p>Coming Soon</p>
+                                    <p>Dubai, United Arab Emirates</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form action="mailto:info@navieryacht.com" method="POST" enctype="text/plain"></form>
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="interest">I'm Interested In</label>
+                                <select id="interest" name="interest" class="form-control">
+                                    <option value="">Select an option</option>
+                                    <option value="ninja-18">TideMaster Ninja 18</option>
+                                    <option value="hunter-28">TideMaster Hunter 28</option>
+                                    <option value="cat-38">TideMaster Cat 38</option>
+                                    <option value="lounge-38">TideMaster Lounge 38</option>
+                                    <option value="big-cat-60">TideMaster Big Cat 60</option>
+                                    <option value="other">Other Inquiries</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" class="form-control" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-block">Submit Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+                <!-- WhatsApp Floating Button -->
+                <a href="https://wa.me/971528724455?text=Hello%20TideMaster%2C%20I%20would%20like%20to%20get%20more%20information%20about%20your%20boats" class="whatsapp-float" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+                <style>
+                    .whatsapp-float {
+                        position: fixed;
+                        right: 20px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 60px;
+                        height: 60px;
+                        background-color: #25D366;
+                        color: white;
+                        border-radius: 50%;
+                        text-align: center;
+                        font-size: 30px;
+                        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+                        z-index: 1000;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: all 0.3s;
+                    }
+
+                    .whatsapp-float:hover {
+                        background-color: #1da851;
+                        transform: translateY(-50%) scale(1.1);
+                    }
+                </style>
+    <!-- 页脚 -->
+    <footer class="compact-footer">
+        <div class="container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <!-- Placeholder for logo -->
+                    <div style="height: 40px; width: 200px; background-color: white; color: var(--dark-bg); display: flex; align-items: center; justify-content: center; font-weight: bold;">TIDEMASTER</div>
+                </div>
+                <p class="footer-about">TideMaster specializes in high-quality aluminum boat design and manufacturing, serving commercial and recreational markets worldwide.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services-support.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog-news.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="products.html">TideMaster Ninja 18</a></li>
+                        <li><a href="products.html">TideMaster Hunter 28</a></li>
+                        <li><a href="products.html">TideMaster Cat 38</a></li>
+                        <li><a href="products.html">TideMaster Lounge 38</a></li>
+                        <li><a href="products.html">TideMaster Big Cat 60</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i>Integrated Business Zone, Dubai Silicon Oasis, Dubai, UAE</p>
+                        <p><i class="fas fa-phone"></i> +971 52 872 4455</p>
+                        <p><i class="fas fa-envelope"></i> info@navieryacht.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TideMaster is a brand distributed by NAIVER YACHTS FZCO. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navList = document.querySelector('.nav-list');
+            
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    navList.style.display = 'flex';
+                } else {
+                    navList.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

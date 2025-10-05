@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Support - TideMaster</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #1e3c8c;
+            --secondary-color: #3a86ff;
+            --dark-bg: #0a1931;
+            --light-bg: #f8f9fa;
+            --text-gray: #6c757d;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .main-nav {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .main-nav a:hover,
+        .main-nav .active a {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .services-hero {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/services/services-hero.jpg');
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Tabs styling */
+        .services-tabs {
+            margin: 4rem 0;
+        }
+        
+        .services-tabs h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .services-tabs > .container > p {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            color: var(--text-gray);
+        }
+        
+        .tabs-navigation {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 2rem;
+        }
+        
+        .tab-button {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .tab-button.active {
+            color: var(--primary-color);
+        }
+        
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Service card styling */
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1.5rem;
+            object-fit: contain;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .service-card p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card ul {
+            text-align: left;
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .service-card li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Customer support section */
+        .customer-support {
+            background-color: var(--light-bg);
+            padding: 4rem 0;
+        }
+        
+        .customer-support h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .customer-support > .container > p {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            color: var(--text-gray);
+        }
+        
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .support-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .support-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .support-card h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .support-card p {
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+        }
+        
+        .support-card .btn {
+            display: block;
+            margin: 0.5rem 0;
+            width: 100%;
+        }
+        
+        /* FAQ section */
+        .faq-section {
+            padding: 4rem 0;
+        }
+        
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 2rem auto 0;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+        
+        /* CTA section */
+        .cta-section {
+            padding: 4rem 0;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .cta-buttons .btn.primary {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        .cta-buttons .btn.secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        /* Footer Styles */
+        .compact-footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-brand {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo img {
+            max-width: 180px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-about {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary-color);
+        }
+        
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #eaeaea;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+        }
+        
+        .contact-info p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            min-width: 16px;
+            margin-top: 2px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .tabs-navigation {
+                flex-direction: column;
+                border-bottom: none;
+            }
+            
+            .tab-button {
+                border-bottom: 1px solid #ddd;
+            }
+            
+            .tab-button.active::after {
+                display: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .support-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-columns {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .services-tabs h2,
+            .customer-support h2,
+            .faq-section h2,
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <!-- Placeholder for logo -->
+                    <div style="height: 40px; width: 150px; background-color: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">TIDEMASTER</div>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list" style="display: flex; list-style: none; gap: 1.5rem;">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li class="active"><a href="services-support.html">Services & Support</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog-news.html">Blog & News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <select class="language-selector">
+                    <option value="en">EN</option>
+                    <option value="ar">AR</option>
+                </select>
+                <button class="search-toggle"><i class="fas fa-search"></i></button>
+                <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero services-hero">
+        <div class="container">
+            <h1>Services & Support</h1>
+            <p>Comprehensive support and professional services to maximize your investment</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Services Tabs Section -->
+        <section class="services-tabs">
+            <div class="container">
+                <h2>Our Service Offerings</h2>
+                <p>TideMaster provides comprehensive service solutions to support you throughout your equipment lifecycle</p>
+                
+                <div class="tabs-navigation">
+                    <button class="tab-button active" data-tab="consultation">💬 Pre-sales Consultation</button>
+                    <button class="tab-button" data-tab="installation">🔧 Installation & Setup</button>
+                    <button class="tab-button" data-tab="maintenance">🛠️ Maintenance & Repair</button>
+                    <button class="tab-button" data-tab="parts">🔩 Spare Parts</button>
+                </div>
+                
+                <!-- Pre-sales Consultation Tab -->
+                <div class="tab-content active" id="consultation">
+                    <div class="service-card">
+                        <!-- Using Font Awesome icon as placeholder -->
+                        <i class="fas fa-comments fa-3x" style="color: var(--primary-color); margin-bottom: 1.5rem;"></i>
+                        <h3>Pre-sales Consultation Services</h3>
+                        <p>Our experienced consultants will help you select the perfect equipment that matches your specific needs and requirements.</p>
+                        <ul>
+                            <li>Needs assessment and analysis</li>
+                            <li>Product recommendations</li>
+                            <li>Custom solution design</li>
+                            <li>Budget planning and ROI calculation</li>
+                            <li>Site visit and evaluation</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Request Consultation</a>
+                    </div>
+                </div>
+                
+                <!-- Installation Tab -->
+                <div class="tab-content" id="installation">
+                    <div class="service-card">
+                        <i class="fas fa-tools fa-3x" style="color: var(--primary-color); margin-bottom: 1.5rem;"></i>
+                        <h3>Installation & Setup Services</h3>
+                        <p>Professional installation and configuration of all TideMaster equipment and software.</p>
+                        <ul>
+                            <li>Site preparation guidance</li>
+                            <li>Professional equipment installation</li>
+                            <li>System configuration and setup</li>
+                            <li>Initial calibration and testing</li>
+                            <li>Operator training and handover</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Schedule Installation</a>
+                    </div>
+                </div>
+                
+                <!-- Maintenance Tab -->
+                <div class="tab-content" id="maintenance">
+                    <div class="service-card">
+                        <i class="fas fa-wrench fa-3x" style="color: var(--primary-color); margin-bottom: 1.5rem;"></i>
+                        <h3>Maintenance & Repair Services</h3>
+                        <p>Regular maintenance and repair services to ensure optimal performance and extend equipment lifespan.</p>
+                        <ul>
+                            <li>Preventive maintenance plans</li>
+                            <li>Emergency repair services</li>
+                            <li>System diagnostics and troubleshooting</li>
+                            <li>Regular calibration services</li>
+                            <li>Performance optimization</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Schedule Maintenance</a>
+                    </div>
+                </div>
+                
+                <!-- Spare Parts Tab -->
+                <div class="tab-content" id="parts">
+                    <div class="service-card">
+                        <i class="fas fa-cogs fa-3x" style="color: var(--primary-color); margin-bottom: 1.5rem;"></i>
+                        <h3>Spare Parts Services</h3>
+                        <p>Quick access to genuine TideMaster parts to minimize downtime and ensure optimal equipment performance.</p>
+                        <ul>
+                            <li>Genuine manufacturer parts</li>
+                            <li>Fast worldwide shipping</li>
+                            <li>Technical documentation and installation guidance</li>
+                            <li>Parts inventory management</li>
+                            <li>Critical spares recommendations</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Order Spare Parts</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Support Section -->
+        <section class="customer-support" id="customer-support">
+            <div class="container">
+                <h2>📞 Customer Support Center</h2>
+                <p>At TideMaster, we're committed to providing exceptional support throughout your equipment's lifecycle</p>
+                
+                <div class="support-grid">
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Technical Support</h3>
+                        <p>Our technical team is ready to assist with any operational issues</p>
+                        <p><strong>Phone:</strong> +971 52 872 4455</p>
+                        <p><strong>Email:</strong> support@navieryacht.com</p>
+
+                    </div>
+                    
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Documentation</h3>
+                        <p>Access user manuals, technical documentation, and guides</p>
+                        <a href="#" class="btn">Product Manuals</a>
+                        <a href="#" class="btn">Technical Documents</a>
+                        <a href="#" class="btn">Installation Guides</a>
+                    </div>
+                    
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Training Resources</h3>
+                        <p>Enhance your knowledge with our training materials</p>
+                        <a href="#" class="btn">Video Tutorials</a>
+                        <a href="#" class="btn">Webinar Schedule</a>
+                        <a href="#" class="btn">Training Courses</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <h2>❓ Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">How quickly can you respond to an emergency service request?</div>
+                        <div class="faq-answer">
+                            <p>We prioritize emergency service requests and typically respond within 4-24 hours depending on your location and support plan. Premium support customers receive priority response within 4 hours.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What maintenance schedule do you recommend for TideMaster equipment?</div>
+                        <div class="faq-answer">
+                            <p>We recommend quarterly maintenance checks for systems in harsh environments and bi-annual checks for standard installations. Annual calibration is recommended for all systems to ensure measurement accuracy.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you offer remote diagnostics and troubleshooting?</div>
+                        <div class="faq-answer">
+                            <p>Yes, our advanced systems support remote diagnostics, allowing our technicians to troubleshoot many issues without requiring an on-site visit, saving you time and reducing downtime.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How long does equipment installation typically take?</div>
+                        <div class="faq-answer">
+                            <p>Installation time varies by system complexity. Basic systems can be installed and configured in 1-2 days, while more complex networks may require 3-5 days. We'll provide a specific timeline during your consultation.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I order spare parts directly from TideMaster?</div>
+                        <div class="faq-answer">
+                            <p>Yes, you can order genuine spare parts directly from us. We maintain extensive inventory of common parts to ensure quick delivery. For specialized components, lead times may vary, but we prioritize parts orders to minimize your downtime.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you provide operator training for new equipment?</div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer comprehensive operator training as part of our installation package. Additional training sessions can be arranged on-site or through our online training platform. We also provide refresher courses and advanced training for experienced operators.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Get Started?</h2>
+                <p>Contact our service team to discuss your support needs or schedule a service appointment.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn primary">Contact Us</a>
+                    <a href="tel:+97121234567" class="btn secondary">Call +971 52 872 4455</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+      <!-- WhatsApp Floating Button -->
+      <a href="https://wa.me/9714008889999?text=Hello%20TideMaster%2C%20I%20would%20like%20to%20get%20more%20information%20about%20your%20boats" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #1da851;
+            transform: translateY(-50%) scale(1.1);
+        }
+    </style>
+
+    <!-- 页脚 -->
+    <footer class="compact-footer">
+        <div class="container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <!-- Placeholder for logo -->
+                    <div style="height: 40px; width: 200px; background-color: white; color: var(--dark-bg); display: flex; align-items: center; justify-content: center; font-weight: bold;">TIDEMASTER</div>
+                </div>
+                <p class="footer-about">TideMaster specializes in high-quality aluminum boat design and manufacturing, serving commercial, military, and recreational markets worldwide.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services-support.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog-news.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="product-category.html">TideMaster Ninja 18</a></li>
+                        <li><a href="product-category.html">TideMaster Hunter 28</a></li>
+                        <li><a href="product-category.html">TideMaster Cat 38</a></li>
+                        <li><a href="product-category.html">TideMaster Lounge 38</a></li>
+                        <li><a href="product-category.html">TideMaster Big Cat 60</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Industrial Zone, Abu Dhabi, UAE</p>
+                        <p><i class="fas fa-phone"></i> +971 2 123 4567</p>
+                        <p><i class="fas fa-envelope"></i> info@tidemastermarine.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 TideMaster Marine Technology. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tab functionality script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to current button and content
+                    button.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // FAQ functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

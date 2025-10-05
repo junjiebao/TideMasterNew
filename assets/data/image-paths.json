@@ -1,0 +1,17 @@
+{
+  "backgrounds": {
+    "home": "assets/images/backgrounds/marine-yacht-sunset.jpg",
+    "about": "assets/images/backgrounds/shipyard-workers.jpg",
+    "products": "assets/images/backgrounds/luxury-yacht-dock.jpg",
+    "services": "assets/images/backgrounds/maintenance-workshop.jpg",
+    "projects": "assets/images/backgrounds/yacht-construction.jpg",
+    "blog": "assets/images/backgrounds/marine-technology.jpg",
+    "contact": "assets/images/backgrounds/marine-office.jpg"
+  },
+  "overlayColors": {
+    "default": "rgba(30, 61, 89, 0.7)"
+  },
+  "gradients": {
+    "default": "linear-gradient(rgba(30, 61, 89, 0.7), rgba(30, 61, 89, 0.85))"
+  }
+}

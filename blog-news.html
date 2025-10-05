@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & News - TideMaster Marine Technology</title>
+    <meta name="description" content="Stay updated with the latest news, articles, and insights from TideMaster Marine Technology - innovations in aluminum boat manufacturing, industry trends, and company updates.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #1e3c8c;
+            --secondary-color: #3a86ff;
+            --dark-bg: #0a1931;
+            --light-bg: #f8f9fa;
+            --text-light: #ffffff;
+            --text-gray: #6c757d;
+            --text-dark: #333333;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        .main-header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-list a:hover,
+        .nav-list .active a {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .language-selector {
+            background: transparent;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .search-toggle, 
+        .mobile-menu-toggle {
+            background: transparent;
+            border: none;
+            color: #333;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+        }
+
+        /* Page Hero Styles */
+        .page-hero {
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+        
+        .blog-hero {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/blog/blog-hero.jpg');
+        }
+        
+        .page-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .page-hero-content p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* 博客页面特定样式 */
+        .blog-section {
+            padding: 6rem 0;
+        }
+        
+        .blog-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: transparent;
+            border: 1px solid var(--text-gray);
+            color: var(--text-dark);
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .blog-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .blog-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+        
+        .blog-category {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        
+        .blog-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-date {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+        }
+        
+        .blog-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .blog-content h3 a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .blog-content h3 a:hover {
+            color: var(--primary-color);
+        }
+        
+        .blog-excerpt {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        .blog-author {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .author-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* 视频专区样式 */
+        .video-section {
+            padding: 6rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .video-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .video-thumbnail {
+            height: 300px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .video-thumbnail:hover img {
+            transform: scale(1.05);
+        }
+        
+        .video-thumbnail::after {
+            content: '\f144';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            color: white;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .video-thumbnail:hover::after {
+            color: var(--primary-color);
+            opacity: 1;
+        }
+        
+        .video-content {
+            padding: 1.5rem;
+        }
+        
+        .video-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .video-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        .video-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .video-meta i {
+            color: var(--primary-color);
+        }
+        
+        /* 分页样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+            gap: 0.5rem;
+        }
+        
+        .page-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            color: var(--text-dark);
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .page-link.active, .page-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* 视频模态框 */
+        .video-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .video-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .video-modal-content {
+            width: 90%;
+            max-width: 900px;
+            position: relative;
+        }
+        
+        .video-frame {
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            position: relative;
+        }
+        
+        .video-frame iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* Footer Styles */
+        .compact-footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-brand {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo img {
+            max-width: 180px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-about {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #eaeaea;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+        }
+        
+        .contact-info p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            min-width: 16px;
+            margin-top: 2px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            opacity: 0.7;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-list {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .page-hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .page-hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .footer-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <!-- Placeholder for logo -->
+                    <div style="height: 40px; width: 150px; background-color: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">TIDEMASTER</div>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="services-support.html">Services & Support</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li class="active"><a href="blog-news.html">Blog & News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <select class="language-selector">
+                    <option value="en">EN</option>
+                    <option value="ar">AR</option>
+                </select>
+                <button class="search-toggle"><i class="fas fa-search"></i></button>
+                <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="page-content">
+        <!-- 博客页英雄区 -->
+        <section class="page-hero blog-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1>Blog & News</h1>
+                    <p>Stay updated with the latest articles, industry insights, and company news</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 博客文章区 -->
+        <section class="blog-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Latest Articles</h2>
+                    <p>Dive into our collection of informative and engaging content</p>
+                </div>
+                
+                <div class="blog-filter">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="technology">Technology</button>
+                    <button class="filter-btn" data-category="company">Company News</button>
+                    <button class="filter-btn" data-category="guides">Guides</button>
+                    <button class="filter-btn" data-category="industry">Industry</button>
+                </div>
+                
+                <div class="blog-grid">
+                    <!-- Blog Post 1 -->
+                    <div class="blog-card" data-category="technology">
+                        <div class="blog-image">
+                            <!-- Placeholder for blog image -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                Next-Generation Materials
+                            </div>
+                            <span class="blog-category">Technology</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">June 15, 2023</div>
+                            <h3><a href="blog-single.html">Next-Generation Materials in Boat Construction</a></h3>
+                            <p class="blog-excerpt">Exploring the latest advancements in aluminum alloys and composite materials that are revolutionizing the boat manufacturing industry.</p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <div class="author-avatar">
+                                        <!-- Placeholder for author avatar -->
+                                        <div style="width: 100%; height: 100%; background: #3a86ff; display: flex; align-items: center; justify-content: center; color: white;">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <span>Ahmed Hassan</span>
+                                </div>
+                                <div class="blog-comments">
+                                    <i class="fas fa-comment"></i> 24
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 2 -->
+                    <div class="blog-card" data-category="company">
+                        <div class="blog-image">
+                            <!-- Placeholder for blog image -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                Regional Expansion
+                            </div>
+                            <span class="blog-category">Company News</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">May 28, 2023</div>
+                            <h3><a href="blog-single.html">TideMaster Expands Operations to the Gulf Region</a></h3>
+                            <p class="blog-excerpt">We're proud to announce our new manufacturing facility in Abu Dhabi, strengthening our commitment to serving the Middle Eastern market.</p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <div class="author-avatar">
+                                        <!-- Placeholder for author avatar -->
+                                        <div style="width: 100%; height: 100%; background: #3a86ff; display: flex; align-items: center; justify-content: center; color: white;">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <span>Sarah Johnson</span>
+                                </div>
+                                <div class="blog-comments">
+                                    <i class="fas fa-comment"></i> 18
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 3 -->
+                    <div class="blog-card" data-category="guides">
+                        <div class="blog-image">
+                            <!-- Placeholder for blog image -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                Maintenance Tips
+                            </div>
+                            <span class="blog-category">Guides</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">April 12, 2023</div>
+                            <h3><a href="blog-single.html">Essential Maintenance Tips for Aluminum Vessels</a></h3>
+                            <p class="blog-excerpt">A comprehensive guide to proper care and maintenance of aluminum boats to ensure longevity and optimal performance in marine environments.</p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <div class="author-avatar">
+                                        <!-- Placeholder for author avatar -->
+                                        <div style="width: 100%; height: 100%; background: #3a86ff; display: flex; align-items: center; justify-content: center; color: white;">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <span>Mohammed Ali</span>
+                                </div>
+                                <div class="blog-comments">
+                                    <i class="fas fa-comment"></i> 32
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 4 -->
+                    <div class="blog-card" data-category="industry">
+                        <div class="blog-image">
+                            <!-- Placeholder for blog image -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                Sustainability
+                            </div>
+                            <span class="blog-category">Industry</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">March 5, 2023</div>
+                            <h3><a href="blog-single.html">Sustainable Practices in Marine Manufacturing</a></h3>
+                            <p class="blog-excerpt">How the boating industry is adapting to environmental challenges with innovative green technologies and sustainable production methods.</p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <div class="author-avatar">
+                                        <!-- Placeholder for author avatar -->
+                                        <div style="width: 100%; height: 100%; background: #3a86ff; display: flex; align-items: center; justify-content: center; color: white;">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <span>Lisa Chen</span>
+                                </div>
+                                <div class="blog-comments">
+                                    <i class="fas fa-comment"></i> 15
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 5 -->
+                    <div class="blog-card" data-category="technology">
+                        <div class="blog-image">
+                            <!-- Placeholder for blog image -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                Navigation Tech
+                            </div>
+                            <span class="blog-category">Technology</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">February 18, 2023</div>
+                            <h3><a href="blog-single.html">Navigation Technologies for Modern Vessels</a></h3>
+                            <p class="blog-excerpt">An overview of cutting-edge navigation systems and how they're enhancing safety and efficiency in commercial and recreational boating.</p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <div class="author-avatar">
+                                        <!-- Placeholder for author avatar -->
+                                        <div style="width: 100%; height: 100%; background: #3a86ff; display: flex; align-items: center; justify-content: center; color: white;">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <span>David Kumar</span>
+                                </div>
+                                <div class="blog-comments">
+                                    <i class="fas fa-comment"></i> 27
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 6 -->
+                    <div class="blog-card" data-category="guides">
+                        <div class="blog-image">
+                            <!-- Placeholder for blog image -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                Work Boat Selection
+                            </div>
+                            <span class="blog-category">Guides</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">January 29, 2023</div>
+                            <h3><a href="blog-single.html">Selecting the Right Work Boat for Your Operation</a></h3>
+                            <p class="blog-excerpt">Key factors to consider when choosing a commercial vessel, from operational requirements to environmental conditions and budget constraints.</p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <div class="author-avatar">
+                                        <!-- Placeholder for author avatar -->
+                                        <div style="width: 100%; height: 100%; background: #3a86ff; display: flex; align-items: center; justify-content: center; color: white;">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <span>Omar Farooq</span>
+                                </div>
+                                <div class="blog-comments">
+                                    <i class="fas fa-comment"></i> 20
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination">
+                    <a href="#" class="page-link active">1</a>
+                    <a href="#" class="page-link">2</a>
+                    <a href="#" class="page-link">3</a>
+                    <a href="#" class="page-link"><i class="fas fa-angle-right"></i></a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 视频专区 -->
+        <section class="video-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Video Gallery</h2>
+                    <p>Watch our informative videos about boat manufacturing and marine technology</p>
+                </div>
+                
+                <div class="video-grid">
+                    <!-- Video 1 -->
+                    <div class="video-card">
+                        <div class="video-thumbnail" data-video="https://www.youtube.com/embed/abc123">
+                            <!-- Placeholder for video thumbnail -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                Boat Manufacturing Process
+                            </div>
+                        </div>
+                        <div class="video-content">
+                            <h3>Behind the Scenes: Boat Manufacturing Process</h3>
+                            <div class="video-meta">
+                                <span><i class="far fa-calendar-alt"></i> May 10, 2023</span>
+                                <span><i class="far fa-clock"></i> 12:45</span>
+                                <span><i class="far fa-eye"></i> 8,254 views</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Video 2 -->
+                    <div class="video-card">
+                        <div class="video-thumbnail" data-video="https://www.youtube.com/embed/def456">
+                            <!-- Placeholder for video thumbnail -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                Patrol Boat in Action
+                            </div>
+                        </div>
+                        <div class="video-content">
+                            <h3>TideMaster Patrol Boat in Action</h3>
+                            <div class="video-meta">
+                                <span><i class="far fa-calendar-alt"></i> April 23, 2023</span>
+                                <span><i class="far fa-clock"></i> 08:37</span>
+                                <span><i class="far fa-eye"></i> 12,689 views</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 视频模态框 -->
+        <div class="video-modal">
+            <div class="video-modal-content">
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+                <div class="video-frame">
+                    <iframe src="" title="YouTube video" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+                 <!-- WhatsApp Floating Button -->
+                 <a href="https://wa.me/971528724455?text=Hello%20TideMaster%2C%20I%20would%20like%20to%20get%20more%20information%20about%20your%20boats" class="whatsapp-float" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+                <style>
+                    .whatsapp-float {
+                        position: fixed;
+                        right: 20px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 60px;
+                        height: 60px;
+                        background-color: #25D366;
+                        color: white;
+                        border-radius: 50%;
+                        text-align: center;
+                        font-size: 30px;
+                        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+                        z-index: 1000;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: all 0.3s;
+                    }
+
+                    .whatsapp-float:hover {
+                        background-color: #1da851;
+                        transform: translateY(-50%) scale(1.1);
+                    }
+                </style>
+    <!-- 页脚 -->
+    <footer class="compact-footer">
+        <div class="container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <!-- Placeholder for logo -->
+                    <div style="height: 40px; width: 200px; background-color: white; color: var(--dark-bg); display: flex; align-items: center; justify-content: center; font-weight: bold;">TIDEMASTER</div>
+                </div>
+                <p class="footer-about">TideMaster specializes in high-quality aluminum boat design and manufacturing, serving commercial and recreational markets worldwide.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services-support.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog-news.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="products.html">TideMaster Ninja 18</a></li>
+                        <li><a href="products.html">TideMaster Hunter 28</a></li>
+                        <li><a href="products.html">TideMaster Cat 38</a></li>
+                        <li><a href="products.html">TideMaster Lounge 38</a></li>
+                        <li><a href="products.html">TideMaster Big Cat 60</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i>Integrated Business Zone, Dubai Silicon Oasis, Dubai, UAE</p>
+                        <p><i class="fas fa-phone"></i> +971 52 872 4455</p>
+                        <p><i class="fas fa-envelope"></i> info@navieryacht.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TideMaster is a brand distributed by NAIVER YACHTS FZCO. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
+
+    <!-- JavaScript -->
+    <script>
+        // Simple mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navList = document.querySelector('.nav-list');
+            
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    navList.style.display = 'flex';
+                } else {
+                    navList.style.display = 'none';
+                }
+            });
+            
+            // Blog filter functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const category = button.getAttribute('data-category');
+                    
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to current button
+                    button.classList.add('active');
+                    
+                    // Filter blog cards
+                    blogCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Video modal functionality
+            const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+            const videoModal = document.querySelector('.video-modal');
+            const modalClose = document.querySelector('.modal-close');
+            const videoFrame = document.querySelector('.video-frame iframe');
+            
+            videoThumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', () => {
+                    const videoUrl = thumbnail.getAttribute('data-video');
+                    videoFrame.src = videoUrl;
+                    videoModal.classList.add('active');
+                });
+            });
+            
+            modalClose.addEventListener('click', () => {
+                videoModal.classList.remove('active');
+                videoFrame.src = '';
+            });
+            
+            // Back to top functionality
+            const backToTop = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            
+            backToTop.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

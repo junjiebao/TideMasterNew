@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - TideMaster Marine Technology</title>
+    <meta name="description" content="Explore TideMaster's project portfolio - from custom builds to AI-integrated vessels, see our aluminum boats in action across various applications.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #1e3c8c;
+            --secondary-color: #3a86ff;
+            --dark-bg: #0a1931;
+            --light-bg: #f8f9fa;
+            --text-light: #ffffff;
+            --text-gray: #6c757d;
+            --text-dark: #333333;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header Styles */
+        .main-header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-list a:hover,
+        .nav-list .active a {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .language-selector {
+            background: transparent;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .search-toggle, 
+        .mobile-menu-toggle {
+            background: transparent;
+            border: none;
+            color: #333;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+        }
+
+        /* Page Hero Styles */
+        .page-hero {
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+        
+        .projects-hero {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/projects/projects-hero.jpg');
+        }
+        
+        .page-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .page-hero-content p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* 项目页面特定样式 */
+        .filter-section {
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .filter-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: transparent;
+            border: 1px solid var(--text-gray);
+            color: var(--text-dark);
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-image {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-category {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: 1.5rem;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .project-meta i {
+            color: var(--primary-color);
+        }
+        
+        .project-excerpt {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        /* 项目模态框 */
+        .project-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .project-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 1000px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .modal-body {
+            padding: 0;
+        }
+        
+        .project-detail {
+            padding: 2rem;
+        }
+        
+        .project-slider {
+            position: relative;
+            height: 450px;
+        }
+        
+        .project-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .project-detail h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+        
+        .stat-item h4 {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-item p {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        
+        .project-content {
+            line-height: 1.8;
+        }
+        
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+        }
+        
+        .project-content p {
+            margin-bottom: 1rem;
+        }
+
+        /* Footer Styles */
+        .compact-footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-brand {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo img {
+            max-width: 180px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-about {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #eaeaea;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+        }
+        
+        .contact-info p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            min-width: 16px;
+            margin-top: 2px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            opacity: 0.7;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float i {
+            font-size: 28px;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .project-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .project-slider {
+                height: 350px;
+            }
+            
+            .project-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-list {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-slider {
+                height: 300px;
+            }
+            
+            .project-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .page-hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .page-hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .footer-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float i {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <!-- Placeholder for logo -->
+                    <div style="height: 40px; width: 150px; background-color: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">TIDEMASTER</div>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="services-support.html">Services & Support</a></li>
+                    <li class="active"><a href="projects.html">Projects</a></li>
+                    <li><a href="blog-news.html">Blog & News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <select class="language-selector">
+                    <option value="en">EN</option>
+                    <option value="ar">AR</option>
+                </select>
+                <button class="search-toggle"><i class="fas fa-search"></i></button>
+                <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="page-content">
+        <!-- 项目页英雄区 -->
+        <section class="page-hero projects-hero">
+            <div class="container">
+                <div class="page-hero-content">
+                    <h1>Our Projects</h1>
+                    <p>Discover the diverse applications of TideMaster boats across various industries and use cases</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 项目过滤和展示区 -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="filter-section">
+                    <div class="section-title">
+                        <h2>Project Showcase</h2>
+                        <p>Browse our portfolio of completed projects and custom builds</p>
+                    </div>
+                    
+                    <div class="filter-categories">
+                        <button class="filter-btn active" data-filter="all">All Projects</button>
+                        <button class="filter-btn" data-filter="ai-integration">AI Integration</button>
+                        <button class="filter-btn" data-filter="custom">Custom Builds</button>
+                        <button class="filter-btn" data-filter="classic">Classic Projects</button>
+                    </div>
+                </div>
+
+                <div class="project-grid">
+                    <!-- AI Integration Project -->
+                    <div class="project-card" data-category="ai-integration">
+                        <div class="project-image">
+                            <!-- Placeholder for project image -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                AI Fishing Fleet
+                            </div>
+                            <div class="project-category">AI Integration</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>AI-Powered Fishing Fleet</h3>
+                            <div class="project-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Dubai, UAE</span>
+                                <span><i class="fas fa-calendar"></i> 2023</span>
+                            </div>
+                            <p class="project-excerpt">Custom fleet of 5 commercial fishing vessels with integrated AI fish detection system and automated navigation technology.</p>
+                            <a href="#" class="btn btn-outline view-project" data-project="ai-fishing">View Details</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Custom Build Project -->
+                    <div class="project-card" data-category="custom">
+                        <div class="project-image">
+                            <!-- Placeholder for project image -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                Patrol Vessel
+                            </div>
+                            <div class="project-category">Custom Build</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Coastal Patrol Vessel</h3>
+                            <div class="project-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Jeddah, Saudi Arabia</span>
+                                <span><i class="fas fa-calendar"></i> 2022</span>
+                            </div>
+                            <p class="project-excerpt">High-speed patrol boat with reinforced hull, radar systems and extended range capabilities for maritime security operations.</p>
+                            <a href="#" class="btn btn-outline view-project" data-project="patrol">View Details</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Classic Project -->
+                    <div class="project-card" data-category="classic">
+                        <div class="project-image">
+                            <!-- Placeholder for project image -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                Research Vessel
+                            </div>
+                            <div class="project-category">Classic Project</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Marine Research Vessel</h3>
+                            <div class="project-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Abu Dhabi, UAE</span>
+                                <span><i class="fas fa-calendar"></i> 2021</span>
+                            </div>
+                            <p class="project-excerpt">Specialized research vessel with onboard laboratory and equipment for marine biology and environmental monitoring.</p>
+                            <a href="#" class="btn btn-outline view-project" data-project="research">View Details</a>
+                        </div>
+                    </div>
+                    
+                    <!-- More Projects -->
+                    <div class="project-card" data-category="ai-integration">
+                        <div class="project-image">
+                            <!-- Placeholder for project image -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                Survey Vessel
+                            </div>
+                            <div class="project-category">AI Integration</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Autonomous Survey Vessel</h3>
+                            <div class="project-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Qatar</span>
+                                <span><i class="fas fa-calendar"></i> 2023</span>
+                            </div>
+                            <p class="project-excerpt">Unmanned vessel equipped with sonar mapping and AI-driven navigation for underwater survey operations.</p>
+                            <a href="#" class="btn btn-outline view-project" data-project="survey">View Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="custom">
+                        <div class="project-image">
+                            <!-- Placeholder for project image -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                Tourism Fleet
+                            </div>
+                            <div class="project-category">Custom Build</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Eco-Tourism Fleet</h3>
+                            <div class="project-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Oman</span>
+                                <span><i class="fas fa-calendar"></i> 2022</span>
+                            </div>
+                            <p class="project-excerpt">Fleet of 3 passenger vessels with hybrid propulsion for sustainable coastal tourism operations.</p>
+                            <a href="#" class="btn btn-outline view-project" data-project="tourism">View Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="classic">
+                        <div class="project-image">
+                            <!-- Placeholder for project image -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                                Workboat
+                            </div>
+                            <div class="project-category">Classic Project</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Industrial Workboat</h3>
+                            <div class="project-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Kuwait</span>
+                                <span><i class="fas fa-calendar"></i> 2020</span>
+                            </div>
+                            <p class="project-excerpt">Heavy-duty workboat with crane systems for offshore platform maintenance and equipment transport.</p>
+                            <a href="#" class="btn btn-outline view-project" data-project="workboat">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Modal Templates (Hidden) -->
+    <div class="project-modal" id="project-modal">
+        <div class="modal-content">
+            <span class="modal-close"><i class="fas fa-times"></i></span>
+            <div class="modal-body">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+                <!-- WhatsApp Floating Button -->
+                <a href="https://wa.me/971528724455?text=Hello%20TideMaster%2C%20I%20would%20like%20to%20get%20more%20information%20about%20your%20boats" class="whatsapp-float" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+                <style>
+                    .whatsapp-float {
+                        position: fixed;
+                        right: 20px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 60px;
+                        height: 60px;
+                        background-color: #25D366;
+                        color: white;
+                        border-radius: 50%;
+                        text-align: center;
+                        font-size: 30px;
+                        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+                        z-index: 1000;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: all 0.3s;
+                    }
+
+                    .whatsapp-float:hover {
+                        background-color: #1da851;
+                        transform: translateY(-50%) scale(1.1);
+                    }
+                </style>
+    <!-- 页脚 -->
+    <footer class="compact-footer">
+        <div class="container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <!-- Placeholder for logo -->
+                    <div style="height: 40px; width: 200px; background-color: white; color: var(--dark-bg); display: flex; align-items: center; justify-content: center; font-weight: bold;">TIDEMASTER</div>
+                </div>
+                <p class="footer-about">TideMaster specializes in high-quality aluminum boat design and manufacturing, serving commercial and recreational markets worldwide.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services-support.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog-news.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="products.html">TideMaster Ninja 18</a></li>
+                        <li><a href="products.html">TideMaster Hunter 28</a></li>
+                        <li><a href="products.html">TideMaster Cat 38</a></li>
+                        <li><a href="products.html">TideMaster Lounge 38</a></li>
+                        <li><a href="products.html">TideMaster Big Cat 60</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i>Integrated Business Zone, Dubai Silicon Oasis, Dubai, UAE</p>
+                        <p><i class="fas fa-phone"></i> +971 52 872 4455</p>
+                        <p><i class="fas fa-envelope"></i> info@navieryacht.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TideMaster is a brand distributed by NAIVER YACHTS FZCO. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navList = document.querySelector('.nav-list');
+            
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    navList.style.display = 'flex';
+                } else {
+                    navList.style.display = 'none';
+                }
+            });
+
+            // Project filtering functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filter = button.dataset.filter;
+                    
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Project modal functionality
+            const projectLinks = document.querySelectorAll('.view-project');
+            const modal = document.getElementById('project-modal');
+            const modalClose = document.querySelector('.modal-close');
+            const modalBody = document.querySelector('.modal-body');
+            
+            projectLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const projectId = link.dataset.project;
+                    
+                    // Load project details
+                    loadProjectDetails(projectId);
+                    
+                    // Show modal
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            modalClose.addEventListener('click', () => {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close modal if clicked outside content
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            function loadProjectDetails(projectId) {
+                // Sample content for demonstration
+                const projectDetails = {
+                    'ai-fishing': {
+                        title: 'AI-Powered Fishing Fleet',
+                        location: 'Dubai, UAE',
+                        year: '2023',
+                        client: 'Dubai Fisheries Corporation',
+                        category: 'AI Integration',
+                        image: 'assets/images/projects/ai-fishing.jpg',
+                        stats: {
+                            'Vessels': '5 units',
+                            'Length': '12-15 meters',
+                            'Hull': 'Aluminum alloy',
+                            'Power': 'Twin 250HP outboards',
+                            'AI Systems': 'Fish detection, Navigation',
+                            'Range': '300 nautical miles'
+                        },
+                        description: `
+                            <h3>Project Overview</h3>
+                            <p>This fleet of five commercial fishing vessels was custom-built for the Dubai Fisheries Corporation with integrated AI systems to revolutionize fishing operations in the Arabian Gulf. Each vessel is equipped with our proprietary AI fish detection system that uses underwater sonar combined with machine learning algorithms to identify fish species, estimate sizes, and predict movement patterns.</p>
+                            
+                            <h3>Technical Implementation</h3>
+                            <p>The vessels feature reinforced aluminum hulls with twin 250HP outboard motors for optimal performance in various sea conditions. The AI navigation system allows for semi-autonomous operation with advanced obstacle avoidance capabilities and optimal route planning based on weather conditions and fish detection data.</p>
+                            
+                            <h3>Results & Impact</h3>
+                            <p>Initial operational data shows a 35% increase in catch efficiency and a 28% reduction in fuel consumption compared to traditional fishing methods. The AI predictive analytics have also helped reduce unnecessary travel time by accurately forecasting productive fishing grounds.</p>
+                        `
+                    },
+                    'patrol': {
+                        title: 'Coastal Patrol Vessel',
+                        location: 'Jeddah, Saudi Arabia',
+                        year: '2022',
+                        client: 'Saudi Coast Guard',
+                        category: 'Custom Build',
+                        image: 'assets/images/projects/patrol-boat.jpg',
+                        stats: {
+                            'Length': '15 meters',
+                            'Max Speed': '50 knots',
+                            'Crew Capacity': '8 persons',
+                            'Range': '450 nautical miles',
+                            'Navigation': 'Advanced radar & GPS',
+                            'Communication': 'Satellite & VHF'
+                        },
+                        description: `
+                            <h3>Project Overview</h3>
+                            <p>This high-speed patrol vessel was custom-built for the Saudi Coast Guard to enhance maritime security operations along the Red Sea coast. The vessel features advanced surveillance systems and extended operational range for prolonged patrol missions.</p>
+                            
+                            <h3>Technical Implementation</h3>
+                            <p>The vessel is constructed with reinforced 5083-H116 aluminum alloy for enhanced durability in rough sea conditions. It's equipped with twin 350HP diesel engines, advanced radar systems, thermal imaging cameras, and satellite communication equipment.</p>
+                            
+                            <h3>Results & Impact</h3>
+                            <p>The vessel has significantly improved response times for maritime incidents and has been instrumental in several successful search and rescue operations. Its extended range allows for longer patrol missions without refueling.</p>
+                        `
+                    }
+                };
+                
+                if (projectDetails[projectId]) {
+                    const project = projectDetails[projectId];
+                    
+                    // Build HTML for project details
+                    let statsHtml = '';
+                    for (const [key, value] of Object.entries(project.stats)) {
+                        statsHtml += `
+                            <div class="stat-item">
+                                <h4>${key}</h4>
+                                <p>${value}</p>
+                            </div>
+                        `;
+                    }
+                    
+                    const html = `
+                        <div class="project-slider">
+                            <!-- Placeholder for project image -->
+                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                ${project.title}
+                            </div>
+                        </div>
+                        <div class="project-detail">
+                            <h2>${project.title}</h2>
+                            <div class="project-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> ${project.location}</span>
+                                <span><i class="fas fa-calendar"></i> ${project.year}</span>
+                                <span><i class="fas fa-user"></i> ${project.client}</span>
+                                <span><i class="fas fa-tag"></i> ${project.category}</span>
+                            </div>
+                            
+                            <div class="project-stats">
+                                ${statsHtml}
+                            </div>
+                            
+                            <div class="project-content">
+                                ${project.description}
+                            </div>
+                        </div>
+                    `;
+                    
+                    modalBody.innerHTML = html;
+                } else {
+                    modalBody.innerHTML = `<div class="project-detail"><p>Project details not found.</p></div>`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

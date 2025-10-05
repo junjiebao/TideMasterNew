@@ -1,0 +1,176 @@
+{
+  "categories": [
+    {
+      "id": "pre-sales",
+      "name": "Pre-Sales Consultation",
+      "description": "Professional guidance to help you choose the perfect TideMaster boat for your needs",
+      "services": [
+        {
+          "id": "boat-selection",
+          "title": "Boat Selection Guidance",
+          "description": "Our experts will help you choose the perfect TideMaster boat based on your specific needs, preferences, and budget. We'll provide detailed comparisons of different models and explain the benefits of various options.",
+          "image": "assets/images/services/boat-selection.jpg",
+          "link": "contact.html"
+        },
+        {
+          "id": "customization",
+          "title": "Customization Options",
+          "description": "Explore the wide range of customization possibilities for your TideMaster boat. From layout modifications to special equipment integration, our design team will work with you to create the perfect vessel for your needs.",
+          "image": "assets/images/services/customization.jpg",
+          "link": "contact.html"
+        },
+        {
+          "id": "financing",
+          "title": "Financing Solutions",
+          "description": "We offer flexible financing options to help make your TideMaster boat purchase more accessible. Our financial advisors can guide you through various payment plans and leasing options tailored to your financial situation.",
+          "image": "assets/images/services/financing.jpg",
+          "link": "contact.html"
+        },
+        {
+          "id": "virtual-tour",
+          "title": "Virtual Tours",
+          "description": "Can't visit our showroom in person? No problem! Schedule a virtual tour of our boats with one of our sales representatives. Using high-definition video, we'll show you every detail and answer all your questions in real-time.",
+          "image": "assets/images/services/virtual-tour.jpg",
+          "link": "contact.html"
+        }
+      ]
+    },
+    {
+      "id": "installation",
+      "name": "Installation & Setup",
+      "description": "Expert delivery and setup of your new TideMaster boat",
+      "services": [
+        {
+          "id": "delivery",
+          "title": "Delivery Services",
+          "description": "We offer comprehensive delivery services to bring your TideMaster boat to your desired location. Our experienced team ensures safe transportation and handles all logistics, making the process smooth and hassle-free.",
+          "image": "assets/images/services/delivery.jpg",
+          "link": "contact.html"
+        },
+        {
+          "id": "setup",
+          "title": "Initial Setup",
+          "description": "Our technicians will perform a complete setup of your new TideMaster boat, including system calibration, equipment testing, and personalized settings configuration to ensure everything is perfectly optimized for your use.",
+          "image": "assets/images/services/setup.jpg",
+          "link": "contact.html"
+        },
+        {
+          "id": "training",
+          "title": "Owner Training",
+          "description": "Get the most from your TideMaster boat with our comprehensive owner training program. Learn about all features, proper operation techniques, basic maintenance, and safety procedures directly from our expert team.",
+          "image": "assets/images/services/training.jpg",
+          "link": "contact.html"
+        },
+        {
+          "id": "documentation",
+          "title": "Documentation Package",
+          "description": "Receive a complete documentation package with your TideMaster boat, including detailed owner's manual, maintenance schedules, warranty information, and quick reference guides for all onboard systems.",
+          "image": "assets/images/services/documentation.jpg",
+          "link": "contact.html"
+        }
+      ]
+    },
+    {
+      "id": "maintenance",
+      "name": "Maintenance & Repair",
+      "description": "Professional care to keep your TideMaster boat in peak condition",
+      "services": [
+        {
+          "id": "regular-maintenance",
+          "title": "Regular Maintenance",
+          "description": "Keep your TideMaster boat in peak condition with our factory-recommended maintenance services. Our certified technicians will perform thorough inspections, fluid changes, system checks, and preventive care.",
+          "image": "assets/images/services/regular-maintenance.jpg",
+          "link": "contact.html"
+        },
+        {
+          "id": "repair",
+          "title": "Repair Services",
+          "description": "Our expert repair team can handle everything from minor fixes to major overhauls. Using genuine TideMaster parts and factory-approved techniques, we'll restore your boat to perfect working condition quickly and effectively.",
+          "image": "assets/images/services/repair.jpg",
+          "link": "contact.html"
+        },
+        {
+          "id": "upgrade",
+          "title": "Upgrades & Retrofits",
+          "description": "Enhance your existing TideMaster boat with the latest technologies and features. Whether you want to upgrade electronics, add comfort features, or install our newest AI systems, our specialists can make it happen.",
+          "image": "assets/images/services/upgrade.jpg",
+          "link": "contact.html"
+        },
+        {
+          "id": "mobile-service",
+          "title": "Mobile Service",
+          "description": "Can't bring your boat to us? Our mobile service team can come to you. We offer on-location maintenance and repair services throughout the UAE, ensuring your TideMaster boat receives expert care wherever it's located.",
+          "image": "assets/images/services/mobile-service.jpg",
+          "link": "contact.html"
+        }
+      ]
+    },
+    {
+      "id": "parts",
+      "name": "Spare Parts",
+      "description": "Genuine TideMaster parts to maintain performance and reliability",
+      "services": [
+        {
+          "id": "genuine-parts",
+          "title": "Genuine TideMaster Parts",
+          "description": "Maintain your boat's performance and reliability with genuine TideMaster parts. Designed specifically for our boats, these components ensure perfect fit, optimal function, and long-lasting quality.",
+          "image": "assets/images/services/genuine-parts.jpg",
+          "link": "contact.html"
+        },
+        {
+          "id": "parts-catalog",
+          "title": "Online Parts Catalog",
+          "description": "Our comprehensive online parts catalog makes it easy to find and order exactly what you need. Search by model, system, or part number with detailed diagrams to ensure correct identification.",
+          "image": "assets/images/services/parts-catalog.jpg",
+          "link": "#"
+        },
+        {
+          "id": "parts-warranty",
+          "title": "Parts Warranty",
+          "description": "All genuine TideMaster parts come with a comprehensive warranty. Our quality assurance process ensures that every component meets our strict standards before it reaches your boat.",
+          "image": "assets/images/services/parts-warranty.jpg",
+          "link": "contact.html"
+        },
+        {
+          "id": "express-delivery",
+          "title": "Express Delivery",
+          "description": "When you need parts quickly, our express delivery service ensures fast shipping throughout the UAE and neighboring countries. We maintain extensive inventory to minimize downtime for your vessel.",
+          "image": "assets/images/services/parts-express.jpg",
+          "link": "contact.html"
+        }
+      ]
+    }
+  ],
+  "support": {
+    "telephone": "+971 400-888-8002",
+    "email": "support@tidemastermarine.com",
+    "hours": "9:00 AM - 6:00 PM",
+    "warranty": {
+      "structural": "5-year warranty on hull and structural components",
+      "systems": "3-year warranty on systems and equipment",
+      "electronics": "1-year warranty on electronics and accessories",
+      "transferable": true,
+      "extended": true
+    },
+    "departments": {
+      "sales": {
+        "name": "Sales Department",
+        "description": "For inquiries about our products, pricing, and availability.",
+        "email": "sales@tidemastermarine.com",
+        "phone": "+971 400-888-8001"
+      },
+      "support": {
+        "name": "Service & Support",
+        "description": "For technical support, maintenance, and warranty inquiries.",
+        "email": "support@tidemastermarine.com",
+        "phone": "+971 400-888-8002"
+      },
+      "custom": {
+        "name": "Custom Projects",
+        "description": "For custom boat designs and special project inquiries.",
+        "email": "custom@tidemastermarine.com",
+        "phone": "+971 400-888-8003"
+      }
+    }
+  }
+}

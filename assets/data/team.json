@@ -1,0 +1,121 @@
+{
+  "leadership": [
+    {
+      "id": "ahmed",
+      "name": "Ahmed Al Mansouri",
+      "position": "Founder & CEO",
+      "bio": "With over 25 years of experience in marine engineering and business leadership, Ahmed founded TideMaster to bring innovation to the boating industry. His vision has guided the company from a small workshop to one of the leading aluminum boat manufacturers in the UAE.",
+      "image": "assets/images/team/ceo.jpg",
+      "social": {
+        "linkedin": "https://www.linkedin.com/",
+        "twitter": "https://twitter.com/"
+      }
+    },
+    {
+      "id": "michael",
+      "name": "Dr. Michael Chen",
+      "position": "Chief Technology Officer",
+      "bio": "Leading our AI and engineering innovations, Michael brings expertise from his background in naval architecture and computer science. With a PhD from MIT and over 15 years in marine technology, he leads TideMaster's cutting-edge technological developments.",
+      "image": "assets/images/team/cto.jpg",
+      "social": {
+        "linkedin": "https://www.linkedin.com/",
+        "github": "https://github.com/"
+      }
+    },
+    {
+      "id": "sofia",
+      "name": "Sofia Rodriguez",
+      "position": "Head of Design",
+      "bio": "Sofia leads our design team, creating boats that combine functionality, performance, and aesthetic excellence. With a background in industrial design and marine architecture, she ensures every TideMaster vessel is not only high-performing but also beautifully crafted.",
+      "image": "assets/images/team/design.jpg",
+      "social": {
+        "linkedin": "https://www.linkedin.com/",
+        "instagram": "https://www.instagram.com/"
+      }
+    },
+    {
+      "id": "khalid",
+      "name": "Khalid Al Farsi",
+      "position": "Production Director",
+      "bio": "Overseeing manufacturing operations, Khalid ensures every boat meets TideMaster's strict quality standards. His background in aluminum manufacturing and lean production techniques has been instrumental in establishing our world-class production facility.",
+      "image": "assets/images/team/production.jpg",
+      "social": {
+        "linkedin": "https://www.linkedin.com/",
+        "twitter": "https://twitter.com/"
+      }
+    },
+    {
+      "id": "sarah",
+      "name": "Sarah Johnson",
+      "position": "Marketing Director",
+      "bio": "Sarah leads our global marketing efforts with over 15 years of experience in luxury brands and marine industry marketing. Her innovative strategies have significantly enhanced TideMaster's brand presence across international markets.",
+      "image": "assets/images/team/marketing.jpg",
+      "social": {
+        "linkedin": "https://www.linkedin.com/",
+        "instagram": "https://www.instagram.com/"
+      }
+    },
+    {
+      "id": "omar",
+      "name": "Omar Al-Farsi",
+      "position": "Chief Engineer",
+      "bio": "Omar leads our engineering department with expertise in marine structural design and aluminum fabrication. His innovative approaches to hull design have contributed significantly to the performance characteristics of TideMaster boats.",
+      "image": "assets/images/team/engineer.jpg",
+      "social": {
+        "linkedin": "https://www.linkedin.com/",
+        "facebook": "https://www.facebook.com/"
+      }
+    },
+    {
+      "id": "ali",
+      "name": "Ali Hassan",
+      "position": "Customer Service Manager",
+      "bio": "Ali ensures that our customers receive exceptional service throughout their ownership experience. His team handles everything from delivery coordination to after-sales support, making the TideMaster experience seamless.",
+      "image": "assets/images/team/service.jpg",
+      "social": {
+        "linkedin": "https://www.linkedin.com/",
+        "twitter": "https://twitter.com/"
+      }
+    },
+    {
+      "id": "fatima",
+      "name": "Fatima Al Zaabi",
+      "position": "Finance Director",
+      "bio": "Fatima oversees all financial operations at TideMaster with her background in corporate finance and business strategy. Her financial stewardship has been instrumental in the company's sustainable growth trajectory.",
+      "image": "assets/images/team/finance.jpg",
+      "social": {
+        "linkedin": "https://www.linkedin.com/"
+      }
+    }
+  ],
+  "departments": {
+    "design": [
+      "Sofia Rodriguez",
+      "Hamad Al Suwaidi",
+      "Julia Miller",
+      "Tariq Abdullah",
+      "Victoria Wang"
+    ],
+    "engineering": [
+      "Omar Al-Farsi",
+      "Rebecca Chen",
+      "Mohammed Al Zaabi",
+      "Daniel Kim",
+      "Aisha Ahmed"
+    ],
+    "production": [
+      "Khalid Al Farsi",
+      "Maria Lopez",
+      "Saeed bin Sultan",
+      "James Wilson",
+      "Laila Al Hashimi"
+    ],
+    "sales": [
+      "Jamal Al Mansoori",
+      "Christina Park",
+      "Faisal Al Qasimi",
+      "Nadia Sayed",
+      "Robert Thompson"
+    ]
+  }
+}
