@@ -4,7 +4,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://www.tidemaster.com/sitemap.xml
+Sitemap: https://www.tidemaster.ae/sitemap.xml
 
 # Crawl-delay for better server performance
 Crawl-delay: 1

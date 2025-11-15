@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TideMaster URL检查工具</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c8c 0%, #3a86ff 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .test-section {
+            margin-bottom: 40px;
+        }
+        
+        .test-section h2 {
+            color: #1e3c8c;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3a86ff;
+        }
+        
+        .url-test {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .url-test:hover {
+            background: #e9ecef;
+        }
+        
+        .url-input {
+            flex: 1;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            color: #333;
+            margin-right: 15px;
+        }
+        
+        .test-btn {
+            padding: 8px 20px;
+            background: #3a86ff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .test-btn:hover {
+            background: #1e3c8c;
+            transform: translateY(-2px);
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        .status.pending {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        .status.success {
+            background: #28a745;
+            color: white;
+        }
+        
+        .status.error {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .status.checking {
+            background: #17a2b8;
+            color: white;
+        }
+        
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background: white;
+            border-left: 4px solid #3a86ff;
+            font-size: 13px;
+            display: none;
+        }
+        
+        .result.show {
+            display: block;
+        }
+        
+        .btn-group {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin: 5px;
+            background: linear-gradient(135deg, #1e3c8c, #3a86ff);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 60, 140, 0.3);
+        }
+        
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #3a86ff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        
+        .info-box h3 {
+            color: #1e3c8c;
+            margin-bottom: 10px;
+        }
+        
+        .info-box ul {
+            margin-left: 20px;
+        }
+        
+        .info-box li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 TideMaster URL重定向检查工具</h1>
+            <p>验证域名重定向配置是否正确</p>
+        </div>
+        
+        <div class="content">
+            <div class="info-box">
+                <h3>📋 检查说明</h3>
+                <ul>
+                    <li>点击"测试"按钮检查每个URL的重定向</li>
+                    <li>所有URL应该重定向到 <strong>https://www.tidemaster.ae</strong></li>
+                    <li>绿色✅表示正确重定向</li>
+                    <li>红色❌表示需要修复</li>
+                </ul>
+            </div>
+            
+            <div class="test-section">
+                <h2>🌐 域名重定向测试</h2>
+                
+                <div class="url-test" id="test-1">
+                    <div class="url-input">http://tidemaster.ae</div>
+                    <button class="test-btn" onclick="testURL('http://tidemaster.ae', 'test-1')">测试</button>
+                    <span class="status pending">待测试</span>
+                </div>
+                <div class="result" id="result-1"></div>
+                
+                <div class="url-test" id="test-2">
+                    <div class="url-input">https://tidemaster.ae</div>
+                    <button class="test-btn" onclick="testURL('https://tidemaster.ae', 'test-2')">测试</button>
+                    <span class="status pending">待测试</span>
+                </div>
+                <div class="result" id="result-2"></div>
+                
+                <div class="url-test" id="test-3">
+                    <div class="url-input">http://www.tidemaster.ae</div>
+                    <button class="test-btn" onclick="testURL('http://www.tidemaster.ae', 'test-3')">测试</button>
+                    <span class="status pending">待测试</span>
+                </div>
+                <div class="result" id="result-3"></div>
+                
+                <div class="url-test" id="test-4">
+                    <div class="url-input">https://www.tidemaster.ae</div>
+                    <button class="test-btn" onclick="testURL('https://www.tidemaster.ae', 'test-4')">测试</button>
+                    <span class="status pending">待测试</span>
+                </div>
+                <div class="result" id="result-4"></div>
+            </div>
+            
+            <div class="test-section">
+                <h2>📄 页面URL测试</h2>
+                
+                <div class="url-test" id="test-5">
+                    <div class="url-input">https://tidemaster.ae/about.html</div>
+                    <button class="test-btn" onclick="testURL('https://tidemaster.ae/about.html', 'test-5')">测试</button>
+                    <span class="status pending">待测试</span>
+                </div>
+                <div class="result" id="result-5"></div>
+                
+                <div class="url-test" id="test-6">
+                    <div class="url-input">https://tidemaster.ae/products.html</div>
+                    <button class="test-btn" onclick="testURL('https://tidemaster.ae/products.html', 'test-6')">测试</button>
+                    <span class="status pending">待测试</span>
+                </div>
+                <div class="result" id="result-6"></div>
+                
+                <div class="url-test" id="test-7">
+                    <div class="url-input">https://tidemaster.ae/contact.html</div>
+                    <button class="test-btn" onclick="testURL('https://tidemaster.ae/contact.html', 'test-7')">测试</button>
+                    <span class="status pending">待测试</span>
+                </div>
+                <div class="result" id="result-7"></div>
+            </div>
+            
+            <div class="btn-group">
+                <button class="btn" onclick="testAllURLs()">🚀 测试所有URL</button>
+                <button class="btn" onclick="resetTests()">🔄 重置</button>
+                <button class="btn" onclick="window.open('https://www.redirect-checker.org/', '_blank')">🔗 在线检查工具</button>
+            </div>
+            
+            <div class="info-box" style="margin-top: 30px;">
+                <h3>✅ 期望结果</h3>
+                <ul>
+                    <li><code>http://tidemaster.ae</code> → <strong>https://www.tidemaster.ae</strong> (301重定向)</li>
+                    <li><code>https://tidemaster.ae</code> → <strong>https://www.tidemaster.ae</strong> (301重定向)</li>
+                    <li><code>http://www.tidemaster.ae</code> → <strong>https://www.tidemaster.ae</strong> (301重定向)</li>
+                    <li><code>https://www.tidemaster.ae</code> → <strong>https://www.tidemaster.ae</strong> (200正常)</li>
+                </ul>
+            </div>
+            
+            <div class="info-box">
+                <h3>🛠️ 如何修复</h3>
+                <p><strong>如果测试失败:</strong></p>
+                <ol style="margin-left: 20px; margin-top: 10px;">
+                    <li>检查服务器是否已上传 <code>.htaccess</code> 文件</li>
+                    <li>确认Apache mod_rewrite模块已启用</li>
+                    <li>查看 <code>DOMAIN-REDIRECT-GUIDE.md</code> 获取详细配置说明</li>
+                    <li>联系主机提供商协助配置</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function testURL(url, testId) {
+            const statusElement = document.querySelector(`#${testId} .status`);
+            const resultElement = document.getElementById(`result-${testId.split('-')[1]}`);
+            
+            // 更新状态为检查中
+            statusElement.className = 'status checking';
+            statusElement.textContent = '检查中...';
+            resultElement.classList.remove('show');
+            
+            // 注意: 由于浏览器的CORS限制,这个检查可能无法在本地工作
+            // 建议使用在线工具或部署后测试
+            
+            // 模拟检查(实际应该通过服务器端API检查)
+            setTimeout(() => {
+                const expectedURL = 'https://www.tidemaster.ae';
+                
+                // 这里应该实际检查重定向
+                // 由于浏览器限制,我们提供手动验证说明
+                
+                resultElement.innerHTML = `
+                    <strong>手动验证步骤:</strong><br>
+                    1. 在新标签页打开: <a href="${url}" target="_blank">${url}</a><br>
+                    2. 检查地址栏是否显示: <code>${expectedURL}</code><br>
+                    3. 使用浏览器开发者工具(F12)的Network标签查看重定向状态码
+                `;
+                resultElement.classList.add('show');
+                
+                statusElement.className = 'status pending';
+                statusElement.textContent = '需手动验证';
+            }, 500);
+        }
+        
+        function testAllURLs() {
+            for (let i = 1; i <= 7; i++) {
+                const testElement = document.getElementById(`test-${i}`);
+                const urlInput = testElement.querySelector('.url-input').textContent;
+                testURL(urlInput, `test-${i}`);
+            }
+        }
+        
+        function resetTests() {
+            const statusElements = document.querySelectorAll('.status');
+            const resultElements = document.querySelectorAll('.result');
+            
+            statusElements.forEach(el => {
+                el.className = 'status pending';
+                el.textContent = '待测试';
+            });
+            
+            resultElements.forEach(el => {
+                el.classList.remove('show');
+            });
+        }
+    </script>
+</body>
+</html>

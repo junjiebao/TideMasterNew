@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to TideMaster...</title>
+    
+    <!-- 立即重定向到www版本 -->
+    <meta http-equiv="refresh" content="0;url=https://www.tidemaster.ae/">
+    
+    <!-- Canonical指向www版本 -->
+    <link rel="canonical" href="https://www.tidemaster.ae/">
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #1e3c8c 0%, #3a86ff 100%);
+            color: white;
+        }
+        .container {
+            text-align: center;
+        }
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid white;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        p {
+            opacity: 0.9;
+        }
+        a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+    
+    <script>
+        // JavaScript重定向(如果meta refresh失败)
+        window.location.replace("https://www.tidemaster.ae/");
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="spinner"></div>
+        <h1>Redirecting to TideMaster...</h1>
+        <p>If you are not redirected automatically, <a href="https://www.tidemaster.ae/">click here</a>.</p>
+    </div>
+</body>
+</html>
