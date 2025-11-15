@@ -863,26 +863,23 @@
                         </div>
                     </div>
 
-                    <!-- Lounge 38 -->
-                    <div class="product-item" data-category="family" id="lounge-38">
+                    <!-- Lounge 48 -->
+                    <div class="product-item" data-category="family" id="lounge-48">
                         <div class="product-image">
-                            <img src="assets\images\products\lounge-38ft\lounge 38 starboard.PNG" alt="TideMaster Lounge 38 boat">
-                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
-                                Lounge 38
-                            </div>
-                            <div class="product-category">Family</div>
+                            <img src="assets\images\products\lounge-48ft\lounge 48 bow.JPG" alt="TideMaster Lounge 48 luxury boat">
+                            <div class="product-category">Luxury Lounge</div>
                         </div>
                         <div class="product-info">
-                            <h3>TideMaster Lounge 38</h3>
+                            <h3>TideMaster Lounge 48</h3>
                             <div class="product-specs">
-                                <span><i class="fas fa-ruler-horizontal"></i> 38ft</span>
-                                <span><i class="fas fa-tachometer-alt"></i> 20+ knots</span>
-                                <span><i class="fas fa-user"></i> 12 persons</span>
+                                <span><i class="fas fa-ruler-horizontal"></i> 48ft / 14.6m</span>
+                                <span><i class="fas fa-tachometer-alt"></i> 25+ knots</span>
+                                <span><i class="fas fa-user"></i> 12+ persons</span>
                             </div>
-                            <p>Luxury lounge boat designed for entertaining and comfort on the water.</p>
+                            <p>Ultimate luxury lounge yacht with premium amenities, perfect for entertaining and extended cruising in supreme comfort.</p>
                             <div class="product-actions">
-                                <div class="product-price">Starting from $480,000</div>
-                                <button class="btn btn-primary open-modal" data-product="lounge-38">View Details</button>
+                                <div class="product-price">Contact for Quote</div>
+                                <button class="btn btn-primary open-modal" data-product="lounge-48">View Details</button>
                             </div>
                         </div>
                     </div>
@@ -890,10 +887,7 @@
                     <!-- Big Cat 60 -->
                     <div class="product-item" data-category="custom" id="big-cat-60">
                         <div class="product-image">
-                            <img src="assets\images\products\big cat-60ft\big cat 60.JPG" alt="TideMaster Big Cat 60 catamaran yacht">
-                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
-                                Big Cat 60
-                            </div>
+                            <img src="assets/images/products/big cat-60ft/big cat 60.JPG" alt="TideMaster Big Cat 60 catamaran yacht">
                             <div class="product-category">Custom Catamaran</div>
                         </div>
                         <div class="product-info">
@@ -1062,6 +1056,12 @@
 
             // Product modal functionality
             const modal = document.getElementById('productModal');
+            
+            if (!modal) {
+                console.error('Modal element not found!');
+                return;
+            }
+            
             const modalBody = modal.querySelector('.modal-body');
             const modalClose = modal.querySelector('.modal-close');
             const openButtons = document.querySelectorAll('.open-modal');
@@ -1124,8 +1124,8 @@
                     },
                     images: [
                         'assets/images/products/hunter-28ft/Hunter 28 port.JPG',
-                        'assets/images/products/hunter-28ft/side-view.jpg',
-                        'assets/images/products/hunter-28ft/fishing-deck.jpg'
+                        'assets/images/products/hunter-28ft/Hunter 28 blue port.JPG',
+                        'assets/images/products/hunter-28ft/Hunter 28 top.jpg'
                     ]
                 },
                 'cat-38': {
@@ -1147,15 +1147,81 @@
                         'Beam': '12ft',
                         'Max Speed': '40+ knots',
                         'Seating Capacity': '12 persons',
-                        'Fuel Capacity': '600 liters',
+                        'Fuel Capacity': '940 liters',
                         'Hull Material': '5083-H116 Aluminum',
-                        'Engine Options': 'Twin outboard configuration',
-                        'Special Feature': 'Family Catamaran Design'
+                        'Engine Options': 'Twin outboard 450HP Max',
+                        'Special Feature': 'Asymmetric Twin Hulls Design'
                     },
                     images: [
                         'assets/images/products/cat-38ft/cat 38 starboard.JPG',
-                        'assets/images/products/cat-38ft/Cat 38 running in Dubai.png',
-                        'assets/images/products/cat-38ft/interior.jpg'
+                        'assets/images/products/cat-38ft/cat 38 hull front.jpg',
+                        'assets/images/products/cat-38ft/Cat 38 console.jpg'
+                    ]
+                },
+                'lounge-48': {
+                    name: 'TideMaster Lounge 48',
+                    price: 'Contact for Quote',
+                    description: 'Experience the epitome of luxury yacht entertainment with the Lounge 48. This magnificent 48-foot luxury lounge yacht combines sophisticated design, premium amenities, and exceptional performance. Perfect for corporate events, exclusive gatherings, and unforgettable family celebrations on the water.',
+                    features: [
+                        'Luxurious 48-foot design for ultimate entertaining',
+                        'Spacious accommodations with premium comfort',
+                        'Twin propulsion options: Mercury 350hp diesel or Cummins 480hp',
+                        'Large fuel capacity (1,500L) for extended cruising',
+                        'Generous fresh water capacity (606L)',
+                        'Shallow draft (0.62m) for versatile anchorage access',
+                        'Professional-grade construction for charter operations',
+                        'Elegant layout perfect for social events and celebrations'
+                    ],
+                    specs: {
+                        'Length Overall (L.O.A.)': '14.6m / 48\'0"',
+                        'Hull Length': '13.6m / 44\'6"',
+                        'Maximum Beam': '4.8m / 15\'6"',
+                        'Draft': '0.62m / 2\'1"',
+                        'Displacement': '15.6 ton / 27,720 lbs',
+                        'Fuel Tank': '1,500L / 397 gals',
+                        'Water Tank': '606L / 160 gals',
+                        'Holding Tank': '416L / 110 gals',
+                        'Standard Propulsion': 'Twin Mercury 350hp diesel stern drive',
+                        'Optional Propulsion': 'Twin Cummins 480hp diesel w/ ZF gear, shafts & props',
+                        'Hull Material': '5083-H116 Aluminum',
+                        'Special Feature': 'Premium Luxury Lounge Yacht'
+                    },
+                    images: [
+                        'assets/images/products/lounge-48ft/lounge 48 saloon front.JPG',
+                        'assets/images/products/lounge-48ft/lounge 48 bow.JPG',
+                        'assets/images/products/lounge-48ft/lounge 48 saloon.JPG',
+                        'assets/images/products/lounge-48ft/lounge 48 cabin.JPG'
+                    ]
+                },
+                'big-cat-60': {
+                    name: 'TideMaster Big Cat 60',
+                    price: 'Contact for Quote',
+                    description: 'Experience the ultimate in luxury catamaran cruising with the Big Cat 60. This impressive 60-foot aluminum catamaran combines exceptional seaworthiness, spacious accommodations, and cutting-edge marine technology. Perfect for extended voyages, charter operations, or as your premier liveaboard vessel.',
+                    features: [
+                        'Luxurious 60-foot catamaran design for ultimate comfort',
+                        'Exceptional fuel capacity (1,514L) for extended range cruising',
+                        'Spacious accommodations with generous living areas',
+                        'Shallow draft (0.6m) for access to secluded anchorages',
+                        'Premium marine-grade aluminum construction',
+                        'Large fresh water capacity (606L) for extended trips',
+                        'Professional-grade design suitable for charter operations',
+                        'Superior stability and smooth ride in all conditions'
+                    ],
+                    specs: {
+                        'Length Overall (LOA)': '18.2m / 59\'8"',
+                        'Length at Water Line': '17.6m / 57\'8"',
+                        'Beam': '7.3m / 23\'11"',
+                        'Draft': '0.6m / 1\'11"',
+                        'Displacement': '22.1 ton / 48,620 lbs',
+                        'Fresh Water Capacity': '606L / 160 Gal',
+                        'Fuel Capacity': '1,514L / 400 Gal',
+                        'Holding Tank Capacity': '460L / 122 Gal',
+                        'Hull Material': '5083-H116 Aluminum',
+                        'Special Feature': 'Long-Range Cruising Catamaran'
+                    },
+                    images: [
+                        'assets/images/products/big cat-60ft/big cat 60.JPG',
+                        'assets/images/products/big cat-60ft/big cat 60 port.jpg'
                     ]
                 }
             };
@@ -1165,23 +1231,22 @@
                     const productId = this.getAttribute('data-product');
                     const product = products[productId];
                     
+                    if (!product) {
+                        console.error('Product not found:', productId);
+                        return;
+                    }
+                    
                     if (product) {
                         let modalContent = `
                             <div class="product-detail">
                                 <div class="product-detail-images">
                                     <div class="product-main-image">
-                                        <!-- Placeholder for main image -->
-                                        <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
-                                            ${product.name}
-                                        </div>
+                                        <img src="${product.images[0]}" alt="${product.name}" id="mainProductImage">
                                     </div>
                                     <div class="product-thumbnails">
                                         ${product.images.map((image, index) => `
                                             <div class="product-thumbnail ${index === 0 ? 'active' : ''}" data-image="${image}">
-                                                <!-- Placeholder for thumbnail -->
-                                                <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;">
-                                                    View ${index + 1}
-                                                </div>
+                                                <img src="${image}" alt="${product.name} - View ${index + 1}">
                                             </div>
                                         `).join('')}
                                     </div>
@@ -1234,6 +1299,21 @@
                         modalBody.innerHTML = modalContent;
                         modal.classList.add('active');
                         document.body.style.overflow = 'hidden';
+                        
+                        // Bind thumbnail click events to change main image
+                        const thumbnails = modal.querySelectorAll('.product-thumbnail');
+                        const mainImage = modal.querySelector('#mainProductImage');
+                        
+                        thumbnails.forEach(thumbnail => {
+                            thumbnail.addEventListener('click', function() {
+                                const imageSrc = this.getAttribute('data-image');
+                                mainImage.src = imageSrc;
+                                
+                                // Update active state
+                                thumbnails.forEach(thumb => thumb.classList.remove('active'));
+                                this.classList.add('active');
+                            });
+                        });
                         
                         // Bind tab events
                         const tabButtons = modal.querySelectorAll('.tab-btn');
