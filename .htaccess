@@ -3,6 +3,10 @@
 # 启用重写引擎
 RewriteEngine On
 
+# Redirect tidemaster.ae to tidemasternew.edgeone.app
+RewriteCond %{HTTP_HOST} ^(www\.)?tidemaster\.ae$ [NC]
+RewriteRule ^ https://tidemasternew.edgeone.app%{REQUEST_URI} [L,R=301]
+
 # Redirect non-www to www for HTTPS
 RewriteCond %{HTTPS} on
 RewriteCond %{HTTP_HOST} ^tidemaster\.ae$ [NC]
