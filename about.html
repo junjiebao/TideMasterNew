@@ -887,6 +887,20 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+        /* 隐藏时间线部分 */
+        .timeline-section,
+        .timeline,
+        .timeline::before,
+        .timeline-item,
+        .timeline-dot,
+        .timeline-date,
+        .timeline-content,
+        .timeline-item:nth-child(odd) .timeline-content::after,
+        .timeline-item:nth-child(even) .timeline-content::after {
+            display: none !important;
+            visibility: hidden;
+        }
     </style>
 </head>
 <body>
@@ -1044,217 +1058,7 @@
             </div>
         </section>
 
-        <!-- 发展历程 -->
-        <section class="timeline-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Our Journey</h2>
-                    <p>The evolution of TideMaster Technology</p>
-                </div>
-                
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2010</div>
-                        <div class="timeline-content">
-                            <h3>The Beginning</h3>
-                            <p>TideMaster was founded in city of Longkou, Shandong province China by the Chi family with a vision to create high-quality aluminum boats, tailored to meet global demand and diverse maritime conditions.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2013</div>
-                        <div class="timeline-content">
-                            <h3>First Commercial Fleet</h3>
-                            <p>Completed our first major commercial order - a fleet of 26 tourism vessels for a prominent tourism operation company.</p>
-                        </div>
-                    </div>
-
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2020</div>
-                        <div class="timeline-content">
-                            <h3>New Facility</h3>
-                            <p>Expanded into a state-of-the-art 35,000 sqm production facility in Longkou City, increasing our production capacity by 600%.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2022</div>
-                        <div class="timeline-content">
-                            <h3>Production Milestone Reached</h3>
-                            <p>We set a new annual record by manufacturing 150 boats in our new state-of-the-art facility this year.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2023</div>
-                        <div class="timeline-content">
-                            <h3>AI Integration</h3>
-                            <p>Revolutionized the regional boating industry with the introduction of our AI-integrated navigation and safty systems.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2024</div>
-                        <div class="timeline-content">
-                            <h3>Strategic Patrol Boat Export</h3>
-                            <p>Marking a significant milestone, we have designed, built, and exported four distinct patrol boat variants for deployment with the Malaysian Coast Guard.</p>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2024</div>
-                        <div class="timeline-content">
-                            <h3>GCC Expansion</h3>
-                            <p>We have extended our reach into the GCC with operations in the UAE and new service centers on the horizon in Qatar and Oman.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2025</div>
-                        <div class="timeline-content">
-                            <h3>Present Day</h3>
-                            <p>Continuing to innovate with new models, expanded services, and our commitment to sustainable marine technology.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 技术实力 -->
-        <section class="tech-capabilities">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Our Capabilities</h2>
-                    <p>The advanced technologies and methodologies that set TideMaster apart</p>
-                </div>
-                
-                <div class="capability-grid">
-                    <div class="capability-card">
-                        <div class="capability-icon">
-                            <i class="fas fa-drafting-compass"></i>
-                        </div>
-                        <div class="capability-content">
-                            <h3>Advanced Design</h3>
-                            <p>Our team of naval architects utilizes 3D modeling and hydrodynamic simulation software to optimize hull designs for performance, stability, and fuel efficiency.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="capability-card">
-                        <div class="capability-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <div class="capability-content">
-                            <h3>Precision Manufacturing</h3>
-                            <p>Using CNC plasma cutting technology and robotic welding systems, we ensure consistent quality and precision in every boat we produce.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="capability-card">
-                        <div class="capability-icon">
-                            <i class="fas fa-flask"></i>
-                        </div>
-                        <div class="capability-content">
-                            <h3>Material Innovation</h3>
-                            <p>Our research team continuously tests and implements the latest aluminum alloys and composite materials to improve durability and reduce weight.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 团队介绍 -->
-        <section class="team-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Our Team</h2>
-                    <p>Meet the experts behind TideMaster's success</p>
-                </div>
-                
-                <div class="team-grid">
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <!-- Placeholder for team member photo -->
-                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
-                                Joey Junjie Bao
-                            </div>
-                        </div>
-                        <div class="team-info">
-                            <h3>Joey Junjie Bao</h3>
-                            <div class="team-position">Founder & CEO</div>
-                            <p>With over 25 years of experience in marine and boat related business, Joey's vision drives TideMaster's innovation.</p>
-                            <div class="team-social">
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <!-- Placeholder for team member photo -->
-                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
-                                Sarah Johnson
-                            </div>
-                        </div>
-                        <div class="team-info">
-                            <h3>Sarah Johnson</h3>
-                            <div class="team-position">Head Naval Architect</div>
-                            <p>Sarah leads our design team with innovative approaches to marine architecture.</p>
-                            <div class="team-social">
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <!-- Placeholder for team member photo -->
-                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
-                                Cyrus Shiqi Chi
-                            </div>
-                        </div>
-                        <div class="team-info">
-                            <h3>Cyrus Shiqi Chi</h3>
-                            <div class="team-position">Production Director</div>
-                            <p>Cyrus oversees our supply chain and manufacturing process, ensuring quality at every stage.</p>
-                            <div class="team-social">
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <!-- Placeholder for team member photo -->
-                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
-                                RuoChen Lv
-                            </div>
-                        </div>
-                        <div class="team-info">
-                            <h3>RuoChen Lv</h3>
-                            <div class="team-position">Technology Officer</div>
-                            <p>Chen leads our innovations in latest material, navigation systems and smart boat technology.</p>
-                            <div class="team-social">
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+   
 
         <!-- 铝合金船优势 -->
         <section class="aluminum-advantages" id="aluminum-advantages-section">
@@ -1908,7 +1712,7 @@
                         <li><a href="products.html">TideMaster Ninja 18</a></li>
                         <li><a href="products.html">TideMaster Hunter 28</a></li>
                         <li><a href="products.html">TideMaster Cat 38</a></li>
-                        <li><a href="products.html">TideMaster Lounge 38</a></li>
+                        <li><a href="products.html">TideMaster Lounge 48</a></li>
                         <li><a href="products.html">TideMaster Big Cat 60</a></li>
                     </ul>
                 </div>
@@ -1924,7 +1728,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 TideMaster is a brand distributed by NAIVER YACHTS FZCO. All Rights Reserved.</p>
+                <p>&copy; 2023-2025 TideMaster is a brand distributed by <a href="https://www.navieryacht.com/" target="_blank" style="color: inherit; text-decoration: none;">NAIVER YACHTS FZCO</a>. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
