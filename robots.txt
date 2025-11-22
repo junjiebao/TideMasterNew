@@ -1,7 +1,21 @@
 # TideMaster Marine Technology - robots.txt
+# Premium Aluminum Boats Dubai UAE
 
 User-agent: *
 Allow: /
+
+# Allow all important resources for SEO
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+Allow: /assets/Sound/
+
+# Disallow admin and development areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /test-*
+Disallow: /check-*
+Disallow: /*.md$
 
 # Sitemaps
 Sitemap: https://www.tidemaster.ae/sitemap.xml
@@ -9,11 +23,29 @@ Sitemap: https://www.tidemaster.ae/sitemap.xml
 # Crawl-delay for better server performance
 Crawl-delay: 1
 
-# Disallow admin areas (if any in future)
-Disallow: /admin/
-Disallow: /private/
+# Specific User-agents for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
 
-# Allow access to CSS and JS for proper rendering
-Allow: /assets/css/
-Allow: /assets/js/
-Allow: /assets/images/
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Social Media Bots (for rich previews)
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
