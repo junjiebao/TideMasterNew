@@ -415,6 +415,216 @@
         /* 铝合金船优势 */
         .aluminum-advantages {
             padding: 6rem 0;
+            position: relative;
+        }
+        
+        /* 音频播放器UI样式 */
+        .audio-player-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            width: 400px;
+            max-width: 90vw;
+            z-index: 1000;
+            animation: slideInUp 0.5s ease-out;
+            backdrop-filter: blur(10px);
+        }
+        
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .audio-player-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .audio-player-icon {
+            font-size: 2em;
+            margin-right: 12px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .audio-player-info {
+            flex: 1;
+        }
+        
+        .audio-player-title {
+            font-weight: 600;
+            font-size: 1em;
+            margin-bottom: 4px;
+            color: #fff;
+        }
+        
+        .audio-player-subtitle {
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .audio-close-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 24px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        
+        .audio-close-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+        
+        .audio-player-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .audio-play-pause-btn {
+            background: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #1e3c72;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .audio-play-pause-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+        }
+        
+        .audio-progress-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .audio-time {
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.9);
+            min-width: 40px;
+            font-family: monospace;
+        }
+        
+        .audio-progress-bar {
+            flex: 1;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .audio-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            border-radius: 3px;
+            width: 0%;
+            transition: width 0.1s linear;
+            position: relative;
+        }
+        
+        .audio-progress-fill::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .audio-volume-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        
+        .volume-icon {
+            font-size: 1.2em;
+        }
+        
+        .volume-slider {
+            width: 80px;
+            height: 4px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            outline: none;
+        }
+        
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 14px;
+            height: 14px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .volume-slider::-moz-range-thumb {
+            width: 14px;
+            height: 14px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .audio-player-widget {
+                bottom: 20px;
+                right: 20px;
+                left: 20px;
+                width: auto;
+            }
+            
+            .audio-volume-control {
+                display: none;
+            }
         }
         
         .advantages-flex {
@@ -681,8 +891,8 @@
                     <li class="active"><a href="about.html">About Us</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="services-support.html">Services & Support</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="blog-news.html">Blog & News</a></li>
+                    <!-- <li><a href="projects.html">Projects</a></li> -->
+                    <!-- <li><a href="blog-news.html">Blog & News</a></li> -->
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -725,6 +935,7 @@
                                 <img src="assets/images/brand/navier factory.jpg" alt="TideMaster Manufacturing Facility" class="slider-image active">
                                 <img src="assets/images/brand/factory inside.jpg" alt="TideMaster Factory Interior" class="slider-image">
                                 <img src="assets/images/brand/boat building.jpg" alt="TideMaster Factory Boat building" class="slider-image">
+                                <img src="assets\images\brand\cat 38 wrapped port.JPG" alt="TideMaster Factory Boat building" class="slider-image">
                             </div>
                             <div class="slider-dots">
                                 <span class="dot active"></span>
@@ -1032,11 +1243,46 @@
         </section>
 
         <!-- 铝合金船优势 -->
-        <section class="aluminum-advantages">
+        <section class="aluminum-advantages" id="aluminum-advantages-section">
             <div class="container">
                 <div class="section-title">
                     <h2>The TideMaster Aluminum Advantage</h2>
                     <p>Why aluminum boats by TideMaster stand apart</p>
+                </div>
+                
+                <!-- 音频播放器 -->
+                <audio id="aluminum-advantage-audio" preload="auto">
+                    <source src="assets/Sound/tidemaster cat 38 talk show.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                
+                <!-- 音频播放器UI -->
+                <div id="audio-player-widget" class="audio-player-widget" style="display: none;">
+                    <div class="audio-player-header">
+                        <div class="audio-player-icon">🎙️</div>
+                        <div class="audio-player-info">
+                            <div class="audio-player-title">Now Playing: Boat Tech Talk</div>
+                            <div class="audio-player-subtitle">Featuring TideMaster Cat 38</div>
+                        </div>
+                        <button class="audio-close-btn" id="audio-close-btn">×</button>
+                    </div>
+                    <div class="audio-player-controls">
+                        <button class="audio-play-pause-btn" id="audio-play-pause-btn">
+                            <span id="play-icon">▶</span>
+                            <span id="pause-icon" style="display: none;">⏸</span>
+                        </button>
+                        <div class="audio-progress-container">
+                            <div class="audio-time" id="current-time">0:00</div>
+                            <div class="audio-progress-bar">
+                                <div class="audio-progress-fill" id="audio-progress-fill"></div>
+                            </div>
+                            <div class="audio-time" id="total-time">0:00</div>
+                        </div>
+                        <div class="audio-volume-control">
+                            <span class="volume-icon">🔊</span>
+                            <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="80">
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="advantages-flex">
@@ -1636,8 +1882,8 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="products.html">Products</a></li>
                         <li><a href="services-support.html">Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="blog-news.html">Blog</a></li>
+                        <!-- <li><a href="projects.html">Projects</a></li> -->
+                        <!-- <li><a href="blog-news.html">Blog</a></li> -->
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -1688,6 +1934,121 @@
                     navList.style.display = 'none';
                 }
             });
+
+            // Auto-play audio when scrolling to Aluminum Advantage section
+            const aluminumSection = document.getElementById('aluminum-advantages-section');
+            const audio = document.getElementById('aluminum-advantage-audio');
+            const audioWidget = document.getElementById('audio-player-widget');
+            const playPauseBtn = document.getElementById('audio-play-pause-btn');
+            const playIcon = document.getElementById('play-icon');
+            const pauseIcon = document.getElementById('pause-icon');
+            const closeBtn = document.getElementById('audio-close-btn');
+            const progressFill = document.getElementById('audio-progress-fill');
+            const currentTimeEl = document.getElementById('current-time');
+            const totalTimeEl = document.getElementById('total-time');
+            const volumeSlider = document.getElementById('volume-slider');
+            let hasPlayed = false; // 确保音频只播放一次
+
+            if (aluminumSection && audio && audioWidget) {
+                // 设置初始音量
+                audio.volume = 0.8;
+
+                // 格式化时间显示
+                function formatTime(seconds) {
+                    const mins = Math.floor(seconds / 60);
+                    const secs = Math.floor(seconds % 60);
+                    return mins + ':' + (secs < 10 ? '0' : '') + secs;
+                }
+
+                // 更新进度条
+                function updateProgress() {
+                    const progress = (audio.currentTime / audio.duration) * 100;
+                    progressFill.style.width = progress + '%';
+                    currentTimeEl.textContent = formatTime(audio.currentTime);
+                }
+
+                // 音频元数据加载后设置总时长
+                audio.addEventListener('loadedmetadata', function() {
+                    totalTimeEl.textContent = formatTime(audio.duration);
+                });
+
+                // 更新播放进度
+                audio.addEventListener('timeupdate', updateProgress);
+
+                // 音频播放时更新UI
+                audio.addEventListener('play', function() {
+                    playIcon.style.display = 'none';
+                    pauseIcon.style.display = 'inline';
+                    audioWidget.style.display = 'block';
+                });
+
+                // 音频暂停时更新UI
+                audio.addEventListener('pause', function() {
+                    playIcon.style.display = 'inline';
+                    pauseIcon.style.display = 'none';
+                });
+
+                // 音频结束时
+                audio.addEventListener('ended', function() {
+                    playIcon.style.display = 'inline';
+                    pauseIcon.style.display = 'none';
+                    progressFill.style.width = '0%';
+                    currentTimeEl.textContent = '0:00';
+                });
+
+                // 播放/暂停按钮
+                playPauseBtn.addEventListener('click', function() {
+                    if (audio.paused) {
+                        audio.play();
+                    } else {
+                        audio.pause();
+                    }
+                });
+
+                // 关闭按钮
+                closeBtn.addEventListener('click', function() {
+                    audio.pause();
+                    audioWidget.style.display = 'none';
+                });
+
+                // 音量控制
+                volumeSlider.addEventListener('input', function() {
+                    audio.volume = this.value / 100;
+                });
+
+                // 点击进度条跳转
+                const progressBar = document.querySelector('.audio-progress-bar');
+                progressBar.addEventListener('click', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const percent = (e.clientX - rect.left) / rect.width;
+                    audio.currentTime = percent * audio.duration;
+                });
+
+                // 创建 Intersection Observer
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        // 当部分进入视口且还未播放过
+                        if (entry.isIntersecting && !hasPlayed) {
+                            // 尝试播放音频
+                            audio.play().then(function() {
+                                hasPlayed = true;
+                                audioWidget.style.display = 'block';
+                                console.log('Audio started playing automatically');
+                            }).catch(function(error) {
+                                console.log('Auto-play was prevented:', error);
+                                // 如果自动播放被阻止，显示播放器UI让用户手动播放
+                                audioWidget.style.display = 'block';
+                            });
+                        }
+                    });
+                }, {
+                    threshold: 0.3, // 当30%的部分可见时触发
+                    rootMargin: '0px'
+                });
+
+                // 开始观察该部分
+                observer.observe(aluminumSection);
+            }
         });
     </script>
 </body>
