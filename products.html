@@ -567,6 +567,175 @@
             width: 40%;
         }
 
+        /* News Section Styles */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .news-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .news-card:hover .news-image img {
+            transform: scale(1.05);
+        }
+
+        .news-info {
+            margin-top: 1rem;
+        }
+
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .news-date {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .news-category {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .news-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        .news-excerpt {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .read-more-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .read-more-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .news-details {
+            display: none;
+            grid-column: 1 / -1;
+            grid-row: 1;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            padding: 2rem;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .news-details.active {
+            display: block;
+        }
+
+        .news-detail-content {
+            color: var(--text-dark);
+        }
+
+        .news-detail-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .news-detail-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .news-detail-content p {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-less-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .read-less-btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Footer Styles */
         .compact-footer {
             background-color: var(--dark-bg);
@@ -754,6 +923,10 @@
             }
             
             .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .news-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -946,6 +1119,104 @@
                             <div class="product-actions">
                                 <div class="product-price">Starting from $950,000</div>
                                 <button class="btn btn-primary open-modal" data-product="big-cat-60">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 最新动态新闻 -->
+        <section class="section-padding" style="background-color: #f8f9fa;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Latest News & Updates</h2>
+                    <p>Stay updated with our latest projects and delivery milestones</p>
+                </div>
+                
+                <div class="news-grid">
+                    <!-- 新闻1: Hunter 28 阿曼马斯喀拉到客户 -->
+                    <div class="news-card" id="news-1">
+                        <div class="news-content">
+                            <div class="news-image">
+                                <img src="assets/images/products/hunter-28ft/hunter 28 masirah port front.jpg" alt="Hunter 28 boat completion for Masirah client" loading="lazy">
+                            </div>
+                            <div class="news-info">
+                                <div class="news-meta">
+                                    <span class="news-date">November 2024</span>
+                                    <span class="news-category">Project Completion</span>
+                                </div>
+                                <h3>Hunter 28 Hull Completed for Masirah Client</h3>
+                                <div class="news-excerpt">
+                                    <p>We are proud to announce the successful completion of Hunter 28 hull construction for our valued client in Masirah, Oman. The boat features custom finishing and is ready for delivery.</p>
+                                </div>
+                                <button class="read-more-btn" onclick="toggleNewsDetails('news-1')">Read More</button>
+                            </div>
+                        </div>
+                        <div class="news-details" id="news-1-details">
+                            <div class="news-detail-content">
+                                <h3>Hunter 28 Hull Completion Details</h3>
+                                <img src="assets/images/products/hunter-28ft/hunter 28 masirah port stern.jpg" alt="Hunter 28 stern view" class="news-detail-image">
+                                <img src="assets/images/products/hunter-28ft/hunter 28 masirah stern.jpg" alt="Hunter 28 detailed finishing" class="news-detail-image">
+                                <p>The Hunter 28 project showcases our commitment to quality craftsmanship and timely delivery. Our team worked diligently to ensure every detail met the client's specifications, from the hull construction to the final finishing touches. The boat represents another successful TideMaster vessel serving the Middle East market.</p>
+                                <button class="read-less-btn" onclick="toggleNewsDetails('news-1')">Read Less</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 新闻2: Ninja 18 新西兰客户建造开始 -->
+                    <div class="news-card" id="news-2">
+                        <div class="news-content">
+                            <div class="news-image">
+                                <img src="assets/images/products/ninja-18ft/5.5.jpg" alt="Ninja 18 construction start for New Zealand client" loading="lazy">
+                            </div>
+                            <div class="news-info">
+                                <div class="news-meta">
+                                    <span class="news-date">November 2024</span>
+                                    <span class="news-category">New Project</span>
+                                </div>
+                                <h3>Ninja 18 Construction Begins for New Zealand Client</h3>
+                                <div class="news-excerpt">
+                                    <p>We have commenced construction of a new Ninja 18 for our client from New Zealand. This towable fishing boat will be built to their exact specifications and is expected to be completed in Q1 2025.</p>
+                                </div>
+                                <button class="read-more-btn" onclick="toggleNewsDetails('news-2')">Read More</button>
+                            </div>
+                        </div>
+                        <div class="news-details" id="news-2-details">
+                            <div class="news-detail-content">
+                                <h3>Ninja 18 New Zealand Project Details</h3>
+                                <img src="assets/images/products/ninja-18ft/5.5.jpg" alt="Ninja 18 detailed construction view" class="news-detail-image">
+                                <p>The Ninja 18 represents one of our most popular models for international clients. This particular vessel will feature enhanced customization options including specialized fishing equipment storage and upgraded navigation systems suitable for New Zealand waters.</p>
+                                <button class="read-less-btn" onclick="toggleNewsDetails('news-2')">Read Less</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 新闻3: CAT 38 完工运往迪拜 -->
+                    <div class="news-card" id="news-3">
+                        <div class="news-content">
+                            <div class="news-image">
+                                <img src="assets/images/products/cat-38ft/cat 38 on truck.JPG" alt="Cat 38 shipping to Dubai" loading="lazy">
+                            </div>
+                            <div class="news-info">
+                                <div class="news-meta">
+                                    <span class="news-date">November 2024</span>
+                                    <span class="news-category">Delivery</span>
+                                </div>
+                                <h3>Cat 38 Completed & Shipping to Dubai</h3>
+                                <div class="news-excerpt">
+                                    <p>Another Cat 38 luxury catamaran has been completed and is now being shipped to our Dubai facility. The vessel features premium amenities and custom configurations.</p>
+                                </div>
+                                <button class="read-more-btn" onclick="toggleNewsDetails('news-3')">Read More</button>
+                            </div>
+                        </div>
+                        <div class="news-details" id="news-3-details">
+                            <div class="news-detail-content">
+                                <h3>Cat 38 Dubai Delivery Details</h3>
+                                <img src="assets/images/products/cat-38ft/cat 38 packing.JPG" alt="Cat 38 packing for shipping" class="news-detail-image">
+                                <img src="assets/images/products/cat-38ft/cat 38 shipping.JPG" alt="Cat 38 shipping process" class="news-detail-image">
+                                <p>The Cat 38 demonstrates our production capability and global delivery network. This vessel will join our Dubai inventory and be available for viewing by prospective clients in the region. The completion marks another milestone in our expansion into the Middle East luxury boat market.</p>
+                                <button class="read-less-btn" onclick="toggleNewsDetails('news-3')">Read Less</button>
                             </div>
                         </div>
                     </div>
@@ -1392,6 +1663,35 @@
                     document.body.style.overflow = 'auto';
                 }
             });
+
+            // News toggle functionality
+            window.toggleNewsDetails = function(newsId) {
+                const newsCard = document.getElementById(newsId);
+                const newsDetails = document.getElementById(newsId + '-details');
+                
+                if (newsCard && newsDetails) {
+                    if (newsDetails.classList.contains('active')) {
+                        newsDetails.classList.remove('active');
+                        newsCard.querySelector('.read-more-btn').style.display = 'block';
+                        newsCard.querySelector('.news-excerpt').style.display = '-webkit-box';
+                    } else {
+                        // Close other open news details first
+                        document.querySelectorAll('.news-details.active').forEach(detail => {
+                            detail.classList.remove('active');
+                        });
+                        document.querySelectorAll('.read-more-btn').forEach(btn => {
+                            btn.style.display = 'block';
+                        });
+                        document.querySelectorAll('.news-excerpt').forEach(excerpt => {
+                            excerpt.style.display = '-webkit-box';
+                        });
+                        
+                        newsDetails.classList.add('active');
+                        newsCard.querySelector('.read-more-btn').style.display = 'none';
+                        newsCard.querySelector('.news-excerpt').style.display = 'none';
+                    }
+                }
+            };
         });
     </script>
 </body>
