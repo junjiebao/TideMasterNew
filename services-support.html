@@ -55,6 +55,7 @@
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/mobile-enhanced.css">
     <style>
         /* CSS Variables */
         :root {
@@ -732,8 +733,8 @@
                         </div>
                         <h3>Technical Support</h3>
                         <p>Our technical team is ready to assist with any operational issues</p>
-                        <p><strong>Phone:</strong> +971 52 872 4455</p>
-                        <p><strong>Email:</strong> support@navieryacht.com</p>
+                        <p><strong>Phone:</strong> +971 58 508 8518</p>
+                        <p><strong>Email:</strong> Service@navieryacht.com</p>
 
                     </div>
                     
@@ -816,7 +817,7 @@
                 <p>Contact our service team to discuss your support needs or schedule a service appointment.</p>
                 <div class="cta-buttons">
                     <a href="contact.html" class="btn primary">Contact Us</a>
-                    <a href="tel:+97121234567" class="btn secondary">Call +971 52 872 4455</a>
+                    <a href="tel:+971585088518" class="btn secondary">Call +971 58 508 8518</a>
                 </div>
             </div>
         </section>
@@ -908,7 +909,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 TideMaster Marine Technology. All Rights Reserved.</p>
+                <p>&copy; 2023-2026 TideMaster Marine Technology. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -953,6 +954,33 @@
                 });
             });
         });
+
+        // Enhanced Mobile Menu Toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navList = document.querySelector('.nav-list');
+        
+        if (mobileMenuToggle && navList) {
+            mobileMenuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navList.classList.toggle('active');
+                mobileMenuToggle.classList.toggle('active');
+            });
+            
+            const navLinks = navList.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navList.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                });
+            });
+            
+            document.addEventListener('click', function(e) {
+                if (!navList.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                    navList.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                }
+            });
+        }
     </script>
 </body>
 </html>

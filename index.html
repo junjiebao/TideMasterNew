@@ -88,6 +88,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/mobile-enhanced.css">
     
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -641,7 +642,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023-2025 TideMaster is a brand distributed by <a href="https://www.navieryacht.com/" target="_blank" style="color: inherit; text-decoration: none;">NAIVER YACHTS FZCO</a>. All Rights Reserved.</p>
+                <p>&copy; 2023-2026 TideMaster is a brand distributed by <a href="https://www.navieryacht.com/" target="_blank" style="color: inherit; text-decoration: none;">NAIVER YACHTS FZCO</a>. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -734,5 +735,37 @@
     
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
+    <script>
+        // Enhanced Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navList = document.querySelector('.nav-list');
+            
+            if (mobileMenuToggle && navList) {
+                mobileMenuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    navList.classList.toggle('active');
+                    mobileMenuToggle.classList.toggle('active');
+                });
+                
+                // 点击导航链接后关闭菜单
+                const navLinks = navList.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navList.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                    });
+                });
+                
+                // 点击页面其他地方关闭菜单
+                document.addEventListener('click', function(e) {
+                    if (!navList.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                        navList.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

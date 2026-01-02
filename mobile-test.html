@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动端优化测试 - TideMaster</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c8c, #3a86ff);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .test-section {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .test-section h2 {
+            color: #1e3c8c;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .status-pass {
+            background: #4caf50;
+            color: white;
+        }
+
+        .status-check {
+            background: #ff9800;
+            color: white;
+        }
+
+        .test-item {
+            padding: 10px;
+            border-left: 4px solid #3a86ff;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+        }
+
+        .btn-test {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #3a86ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 10px 10px 0;
+            transition: all 0.3s;
+        }
+
+        .btn-test:hover {
+            background: #1e3c8c;
+            transform: translateY(-2px);
+        }
+
+        .device-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .responsive-test {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .device-card {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .device-card i {
+            font-size: 2rem;
+            color: #3a86ff;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .responsive-test {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-test {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="header">
+            <h1>📱 TideMaster 移动端优化测试页面</h1>
+            <p>检查所有移动端优化是否正常工作</p>
+        </div>
+
+        <!-- 设备信息 -->
+        <div class="test-section">
+            <h2><i class="fas fa-mobile-alt"></i> 当前设备信息</h2>
+            <div class="device-info">
+                <p><strong>屏幕宽度：</strong> <span id="screenWidth"></span>px</p>
+                <p><strong>屏幕高度：</strong> <span id="screenHeight"></span>px</p>
+                <p><strong>设备像素比：</strong> <span id="pixelRatio"></span></p>
+                <p><strong>用户代理：</strong> <span id="userAgent"></span></p>
+                <p><strong>触摸支持：</strong> <span id="touchSupport"></span></p>
+            </div>
+        </div>
+
+        <!-- 优化项目清单 -->
+        <div class="test-section">
+            <h2><i class="fas fa-check-circle"></i> 已完成优化项目 <span class="status status-pass">已完成</span></h2>
+            <div class="test-item">
+                ✅ 创建 mobile-enhanced.css 增强样式文件
+            </div>
+            <div class="test-item">
+                ✅ 所有主要页面已引入移动端CSS
+            </div>
+            <div class="test-item">
+                ✅ 导航菜单移动端交互优化
+            </div>
+            <div class="test-item">
+                ✅ 响应式图片和布局
+            </div>
+            <div class="test-item">
+                ✅ 按钮和表单触摸优化
+            </div>
+            <div class="test-item">
+                ✅ WhatsApp浮动按钮位置调整
+            </div>
+            <div class="test-item">
+                ✅ 表格横向滚动支持
+            </div>
+        </div>
+
+        <!-- 需要测试的页面 -->
+        <div class="test-section">
+            <h2><i class="fas fa-tasks"></i> 页面测试清单 <span class="status status-check">需测试</span></h2>
+            <p>点击以下链接在移动设备上测试各页面：</p>
+            <a href="index.html" class="btn-test"><i class="fas fa-home"></i> 首页</a>
+            <a href="products.html" class="btn-test"><i class="fas fa-ship"></i> 产品页</a>
+            <a href="about.html" class="btn-test"><i class="fas fa-info-circle"></i> 关于我们</a>
+            <a href="contact.html" class="btn-test"><i class="fas fa-envelope"></i> 联系我们</a>
+            <a href="blog-news.html" class="btn-test"><i class="fas fa-newspaper"></i> 博客新闻</a>
+            <a href="projects.html" class="btn-test"><i class="fas fa-project-diagram"></i> 项目展示</a>
+            <a href="services-support.html" class="btn-test"><i class="fas fa-cog"></i> 服务支持</a>
+        </div>
+
+        <!-- 响应式断点测试 -->
+        <div class="test-section">
+            <h2><i class="fas fa-ruler-horizontal"></i> 响应式断点</h2>
+            <div class="responsive-test">
+                <div class="device-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>小手机</h3>
+                    <p>< 576px</p>
+                    <p>iPhone SE</p>
+                </div>
+                <div class="device-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>手机</h3>
+                    <p>< 768px</p>
+                    <p>iPhone 12/13</p>
+                </div>
+                <div class="device-card">
+                    <i class="fas fa-tablet-alt"></i>
+                    <h3>平板</h3>
+                    <p>< 992px</p>
+                    <p>iPad</p>
+                </div>
+                <div class="device-card">
+                    <i class="fas fa-desktop"></i>
+                    <h3>桌面</h3>
+                    <p>> 992px</p>
+                    <p>Desktop</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 测试功能 -->
+        <div class="test-section">
+            <h2><i class="fas fa-vial"></i> 功能测试项</h2>
+            <div class="test-item">
+                <input type="checkbox" id="test1">
+                <label for="test1"> 导航菜单可以展开和收起</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" id="test2">
+                <label for="test2"> 点击导航链接后菜单自动关闭</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" id="test3">
+                <label for="test3"> 图片可以正常显示且自适应</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" id="test4">
+                <label for="test4"> 按钮足够大且易于点击</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" id="test5">
+                <label for="test5"> 表单输入不会导致页面缩放</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" id="test6">
+                <label for="test6"> WhatsApp按钮位于右下角</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" id="test7">
+                <label for="test7"> 页面无横向滚动条</label>
+            </div>
+            <div class="test-item">
+                <input type="checkbox" id="test8">
+                <label for="test8"> 内容在屏幕内完整显示</label>
+            </div>
+        </div>
+
+        <!-- 在线测试工具 -->
+        <div class="test-section">
+            <h2><i class="fas fa-tools"></i> 在线测试工具</h2>
+            <a href="https://search.google.com/test/mobile-friendly" target="_blank" class="btn-test">
+                <i class="fab fa-google"></i> Google 移动友好测试
+            </a>
+            <a href="https://www.browserstack.com/responsive" target="_blank" class="btn-test">
+                <i class="fas fa-browser"></i> BrowserStack 响应式测试
+            </a>
+            <a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank" class="btn-test">
+                <i class="fas fa-tachometer-alt"></i> PageSpeed Insights
+            </a>
+        </div>
+
+        <!-- 文档 -->
+        <div class="test-section">
+            <h2><i class="fas fa-book"></i> 相关文档</h2>
+            <a href="MOBILE-OPTIMIZATION-GUIDE.md" class="btn-test">
+                <i class="fas fa-file-alt"></i> 查看完整优化指南
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // 显示设备信息
+        document.getElementById('screenWidth').textContent = window.screen.width;
+        document.getElementById('screenHeight').textContent = window.screen.height;
+        document.getElementById('pixelRatio').textContent = window.devicePixelRatio;
+        document.getElementById('userAgent').textContent = navigator.userAgent;
+        document.getElementById('touchSupport').textContent = 'ontouchstart' in window ? '✅ 支持' : '❌ 不支持';
+
+        // 实时更新屏幕宽度
+        window.addEventListener('resize', function() {
+            document.getElementById('screenWidth').textContent = window.screen.width;
+            document.getElementById('screenHeight').textContent = window.screen.height;
+        });
+
+        // 测试完成度统计
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const total = checkboxes.length;
+                const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+                console.log(`测试完成度: ${checked}/${total} (${Math.round(checked/total*100)}%)`);
+            });
+        });
+    </script>
+</body>
+</html>
