@@ -171,22 +171,57 @@ html {
     }
 }
 
+/* 桌面端和移动端图片切换 */
+.hero-video-mobile {
+    display: none;
+}
+
+.hero-video-desktop {
+    display: block;
+}
+
 /* Hero区域移动端优化 */
 @media (max-width: 768px) {
+    /* 切换为移动端图片 */
+    .hero-video-desktop {
+        display: none !important;
+    }
+    
+    .hero-video-mobile {
+        display: block !important;
+    }
+    
     .home-hero,
     .page-hero {
-        height: 60vh;
-        min-height: 500px;
+        height: 75vh;
+        min-height: 600px;
+    }
+    
+    /* 移动端视频背景优化 - 确保船只完整显示 */
+    .hero-video {
+        object-fit: contain !important;
+        object-position: center 40% !important;
+        background: #0a1931;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    /* 增强Hero内容区域以适应新布局 */
+    .home-hero-content {
+        padding-top: 100px !important;
+        justify-content: flex-start !important;
     }
     
     .home-hero-content h1 {
         font-size: 2rem;
         line-height: 1.2;
+        margin-bottom: 1rem;
     }
     
     .home-hero-content p {
         font-size: 1rem;
         line-height: 1.5;
+        margin-bottom: 1.5rem;
     }
     
     .page-hero-content h1 {
@@ -304,12 +339,30 @@ html {
 
 /* 小手机端额外优化 (iPhone SE等) */
 @media (max-width: 576px) {
+    .home-hero {
+        height: 80vh;
+        min-height: 650px;
+    }
+    
+    .hero-video {
+        object-fit: contain !important;
+        object-position: center 35% !important;
+    }
+    
+    .home-hero-content {
+        padding-top: 120px !important;
+    }
+    
     .home-hero-content h1 {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
+    }
+    
+    .home-hero-content p {
+        font-size: 0.9rem;
     }
     
     .btn {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         padding: 12px 20px;
     }
     
