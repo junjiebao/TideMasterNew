@@ -102,7 +102,7 @@
         }
 
         /* Header Styles */
-        header {
+        .main-header {
             background-color: var(--dark-bg);
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: sticky;
@@ -110,7 +110,7 @@
             z-index: 1000;
         }
 
-        header .container {
+        .main-header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -121,28 +121,49 @@
             height: 40px;
         }
 
-        .main-nav {
+        .nav-list {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
 
-        .main-nav a {
+        .nav-list a {
             text-decoration: none;
             color: white;
             font-weight: 500;
             transition: color 0.3s;
         }
 
-        .main-nav a:hover,
-        .main-nav .active a {
-            color: var(--primary-color);
+        .nav-list a:hover,
+        .nav-list .active a {
+            color: var(--secondary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .language-selector {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .search-toggle, 
+        .mobile-menu-toggle {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
         }
 
         .mobile-menu-toggle {
             display: none;
-            flex-direction: column;
-            cursor: pointer;
         }
 
         /* Hero Section */
@@ -166,26 +187,29 @@
         /* Tabs styling */
         .services-tabs {
             margin: 4rem 0;
+            background-color: var(--dark-bg) !important;
+            padding: 4rem 0;
         }
         
         .services-tabs h2 {
             text-align: center;
             margin-bottom: 1rem;
             font-size: 2.5rem;
+            color: #f5f5f5 !important;
         }
         
         .services-tabs > .container > p {
             text-align: center;
             margin-bottom: 2rem;
             font-size: 1.1rem;
-            color: var(--text-gray);
+            color: #d0d0d0 !important;
         }
         
         .tabs-navigation {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             margin-bottom: 2rem;
         }
         
@@ -198,10 +222,11 @@
             font-weight: 600;
             position: relative;
             transition: all 0.3s;
+            color: #d0d0d0 !important;
         }
         
         .tab-button.active {
-            color: var(--primary-color);
+            color: var(--secondary-color) !important;
         }
         
         .tab-button.active::after {
@@ -230,9 +255,9 @@
         
         /* Service card styling */
         .service-card {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.05) !important;
             border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             padding: 2rem;
             text-align: center;
             transition: transform 0.3s ease;
@@ -240,6 +265,7 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .service-card:hover {
@@ -256,11 +282,11 @@
         .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--primary-color);
+            color: #f0f0f0 !important;
         }
         
         .service-card p {
-            color: var(--text-gray);
+            color: #e0e0e0 !important;
             margin-bottom: 1.5rem;
         }
         
@@ -268,10 +294,16 @@
             text-align: left;
             margin: 1.5rem 0;
             padding-left: 1.5rem;
+            color: #d0d0d0 !important;
         }
         
         .service-card li {
             margin-bottom: 0.5rem;
+            color: #d0d0d0 !important;
+        }
+        
+        .service-card .fas {
+            color: var(--secondary-color) !important;
         }
         
         /* Customer support section */
@@ -547,12 +579,12 @@
         }
         
         @media (max-width: 768px) {
-            .main-nav {
+            .nav-list {
                 display: none;
             }
             
             .mobile-menu-toggle {
-                display: flex;
+                display: block;
             }
             
             .tabs-navigation {
@@ -580,8 +612,13 @@
                 grid-template-columns: 1fr;
             }
             
+            /* Hero Section Mobile Optimization */
+            .hero {
+                padding: 4rem 0 2rem !important;
+            }
+            
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2rem !important;
             }
             
             .services-tabs h2,
@@ -600,12 +637,11 @@
         <div class="container">
             <div class="logo">
                 <a href="index.html">
-                    <!-- Placeholder for logo -->
                     <img src="assets/images/brand/TideMaster Metal logo.png" alt="TideMaster Marine Technology Logo">
                 </a>
             </div>
             <nav class="main-nav">
-                <ul class="nav-list" style="display: flex; list-style: none; gap: 1.5rem;">
+                <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="products.html">Products</a></li>

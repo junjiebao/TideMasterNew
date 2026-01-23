@@ -241,31 +241,6 @@
         }
         
         /* 产品页特定样式 */
-        .product-filters {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        
-        .filter-btn {
-            padding: 8px 20px;
-            background-color: transparent;
-            border: 1px solid var(--text-gray);
-            color: var(--text-dark);
-            border-radius: 30px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn.active, .filter-btn:hover {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            color: white;
-        }
-        
         .product-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -675,24 +650,40 @@
             transition: all 0.3s ease;
         }
 
+
         .read-more-btn:hover {
             background-color: var(--secondary-color);
             transform: translateY(-2px);
         }
 
+        .read-less-btn {
+            background-color: var(--text-gray);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .read-less-btn:hover {
+            background-color: var(--text-dark);
+            transform: translateY(-2px);
+        }
+
         .news-details {
             display: none;
-            grid-column: 1 / -1;
-            grid-row: 1;
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
             padding: 2rem;
+            margin-top: 1rem;
             animation: slideDown 0.3s ease-out;
         }
 
         .news-details.active {
-            display: block;
+            display: block !important;
         }
 
         .news-detail-content {
@@ -943,12 +934,18 @@
                 font-size: 2rem;
             }
             
+            /* Hero Section Mobile Optimization */
+            .page-hero {
+                padding: 3rem 0 2rem !important;
+                min-height: 300px !important;
+            }
+            
             .page-hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2rem !important;
             }
             
             .page-hero-content p {
-                font-size: 1.1rem;
+                font-size: 1rem !important;
             }
             
             .footer-columns {
@@ -1015,14 +1012,6 @@
         <!-- 产品过滤和展示区 -->
         <section class="section-padding">
             <div class="container">
-                <div class="product-filters">
-                    <button class="filter-btn active" data-filter="all">All Products</button>
-                    <button class="filter-btn" data-filter="performance">Performance</button>
-                    <button class="filter-btn" data-filter="fishing">Fishing</button>
-                    <button class="filter-btn" data-filter="family">Family</button>
-                    <button class="filter-btn" data-filter="custom">Custom</button>
-                </div>
-
                 <div class="product-grid">
                     <!-- Ninja 18 -->
                     <div class="product-item" data-category="performance" id="ninja-18">
@@ -1039,7 +1028,7 @@
                             </div>
                             <p>The ultimate performance towable boat with dedicated designed Trailer, featuring a spacious design and cutting-edge stability technology. Perfect for towing to remote adventures—whether it's diving, sea fishing, or exploring uncharted islands.</p>
                             <div class="product-actions">
-                                <div class="product-price">Starting from $27,500 （Standard spec, engines are excluded）</div>
+                                <div class="product-price">Starting from $32,000 （Standard spec, engines are excluded）</div>
                                 <button class="btn btn-primary open-modal" data-product="ninja-18">View Details</button>
                             </div>
                         </div>
@@ -1084,7 +1073,7 @@
                             </div>
                             <p>Craft unforgettable memories, from leisurely family cruises to exciting fishing trips. This spacious catamaran ensures every journey is one of remarkable comfort and stability.</p>
                             <div class="product-actions">
-                                <div class="product-price">Starting from $200,000 （Standard spec, engines are excluded）</div>
+                                <div class="product-price">Starting from $235,000 （Standard spec, engines are excluded）</div>
                                 <button class="btn btn-primary open-modal" data-product="cat-38">View Details</button>
                             </div>
                         </div>
@@ -1105,7 +1094,7 @@
                             </div>
                             <p>Ultimate luxury lounge yacht with premium amenities, perfect for entertaining and extended cruising in supreme comfort.</p>
                             <div class="product-actions">
-                                <div class="product-price">Starting from $380,000 （Standard spec, engines are excluded）</div>
+                                <div class="product-price">Starting from $425,000 （Standard spec, engines are excluded）</div>
                                 <button class="btn btn-primary open-modal" data-product="lounge-48">View Details</button>
                             </div>
                         </div>
@@ -1126,7 +1115,7 @@
                             </div>
                             <p>Our flagship catamaran designed for extended voyages with all the comforts of home.</p>
                             <div class="product-actions">
-                                <div class="product-price">Starting from $950,000 （Standard spec, engines are included）</div>
+                                <div class="product-price">Starting from $1,100,000 （Standard spec, engines are included）</div>
                                 <button class="btn btn-primary open-modal" data-product="big-cat-60">View Details</button>
                             </div>
                         </div>
@@ -1144,8 +1133,292 @@
                 </div>
                 
                 <div class="news-grid">
-                    <!-- 新闻0: 新西兰第2艘Ninja 18定制款涂装完成 -->
+                    <!-- 新闻0: Cat 38抵达迪拜 - 即将完成最终安装 -->
                     <div class="news-card" id="news-0">
+                        <div class="news-content">
+                            <div class="news-image">
+                                <img src="assets/images/products/cat-38ft/Cat 38 shipping left.jpg" alt="TideMaster Cat 38 Arrives in Dubai - Final Installation Soon" loading="lazy">
+                            </div>
+                            <div class="news-info">
+                                <div class="news-meta">
+                                    <span class="news-date">January 2026</span>
+                                    <span class="news-category">Delivery Update</span>
+                                </div>
+                                <h3>TideMaster Cat 38 Arrives in Dubai - Ready for Final Equipment Installation</h3>
+                                <div class="news-excerpt">
+                                    <p>Big news for UAE boat enthusiasts! Our TideMaster Cat 38 luxury catamaran has successfully arrived in Dubai. The vessel will soon undergo final installation of radar systems, engines, and advanced electronics locally. This premium aluminum fishing and cruising boat is perfect for Dubai waters. Interested buyers are welcome to schedule a viewing!</p>
+                                </div>
+                                <!-- SEO Tags -->
+                                <div class="news-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;">
+                                    <span class="tag" style="background-color: #e3f2fd; color: #1976d2; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#DubaiFishing</span>
+                                    <span class="tag" style="background-color: #e8f5e9; color: #388e3c; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#AluminumBoat</span>
+                                    <span class="tag" style="background-color: #fff3e0; color: #f57c00; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#UAEFishing</span>
+                                    <span class="tag" style="background-color: #fce4ec; color: #c2185b; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#DubaiBoats</span>
+                                    <span class="tag" style="background-color: #f3e5f5; color: #7b1fa2; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#LuxuryCatamaran</span>
+                                </div>
+                                <button class="read-more-btn" onclick="toggleNewsDetails('news-0')">Read More</button>
+                            </div>
+                        </div>
+                        <div class="news-details" id="news-0-details">
+                            <div class="news-detail-content">
+                                <h3>Cat 38 Dubai Delivery - Final Installation Phase</h3>
+                                
+                                <!-- Latest Update -->
+                                <div style="margin-bottom: 2rem; padding: 1.5rem; border-left: 4px solid #27ae60; background-color: #f8f9fa; border-radius: 0 8px 8px 0;">
+                                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                        <div style="background-color: #27ae60; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-right: 1rem;">
+                                            January 2026 - Latest Update
+                                        </div>
+                                        <h4 style="margin: 0; color: var(--text-dark); font-size: 1.2rem;">Vessel Arrives in Dubai, Equipment Installation Scheduled</h4>
+                                    </div>
+                                    <p style="margin-bottom: 1rem;">We're excited to announce that the TideMaster Cat 38 has safely arrived in Dubai! This premium 38-foot aluminum catamaran will undergo final equipment installation at our Dubai service partner, including radar systems, twin engines, navigation electronics, and safety equipment. The vessel is now available for viewing by interested buyers in the UAE region.</p>
+                                    
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                                        <img src="assets/images/products/cat-38ft/Cat 38 shipping left.jpg" alt="Cat 38 shipping - side view" class="news-detail-image" style="max-width: 100%; height: auto; border-radius: 8px;">
+                                        <img src="assets/images/products/cat-38ft/Cat38 shipping covered.jpg" alt="Cat 38 protected during shipping" class="news-detail-image" style="max-width: 100%; height: auto; border-radius: 8px;">
+                                    </div>
+                                </div>
+
+                                <!-- Project Status -->
+                                <div style="padding: 1.5rem; background-color: white; border-radius: 8px; border: 1px solid #e9ecef; margin-bottom: 2rem;">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Current Status</h4>
+                                    
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span style="font-weight: 600; color: var(--text-dark);">Overall Progress</span>
+                                            <span style="color: #27ae60; font-weight: 600;">90%</span>
+                                        </div>
+                                        <div style="width: 100%; background-color: #e9ecef; border-radius: 10px; height: 10px; overflow: hidden;">
+                                            <div style="width: 90%; background: linear-gradient(90deg, var(--primary-color), #27ae60); height: 100%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <div style="margin-top: 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                        <div style="padding: 1rem; background-color: #f8f9fa; border-radius: 6px;">
+                                            <div style="color: #27ae60; font-size: 1.5rem; margin-bottom: 0.5rem;">✓</div>
+                                            <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.3rem;">Hull & Structure</div>
+                                            <div style="color: var(--text-gray); font-size: 0.9rem;">Completed</div>
+                                        </div>
+                                        <div style="padding: 1rem; background-color: #f8f9fa; border-radius: 6px;">
+                                            <div style="color: #27ae60; font-size: 1.5rem; margin-bottom: 0.5rem;">✓</div>
+                                            <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.3rem;">Shipping to Dubai</div>
+                                            <div style="color: var(--text-gray); font-size: 0.9rem;">Completed</div>
+                                        </div>
+                                        <div style="padding: 1rem; background-color: #fff3cd; border-radius: 6px; border: 2px solid #ffc107;">
+                                            <div style="color: #ffc107; font-size: 1.5rem; margin-bottom: 0.5rem;">⚙</div>
+                                            <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.3rem;">Equipment Installation</div>
+                                            <div style="color: var(--text-gray); font-size: 0.9rem;">Scheduled Soon</div>
+                                        </div>
+                                        <div style="padding: 1rem; background-color: #f8f9fa; border-radius: 6px;">
+                                            <div style="color: var(--text-gray); font-size: 1.5rem; margin-bottom: 0.5rem;">◷</div>
+                                            <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.3rem;">Sea Trials</div>
+                                            <div style="color: var(--text-gray); font-size: 0.9rem;">Upcoming</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Project Details -->
+                                <div style="padding: 1.5rem; background-color: white; border-radius: 8px; border: 1px solid #e9ecef;">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;">About This Vessel</h4>
+                                    <p style="line-height: 1.6; margin-bottom: 1rem;">The TideMaster Cat 38 represents the perfect blend of luxury and functionality for UAE waters. This 38-foot aluminum catamaran offers exceptional stability, fuel efficiency, and versatility - ideal for Dubai's diverse marine activities from offshore fishing to family cruising and entertaining.</p>
+                                    <p style="line-height: 1.6; margin-bottom: 1rem;">Following arrival in Dubai, our local installation team will fit the vessel with state-of-the-art radar systems, twin marine engines, advanced navigation electronics, communication equipment, and comprehensive safety systems. All installations will be performed to international maritime standards with premium quality components.</p>
+                                    
+                                    <div style="margin-top: 1.5rem; padding: 1rem; background-color: #e8f4f8; border-radius: 6px; border-left: 4px solid var(--primary-color);">
+                                        <h5 style="margin-bottom: 0.5rem; color: var(--text-dark);">Upcoming Installations:</h5>
+                                        <ul style="margin: 0; padding-left: 1.5rem; color: var(--text-gray);">
+                                            <li>Marine radar system for navigation safety</li>
+                                            <li>Twin high-performance marine engines</li>
+                                            <li>Advanced GPS and navigation electronics</li>
+                                            <li>VHF marine communication system</li>
+                                            <li>Safety equipment and emergency systems</li>
+                                            <li>Entertainment and comfort amenities</li>
+                                        </ul>
+                                    </div>
+
+                                    <div style="margin-top: 1.5rem; padding: 1rem; background-color: #fff8e1; border-radius: 6px; border-left: 4px solid #ffc107;">
+                                        <h5 style="margin-bottom: 0.5rem; color: var(--text-dark);">Perfect for Dubai Waters:</h5>
+                                        <ul style="margin: 0; padding-left: 1.5rem; color: var(--text-gray);">
+                                            <li>Exceptional stability in Arabian Gulf conditions</li>
+                                            <li>Aluminum construction resists saltwater corrosion</li>
+                                            <li>Spacious deck for fishing and entertaining</li>
+                                            <li>Fuel-efficient catamaran design</li>
+                                            <li>Comfortable cabin with modern amenities</li>
+                                            <li>Ideal for coastal cruising and offshore adventures</li>
+                                        </ul>
+                                    </div>
+
+                                    <div style="margin-top: 1.5rem; padding: 1.5rem; background-color: #e8f5e9; border-radius: 8px; text-align: center; border: 2px solid #27ae60;">
+                                        <p style="margin: 0 0 0.5rem 0; color: #155724; font-weight: 700; font-size: 1.1rem;">
+                                            <i class="fas fa-calendar-check" style="margin-right: 0.5rem;"></i>
+                                            Available for Viewing in Dubai!
+                                        </p>
+                                        <p style="margin: 0; color: #155724; font-weight: 500;">
+                                            Interested buyers welcome to schedule an appointment
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- SEO-Optimized Keywords Section -->
+                                <div style="padding: 1.5rem; background-color: #f8f9fa; border-radius: 8px; margin-top: 2rem;">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;">
+                                        <i class="fas fa-tags" style="margin-right: 0.5rem;"></i>Related Keywords
+                                    </h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">fishing boats Dubai</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">aluminum catamaran UAE</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">luxury boats Dubai</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">Dubai offshore fishing</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">catamaran for sale UAE</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">Arabian Gulf boats</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">marine electronics Dubai</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">boat radar installation UAE</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">Dubai fishing charters</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">custom aluminum boats Middle East</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">UAE marine vessels</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">saltwater fishing boats</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="read-less-btn" onclick="toggleNewsDetails('news-0')" style="margin-top: 2rem;">Read Less</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 新闻1: 新西兰第2艘Ninja 18定制款 - 外观喷漆完成，内装施工中 -->
+                    <div class="news-card" id="news-1">
+                        <div class="news-content">
+                            <div class="news-image">
+                                <img src="assets/images/products/ninja-18ft/Ninja 18  NZ 1.jpg" alt="New Zealand's 2nd Ninja 18 - Paint and Interior Installation Progress" loading="lazy">
+                            </div>
+                            <div class="news-info">
+                                <div class="news-meta">
+                                    <span class="news-date">January 2026</span>
+                                    <span class="news-category">Build Progress</span>
+                                </div>
+                                <h3>New Zealand's 2nd Ninja 18 - Paint Complete, Interior Installation Underway</h3>
+                                <div class="news-excerpt">
+                                    <p>Exciting progress on New Zealand's second Ninja 18 aluminum fishing boat! The exterior paint job has been completed to perfection, and our team has now begun the interior installation phase. This towable fishing boat designed for New Zealand waters will be delivered soon.</p>
+                                </div>
+                                <!-- SEO Tags -->
+                                <div class="news-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;">
+                                    <span class="tag" style="background-color: #e3f2fd; color: #1976d2; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#AluminumBoat</span>
+                                    <span class="tag" style="background-color: #e8f5e9; color: #388e3c; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#NewZealandFishing</span>
+                                    <span class="tag" style="background-color: #fff3e0; color: #f57c00; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#TowableBoat</span>
+                                    <span class="tag" style="background-color: #fce4ec; color: #c2185b; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#CustomBoatBuilding</span>
+                                    <span class="tag" style="background-color: #f3e5f5; color: #7b1fa2; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#Ninja18</span>
+                                </div>
+                                <button class="read-more-btn" onclick="toggleNewsDetails('news-1')">Read More</button>
+                            </div>
+                        </div>
+                        <div class="news-details" id="news-1-details">
+                            <div class="news-detail-content">
+                                <h3>Ninja 18 Build Progress - New Zealand's 2nd Vessel</h3>
+                                
+                                <!-- Latest Update -->
+                                <div style="margin-bottom: 2rem; padding: 1.5rem; border-left: 4px solid #27ae60; background-color: #f8f9fa; border-radius: 0 8px 8px 0;">
+                                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                        <div style="background-color: #27ae60; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-right: 1rem;">
+                                            January 2026 - Latest Update
+                                        </div>
+                                        <h4 style="margin: 0; color: var(--text-dark); font-size: 1.2rem;">Paint Complete, Interior Installation Started</h4>
+                                    </div>
+                                    <p style="margin-bottom: 1rem;">We're thrilled to announce that the exterior paint application for New Zealand's second Ninja 18 has been completed with exceptional finish quality. Our skilled team has now transitioned to the interior installation phase, where all custom fittings, equipment, and finishing touches are being meticulously installed.</p>
+                                    
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                                        <img src="assets/images/products/ninja-18ft/Ninja 18  NZ 1.jpg" alt="Ninja 18 NZ - Exterior view 1" class="news-detail-image" style="max-width: 100%; height: auto; border-radius: 8px;">
+                                        <img src="assets/images/products/ninja-18ft/Ninja 18  NZ 2.jpg" alt="Ninja 18 NZ - Exterior view 2" class="news-detail-image" style="max-width: 100%; height: auto; border-radius: 8px;">
+                                        <img src="assets/images/products/ninja-18ft/Ninja 18  NZ 3.jpg" alt="Ninja 18 NZ - Interior installation progress 1" class="news-detail-image" style="max-width: 100%; height: auto; border-radius: 8px;">
+                                        <img src="assets/images/products/ninja-18ft/Ninja 18  NZ 4.jpg" alt="Ninja 18 NZ - Interior installation progress 2" class="news-detail-image" style="max-width: 100%; height: auto; border-radius: 8px;">
+                                    </div>
+                                </div>
+
+                                <!-- Project Status -->
+                                <div style="padding: 1.5rem; background-color: white; border-radius: 8px; border: 1px solid #e9ecef; margin-bottom: 2rem;">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Current Build Status</h4>
+                                    
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span style="font-weight: 600; color: var(--text-dark);">Overall Progress</span>
+                                            <span style="color: #27ae60; font-weight: 600;">85%</span>
+                                        </div>
+                                        <div style="width: 100%; background-color: #e9ecef; border-radius: 10px; height: 10px; overflow: hidden;">
+                                            <div style="width: 85%; background: linear-gradient(90deg, var(--primary-color), #27ae60); height: 100%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <div style="margin-top: 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                        <div style="padding: 1rem; background-color: #f8f9fa; border-radius: 6px;">
+                                            <div style="color: #27ae60; font-size: 1.5rem; margin-bottom: 0.5rem;">✓</div>
+                                            <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.3rem;">Hull Construction</div>
+                                            <div style="color: var(--text-gray); font-size: 0.9rem;">Completed</div>
+                                        </div>
+                                        <div style="padding: 1rem; background-color: #f8f9fa; border-radius: 6px;">
+                                            <div style="color: #27ae60; font-size: 1.5rem; margin-bottom: 0.5rem;">✓</div>
+                                            <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.3rem;">Exterior Paint</div>
+                                            <div style="color: var(--text-gray); font-size: 0.9rem;">Completed</div>
+                                        </div>
+                                        <div style="padding: 1rem; background-color: #fff3cd; border-radius: 6px; border: 2px solid #ffc107;">
+                                            <div style="color: #ffc107; font-size: 1.5rem; margin-bottom: 0.5rem;">⚙</div>
+                                            <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.3rem;">Interior Installation</div>
+                                            <div style="color: var(--text-gray); font-size: 0.9rem;">In Progress</div>
+                                        </div>
+                                        <div style="padding: 1rem; background-color: #f8f9fa; border-radius: 6px;">
+                                            <div style="color: var(--text-gray); font-size: 1.5rem; margin-bottom: 0.5rem;">◷</div>
+                                            <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.3rem;">Final Inspection</div>
+                                            <div style="color: var(--text-gray); font-size: 0.9rem;">Upcoming</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Project Details -->
+                                <div style="padding: 1.5rem; background-color: white; border-radius: 8px; border: 1px solid #e9ecef;">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;">About This Build</h4>
+                                    <p style="line-height: 1.6; margin-bottom: 1rem;">This is the second Ninja 18 we're building for New Zealand clients, demonstrating the growing popularity of our towable fishing boats in international markets. The vessel features a professionally applied custom paint finish that not only enhances aesthetics but also provides superior protection against harsh marine environments.</p>
+                                    <p style="line-height: 1.6; margin-bottom: 1rem;">Our team is currently installing the interior components, including navigation electronics, fishing equipment storage, safety gear, and all custom fittings specified by the client. Every detail is being carefully executed to ensure the vessel meets the high standards expected by our New Zealand customers.</p>
+                                    
+                                    <div style="margin-top: 1.5rem; padding: 1rem; background-color: #e8f4f8; border-radius: 6px; border-left: 4px solid var(--primary-color);">
+                                        <h5 style="margin-bottom: 0.5rem; color: var(--text-dark);">Custom Features:</h5>
+                                        <ul style="margin: 0; padding-left: 1.5rem; color: var(--text-gray);">
+                                            <li>Premium marine-grade paint finish for durability</li>
+                                            <li>Custom interior layout optimized for NZ fishing conditions</li>
+                                            <li>Enhanced storage solutions for extended trips</li>
+                                            <li>Upgraded navigation and safety equipment</li>
+                                            <li>Towable design for easy transportation</li>
+                                        </ul>
+                                    </div>
+
+                                    <div style="margin-top: 1rem; padding: 1rem; background-color: #d4edda; border-radius: 6px; text-align: center;">
+                                        <p style="margin: 0; color: #155724; font-weight: 600;">
+                                            <i class="fas fa-clock" style="margin-right: 0.5rem;"></i>
+                                            Expected Completion & Delivery: Very Soon!
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- SEO-Optimized Keywords Section -->
+                                <div style="padding: 1.5rem; background-color: #f8f9fa; border-radius: 8px; margin-top: 2rem;">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;">
+                                        <i class="fas fa-tags" style="margin-right: 0.5rem;"></i>Related Keywords
+                                    </h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">aluminum fishing boat New Zealand</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">towable boat NZ</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">custom boat building</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">marine aluminum construction</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">offshore fishing boat</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">boat paint finish</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">Ninja 18 specifications</span>
+                                        <span class="seo-keyword" style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; color: var(--text-dark);">TideMaster boats</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="read-less-btn" onclick="toggleNewsDetails('news-1')" style="margin-top: 2rem;">Read Less</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 新闻2: 新西兰第1艘Ninja 18定制款涂装完成 -->
+                    <div class="news-card" id="news-2">
                         <div class="news-content">
                             <div class="news-image">
                                 <img src="assets/images/products/ninja-18ft/N18-1.jpg" alt="New Zealand Ninja 18 custom paint completed" loading="lazy">
@@ -1155,29 +1428,52 @@
                                     <span class="news-date">December 30, 2024</span>
                                     <span class="news-category">Paint Completion</span>
                                 </div>
-                                <h3>New Zealand's 2nd Ninja 18 Custom Paint Completed</h3>
+                                <h3>New Zealand's 1st Ninja 18 Custom Paint Completed</h3>
                                 <div class="news-excerpt">
-                                    <p>We're excited to announce that the custom paint job for New Zealand's second Ninja 18 has been completed. The vessel will soon enter the outfitting phase, bringing this exceptional craft one step closer to delivery.</p>
+                                    <p>We're excited to announce that the custom marine paint job for New Zealand's first Ninja 18 aluminum fishing boat has been completed. The vessel will soon enter the outfitting phase with premium equipment installation.</p>
                                 </div>
-                                <button class="read-more-btn" onclick="toggleNewsDetails('news-0')">Read More</button>
+                                <!-- SEO Tags -->
+                                <div class="news-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;">
+                                    <span class="tag" style="background-color: #e3f2fd; color: #1976d2; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#CustomPaint</span>
+                                    <span class="tag" style="background-color: #e8f5e9; color: #388e3c; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#NZBoats</span>
+                                    <span class="tag" style="background-color: #fff3e0; color: #f57c00; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#FishingBoat</span>
+                                    <span class="tag" style="background-color: #fce4ec; color: #c2185b; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#MarinePaint</span>
+                                </div>
+                                <button class="read-more-btn" onclick="toggleNewsDetails('news-2')">Read More</button>
                             </div>
                         </div>
-                        <div class="news-details" id="news-0-details">
+                        <div class="news-details" id="news-2-details">
                             <div class="news-detail-content">
                                 <h3>Ninja 18 Custom Paint Completion Details</h3>
                                 <img src="assets/images/products/ninja-18ft/N18-1.jpg" alt="Ninja 18 custom paint - view 1" class="news-detail-image">
                                 <img src="assets/images/products/ninja-18ft/N18-2.jpg" alt="Ninja 18 custom paint - view 2" class="news-detail-image">
                                 <img src="assets/images/products/ninja-18ft/N18-3.jpg" alt="Ninja 18 custom paint - view 3" class="news-detail-image">
-                                <p>The second Ninja 18 destined for New Zealand has completed its custom paint application, showcasing our commitment to delivering personalized vessels that meet each client's unique vision. The professionally applied finish not only enhances the boat's aesthetic appeal but also provides superior protection against harsh marine environments.</p>
+                                <p>The first Ninja 18 destined for New Zealand has completed its custom paint application, showcasing our commitment to delivering personalized vessels that meet each client's unique vision. The professionally applied finish not only enhances the boat's aesthetic appeal but also provides superior protection against harsh marine environments.</p>
                                 <p>With the paint phase now complete, our team will proceed to the outfitting stage, where all systems, equipment, and finishing touches will be installed. This includes navigation electronics, fishing equipment, safety gear, and interior fittings tailored to the client's specifications.</p>
                                 <p>The Ninja 18 continues to be one of our most popular models for international markets, particularly appreciated for its towability, fuel efficiency, and versatility in various fishing and diving conditions.</p>
-                                <button class="read-less-btn" onclick="toggleNewsDetails('news-0')">Read Less</button>
+                                
+                                <!-- SEO Keywords -->
+                                <div style="padding: 1.5rem; background-color: #f8f9fa; border-radius: 8px; margin-top: 2rem;">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;">
+                                        <i class="fas fa-search" style="margin-right: 0.5rem;"></i>SEO Keywords
+                                    </h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">custom boat paint NZ</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">aluminum boat finishing</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">marine grade paint</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">boat outfitting services</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">New Zealand fishing vessels</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">towable fishing boat</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="read-less-btn" onclick="toggleNewsDetails('news-1')">Read Less</button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 新闻1: Hunter 28 阿曼马斯喀拉到客户 -->
-                    <div class="news-card" id="news-1">
+                    <!-- 新闻3: Hunter 28 阿曼马斯喀拉到客户 -->
+                    <div class="news-card" id="news-3">
                         <div class="news-content">
                             <div class="news-image">
                                 <img src="assets/images/products/hunter-28ft/hunter 28 masirah port front.jpg" alt="Hunter 28 boat completion for Masirah client" loading="lazy">
@@ -1189,24 +1485,49 @@
                                 </div>
                                 <h3>Hunter 28 Hull Completed for Masirah Client</h3>
                                 <div class="news-excerpt">
-                                    <p>We are proud to announce the successful completion of Hunter 28 hull construction for our valued client in Masirah, Oman. The boat features custom finishing and is ready for delivery.</p>
+                                    <p>We are proud to announce the successful completion of Hunter 28 aluminum offshore fishing boat construction for our valued client in Masirah, Oman. The vessel features custom finishing and is ready for Gulf waters delivery.</p>
                                 </div>
-                                <button class="read-more-btn" onclick="toggleNewsDetails('news-1')">Read More</button>
+                                <!-- SEO Tags -->
+                                <div class="news-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;">
+                                    <span class="tag" style="background-color: #e3f2fd; color: #1976d2; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#OmanFishing</span>
+                                    <span class="tag" style="background-color: #e8f5e9; color: #388e3c; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#OffshoreFishing</span>
+                                    <span class="tag" style="background-color: #fff3e0; color: #f57c00; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#Hunter28</span>
+                                    <span class="tag" style="background-color: #fce4ec; color: #c2185b; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#MiddleEastBoats</span>
+                                    <span class="tag" style="background-color: #f3e5f5; color: #7b1fa2; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#GulfWaters</span>
+                                </div>
+                                <button class="read-more-btn" onclick="toggleNewsDetails('news-3')">Read More</button>
                             </div>
                         </div>
-                        <div class="news-details" id="news-1-details">
+                        <div class="news-details" id="news-3-details">
                             <div class="news-detail-content">
                                 <h3>Hunter 28 Hull Completion Details</h3>
                                 <img src="assets/images/products/hunter-28ft/hunter 28 masirah port stern.jpg" alt="Hunter 28 stern view" class="news-detail-image">
                                 <img src="assets/images/products/hunter-28ft/hunter 28 masirah stern.jpg" alt="Hunter 28 detailed finishing" class="news-detail-image">
-                                <p>The Hunter 28 project showcases our commitment to quality craftsmanship and timely delivery. Our team worked diligently to ensure every detail met the client's specifications, from the hull construction to the final finishing touches. The boat represents another successful TideMaster vessel serving the Middle East market.</p>
-                                <button class="read-less-btn" onclick="toggleNewsDetails('news-1')">Read Less</button>
+                                <p>The Hunter 28 offshore fishing boat project showcases our commitment to quality craftsmanship and timely delivery. Our team worked diligently to ensure every detail met the client's specifications, from the aluminum hull construction to the final finishing touches. The boat represents another successful TideMaster vessel serving the Middle East and Gulf fishing market.</p>
+                                
+                                <!-- SEO Keywords -->
+                                <div style="padding: 1.5rem; background-color: #f8f9fa; border-radius: 8px; margin-top: 2rem;">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;">
+                                        <i class="fas fa-compass" style="margin-right: 0.5rem;"></i>Location & Keywords
+                                    </h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">fishing boats Oman</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">Masirah Island fishing</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">offshore boat Gulf</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">aluminum fishing vessel</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">Hunter 28 specifications</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">Middle East boat delivery</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">professional fishing boat</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="read-less-btn" onclick="toggleNewsDetails('news-2')">Read Less</button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 新闻2: Ninja 18 新西兰客户建造开始 -->
-                    <div class="news-card" id="news-2">
+                    <!-- 新闻4: Ninja 18 新西兰客户建造开始 -->
+                    <div class="news-card" id="news-4">
                         <div class="news-content">
                             <div class="news-image">
                                 <img src="assets/images/products/ninja-18ft/5.5.jpg" alt="Ninja 18 construction start for New Zealand client" loading="lazy">
@@ -1218,12 +1539,19 @@
                                 </div>
                                 <h3>Ninja 18 Construction Begins for New Zealand Client</h3>
                                 <div class="news-excerpt">
-                                    <p>We have commenced construction of a new Ninja 18 for our client from New Zealand. This towable fishing boat will be built to their exact specifications and is expected to be completed in Q1 2025.</p>
+                                    <p>We have commenced construction of a new Ninja 18 aluminum fishing boat for our client from New Zealand. This towable fishing boat will be built with custom specifications for NZ coastal waters and is expected to be completed in Q1 2025.</p>
                                 </div>
-                                <button class="read-more-btn" onclick="toggleNewsDetails('news-2')">Read More</button>
+                                <!-- SEO Tags -->
+                                <div class="news-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;">
+                                    <span class="tag" style="background-color: #e3f2fd; color: #1976d2; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#BoatConstruction</span>
+                                    <span class="tag" style="background-color: #e8f5e9; color: #388e3c; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#NZFishing</span>
+                                    <span class="tag" style="background-color: #fff3e0; color: #f57c00; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#AluminumHull</span>
+                                    <span class="tag" style="background-color: #fce4ec; color: #c2185b; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#CustomBuild</span>
+                                </div>
+                                <button class="read-more-btn" onclick="toggleNewsDetails('news-4')">Read More</button>
                             </div>
                         </div>
-                        <div class="news-details" id="news-2-details">
+                        <div class="news-details" id="news-4-details">
                             <div class="news-detail-content">
                                 <h3>Ninja 18 New Zealand Project Timeline</h3>
                                 
@@ -1266,14 +1594,29 @@
                                         </ul>
                                     </div>
                                 </div>
+
+                                <!-- SEO Keywords -->
+                                <div style="padding: 1.5rem; background-color: #f8f9fa; border-radius: 8px; margin-top: 2rem;">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;">
+                                        <i class="fas fa-wrench" style="margin-right: 0.5rem;"></i>Build & Construction Keywords
+                                    </h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">boat construction NZ</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">aluminum welding</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">custom fishing boat build</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">marine fabrication</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">towable boat manufacturer</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">New Zealand boat export</span>
+                                    </div>
+                                </div>
                                 
-                                <button class="read-less-btn" onclick="toggleNewsDetails('news-2')" style="margin-top: 2rem;">Read Less</button>
+                                <button class="read-less-btn" onclick="toggleNewsDetails('news-3')" style="margin-top: 2rem;">Read Less</button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 新闻3: CAT 38 完工运往迪拜 -->
-                    <div class="news-card" id="news-3">
+                    <!-- 新闻5: CAT 38 完工运往迪拜 -->
+                    <div class="news-card" id="news-5">
                         <div class="news-content">
                             <div class="news-image">
                                 <img src="assets/images/products/cat-38ft/cat 38 on truck.JPG" alt="Cat 38 shipping to Dubai" loading="lazy">
@@ -1285,18 +1628,44 @@
                                 </div>
                                 <h3>Cat 38 Completed & Shipping to Dubai</h3>
                                 <div class="news-excerpt">
-                                    <p>Another Cat 38 luxury catamaran has been completed and is now being shipped to our Dubai facility. The vessel features premium amenities and custom configurations.</p>
+                                    <p>Another Cat 38 luxury aluminum catamaran has been completed and is now being shipped to our Dubai facility. The vessel features premium amenities, custom configurations, and is perfect for UAE yacht charter and fishing operations.</p>
                                 </div>
-                                <button class="read-more-btn" onclick="toggleNewsDetails('news-3')">Read More</button>
+                                <!-- SEO Tags -->
+                                <div class="news-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;">
+                                    <span class="tag" style="background-color: #e3f2fd; color: #1976d2; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#DubaiYacht</span>
+                                    <span class="tag" style="background-color: #e8f5e9; color: #388e3c; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#LuxuryCatamaran</span>
+                                    <span class="tag" style="background-color: #fff3e0; color: #f57c00; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#UAEBoats</span>
+                                    <span class="tag" style="background-color: #fce4ec; color: #c2185b; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#YachtCharter</span>
+                                    <span class="tag" style="background-color: #f3e5f5; color: #7b1fa2; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">#Cat38</span>
+                                </div>
+                                <button class="read-more-btn" onclick="toggleNewsDetails('news-5')">Read More</button>
                             </div>
                         </div>
-                        <div class="news-details" id="news-3-details">
+                        <div class="news-details" id="news-5-details">
                             <div class="news-detail-content">
                                 <h3>Cat 38 Dubai Delivery Details</h3>
                                 <img src="assets/images/products/cat-38ft/cat 38 packing.JPG" alt="Cat 38 packing for shipping" class="news-detail-image">
                                 <img src="assets/images/products/cat-38ft/cat 38 shipping.JPG" alt="Cat 38 shipping process" class="news-detail-image">
-                                <p>The Cat 38 demonstrates our production capability and global delivery network. This vessel will join our Dubai inventory and be available for viewing by prospective clients in the region. The completion marks another milestone in our expansion into the Middle East luxury boat market.</p>
-                                <button class="read-less-btn" onclick="toggleNewsDetails('news-3')">Read Less</button>
+                                <p>The Cat 38 luxury aluminum catamaran demonstrates our production capability and global delivery network. This vessel will join our Dubai inventory and be available for viewing by prospective clients in the UAE region. The completion marks another milestone in our expansion into the Middle East luxury yacht and fishing charter market.</p>
+                                
+                                <!-- SEO Keywords -->
+                                <div style="padding: 1.5rem; background-color: #f8f9fa; border-radius: 8px; margin-top: 2rem;">
+                                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;">
+                                        <i class="fas fa-ship" style="margin-right: 0.5rem;"></i>Dubai & UAE Market Keywords
+                                    </h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">yacht charter Dubai</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">catamaran UAE</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">luxury boat Dubai</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">fishing charter Dubai</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">boat rental UAE</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">aluminum catamaran</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">Dubai marine</span>
+                                        <span style="background-color: white; border: 1px solid #dee2e6; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">Gulf waters yacht</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="read-less-btn" onclick="toggleNewsDetails('news-4')">Read Less</button>
                             </div>
                         </div>
                     </div>
@@ -1406,6 +1775,52 @@
     </footer>
 
     <script>
+        // News toggle functionality - MUST be defined before DOMContentLoaded
+        function toggleNewsDetails(newsId) {
+            console.log('toggleNewsDetails called with:', newsId);
+            const newsCard = document.getElementById(newsId);
+            const newsDetails = document.getElementById(newsId + '-details');
+            
+            console.log('newsCard:', newsCard);
+            console.log('newsDetails:', newsDetails);
+            
+            if (!newsCard || !newsDetails) {
+                console.error('Elements not found!');
+                return;
+            }
+            
+            const readMoreBtn = newsCard.querySelector('.read-more-btn');
+            const newsExcerpt = newsCard.querySelector('.news-excerpt');
+            
+            if (newsDetails.classList.contains('active')) {
+                console.log('Closing details');
+                newsDetails.classList.remove('active');
+                if (readMoreBtn) readMoreBtn.style.display = 'block';
+                if (newsExcerpt) newsExcerpt.style.display = '-webkit-box';
+            } else {
+                console.log('Opening details');
+                // Close other open news details first
+                document.querySelectorAll('.news-details.active').forEach(detail => {
+                    detail.classList.remove('active');
+                });
+                document.querySelectorAll('.read-more-btn').forEach(btn => {
+                    btn.style.display = 'block';
+                });
+                document.querySelectorAll('.news-excerpt').forEach(excerpt => {
+                    excerpt.style.display = '-webkit-box';
+                });
+                
+                newsDetails.classList.add('active');
+                if (readMoreBtn) readMoreBtn.style.display = 'none';
+                if (newsExcerpt) newsExcerpt.style.display = 'none';
+                
+                // Scroll to details
+                setTimeout(() => {
+                    newsDetails.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            }
+        }
+    
         // Simple mobile menu toggle functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
@@ -1426,30 +1841,6 @@
                 }
             });
 
-            // Product filter functionality
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const productItems = document.querySelectorAll('.product-item');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const filter = button.getAttribute('data-filter');
-                    
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to current button
-                    button.classList.add('active');
-                    
-                    // Filter product items
-                    productItems.forEach(item => {
-                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
             // Product modal functionality
             const modal = document.getElementById('productModal');
             
@@ -1466,7 +1857,7 @@
             const products = {
                 'ninja-18': {
                     name: 'TideMaster Ninja 18',
-                    price: 'Starting from $27,500 (Trailer included) Standard spec, engines are excluded',
+                    price: 'Starting from $32,000 (Trailer included) Standard spec, engines are excluded',
                     description: 'The ultimate performance towable boat, featuring a spacious design and cutting-edge stability technology. Perfect for towing to remote adventures—whether it\'s diving, sea fishing, or exploring uncharted islands, this compact vessel is your ideal companion.',
                     features: [
                         'Towable design - easy transport to remote locations',
@@ -1527,8 +1918,8 @@
                 },
                 'cat-38': {
                     name: 'TideMaster Cat 38',
-                    price: 'Starting from $200,000（Standard spec, engines are excluded）',
-                    description: 'This new 38ft aluminum Asymmetrical Hull boat comes in at 12.5ft wide with a shallow 1.55ft draft, giving her excellent stability and access to tighter/shallower fishing grounds. Lightweight displacement is just 2,800 kg, scaling up to 6,200 kg at maximum load, and she’s certified to carry up to 12 passengers—ideal for charter, guided trips, or private offshore runs. Powered by twin outboards in the 600–900 hp class, the Cat 38 delivers strong mid-35-knot cruising with the deck space, storage volume, and range that TideMaster is known for.',
+                    price: 'Starting from $235,000 (Standard spec, engines are excluded)',
+                    description: 'This new 38ft aluminum Asymmetrical Hull boat comes in at 12.5ft wide with a shallow 1.55ft draft, giving her excellent stability and access to tighter/shallower fishing grounds. Lightweight displacement is just 2,800 kg, scaling up to 6,200 kg at maximum load, and she\'s certified to carry up to 12 passengers—ideal for charter, guided trips, or private offshore runs. Powered by twin outboards in the 600–900 hp class, the Cat 38 delivers strong mid-35-knot cruising with the deck space, storage volume, and range that TideMaster is known for.',
                     features: [
                         'Asymmetrical Hull Design for Superior Efficiency',
                         'Exceptional stability for smooth cruising',
@@ -1558,7 +1949,7 @@
                 },
                 'lounge-48': {
                     name: 'TideMaster Lounge 48',
-                    price: 'Starting from $380,000（Standard spec, engines are excluded）',
+                    price: 'Starting from $425,000（Standard spec, engines are excluded）',
                     description: 'Experience the epitome of luxury yacht entertainment with the Lounge 48. This magnificent 48-foot luxury lounge yacht combines sophisticated design, premium amenities, and exceptional performance. Perfect for corporate events, exclusive gatherings, and unforgettable family celebrations on the water.',
                     features: [
                         'Luxurious 48-foot design for ultimate entertaining',
@@ -1593,7 +1984,7 @@
                 },
                 'big-cat-60': {
                     name: 'TideMaster Big Cat 60',
-                    price: 'Starting from $950,000（Standard spec, WeiChai engines are inincluded）',
+                    price: 'Starting from $1,100,000（Standard spec, WeiChai engines are inincluded）',
                     description: 'Experience the ultimate in luxury catamaran cruising with the Big Cat 60. This impressive 60-foot aluminum catamaran combines exceptional seaworthiness, spacious accommodations, and cutting-edge marine technology. Perfect for extended voyages, charter operations, or as your premier liveaboard vessel.',
                     features: [
                         'Luxurious 60-foot catamaran design for ultimate comfort',
@@ -1745,35 +2136,6 @@
                     document.body.style.overflow = 'auto';
                 }
             });
-
-            // News toggle functionality
-            window.toggleNewsDetails = function(newsId) {
-                const newsCard = document.getElementById(newsId);
-                const newsDetails = document.getElementById(newsId + '-details');
-                
-                if (newsCard && newsDetails) {
-                    if (newsDetails.classList.contains('active')) {
-                        newsDetails.classList.remove('active');
-                        newsCard.querySelector('.read-more-btn').style.display = 'block';
-                        newsCard.querySelector('.news-excerpt').style.display = '-webkit-box';
-                    } else {
-                        // Close other open news details first
-                        document.querySelectorAll('.news-details.active').forEach(detail => {
-                            detail.classList.remove('active');
-                        });
-                        document.querySelectorAll('.read-more-btn').forEach(btn => {
-                            btn.style.display = 'block';
-                        });
-                        document.querySelectorAll('.news-excerpt').forEach(excerpt => {
-                            excerpt.style.display = '-webkit-box';
-                        });
-                        
-                        newsDetails.classList.add('active');
-                        newsCard.querySelector('.read-more-btn').style.display = 'none';
-                        newsCard.querySelector('.news-excerpt').style.display = 'none';
-                    }
-                }
-            };
         });
 
         // Enhanced Mobile Menu Toggle

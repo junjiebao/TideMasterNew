@@ -100,7 +100,7 @@
 
         /* Header Styles */
         .main-header {
-            background-color: white;
+            background-color: var(--dark-bg);
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
@@ -126,14 +126,14 @@
 
         .nav-list a {
             text-decoration: none;
-            color: #333;
+            color: white;
             font-weight: 500;
             transition: color 0.3s;
         }
 
         .nav-list a:hover,
         .nav-list .active a {
-            color: var(--primary-color);
+            color: var(--secondary-color);
         }
 
         .header-actions {
@@ -144,8 +144,8 @@
 
         .language-selector {
             background: transparent;
-            border: 1px solid rgba(0, 0, 0, 0.3);
-            color: #333;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
             padding: 5px 10px;
             border-radius: 4px;
         }
@@ -154,7 +154,7 @@
         .mobile-menu-toggle {
             background: transparent;
             border: none;
-            color: #333;
+            color: white;
             font-size: 1.2rem;
             cursor: pointer;
         }
@@ -614,12 +614,17 @@
                 font-size: 2rem;
             }
             
+            /* Hero Section Mobile Optimization */
+            .page-hero {
+                padding: 4rem 0 2rem !important;
+            }
+            
             .page-hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2rem !important;
             }
             
             .page-hero-content p {
-                font-size: 1.1rem;
+                font-size: 1rem !important;
             }
             
             .footer-columns {

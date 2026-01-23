@@ -247,6 +247,7 @@
         /* 联系页面特定样式 */
         .contact-section {
             padding: 6rem 0;
+            background-color: var(--dark-bg);
         }
         
         .contact-grid {
@@ -258,6 +259,11 @@
         .contact-info h3 {
             font-size: 2rem;
             margin-bottom: 1.5rem;
+            color: #f0f0f0;
+        }
+        
+        .contact-info > p {
+            color: #e0e0e0;
         }
         
         .contact-methods {
@@ -268,6 +274,14 @@
             display: flex;
             align-items: flex-start;
             margin-bottom: 1.5rem;
+        }
+        
+        .contact-method h4 {
+            color: #f0f0f0;
+        }
+        
+        .contact-method p {
+            color: #d0d0d0;
         }
         
         .contact-icon {
@@ -601,12 +615,17 @@
                 font-size: 2rem;
             }
             
+            /* Hero Section Mobile Optimization */
+            .page-hero {
+                padding: 4rem 0 2rem !important;
+            }
+            
             .page-hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2rem !important;
             }
             
             .page-hero-content p {
-                font-size: 1.1rem;
+                font-size: 1rem !important;
             }
             
             .footer-columns {
