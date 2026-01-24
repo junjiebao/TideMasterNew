@@ -72,6 +72,9 @@ ErrorDocument 500 /500.html
 
 # 安全头部
 <IfModule mod_headers.c>
+    # HSTS - 强制HTTPS (包含子域名和预加载)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    
     # 防止点击劫持
     Header always set X-Frame-Options "SAMEORIGIN"
     
@@ -84,8 +87,11 @@ ErrorDocument 500 /500.html
     # 推荐的安全策略
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     
-    # 内容安全策略(根据需要调整)
-    Header always set Content-Security-Policy "default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:;"
+    # 内容安全策略(根据需要调整) - 添加upgrade-insecure-requests
+    Header always set Content-Security-Policy "default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; upgrade-insecure-requests;"
+    
+    # Permissions Policy (替代 Feature-Policy)
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
 
 # 防止目录浏览

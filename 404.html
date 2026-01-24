@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | TideMaster Marine Technology</title>
+    <meta name="description" content="The page you're looking for cannot be found. Navigate back to TideMaster Marine Technology.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://www.tidemaster.ae/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/brand/TideMaster Metal logo.png">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/mobile-enhanced.css">
+    
+    <style>
+        :root {
+            --primary-color: #1e3c8c;
+            --secondary-color: #3a86ff;
+            --dark-bg: #0a1931;
+            --light-bg: #f8f9fa;
+            --text-dark: #333333;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0a1931 0%, #1e3c8c 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .error-404 {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .error-content {
+            max-width: 800px;
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .error-icon {
+            font-size: 8rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        .error-content h1 {
+            font-size: 8rem;
+            font-weight: 900;
+            margin: 0;
+            line-height: 1;
+            background: linear-gradient(45deg, #3a86ff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .error-content h2 {
+            font-size: 2.5rem;
+            margin: 1.5rem 0;
+            font-weight: 700;
+        }
+        
+        .error-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .error-links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 12px 24px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(58, 134, 255, 0.4);
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--dark-bg);
+        }
+        
+        .search-box {
+            max-width: 500px;
+            margin: 2rem auto;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .search-box input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .popular-links {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .popular-links h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .popular-links ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .popular-links li {
+            margin: 0;
+        }
+        
+        .popular-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+        
+        .popular-links a:hover {
+            color: var(--secondary-color);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .error-content h1 {
+                font-size: 5rem;
+            }
+            
+            .error-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .error-content p {
+                font-size: 1rem;
+            }
+            
+            .error-icon {
+                font-size: 5rem;
+            }
+            
+            .error-links {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .popular-links ul {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="error-404">
+        <div class="error-content">
+            <div class="error-icon">
+                <i class="fas fa-ship"></i>
+            </div>
+            <h1>404</h1>
+            <h2>Oops! Page Not Found</h2>
+            <p>The page you're looking for seems to have sailed away into uncharted waters...</p>
+            
+            <div class="error-links">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+                <a href="products.html" class="btn btn-secondary">
+                    <i class="fas fa-ship"></i> View Products
+                </a>
+                <a href="contact.html" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Contact Us
+                </a>
+            </div>
+            
+            <!-- Search Box -->
+            <div class="search-box">
+                <form action="index.html" method="get">
+                    <input type="search" name="q" placeholder="Search our site..." aria-label="Search">
+                </form>
+            </div>
+            
+            <!-- Popular Links -->
+            <div class="popular-links">
+                <h3>Popular Pages:</h3>
+                <ul>
+                    <li><a href="products.html#cat-38"><i class="fas fa-angle-right"></i> Cat 38 Catamaran</a></li>
+                    <li><a href="products.html#hunter-28"><i class="fas fa-angle-right"></i> Hunter 28 Fishing Boat</a></li>
+                    <li><a href="products.html#ninja-18"><i class="fas fa-angle-right"></i> Ninja 18 Towable Boat</a></li>
+                    <li><a href="about.html"><i class="fas fa-angle-right"></i> About TideMaster</a></li>
+                    <li><a href="services-support.html"><i class="fas fa-angle-right"></i> Services & Support</a></li>
+                    <li><a href="contact.html"><i class="fas fa-angle-right"></i> Get in Touch</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/971585088518?text=Hello%20TideMaster%2C%20I%20would%20like%20to%20get%20more%20information" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>
