@@ -8,7 +8,7 @@
     <title>Marine Industry Blog & News Dubai UAE | Boat Technology & Fishing Tips | TideMaster</title>
     <meta name="title" content="Marine Blog & News - Boat Technology, Fishing Tips & Industry Updates">
     <meta name="description" content="TideMaster's marine blog: aluminum boat technology, fishing tips, diving guides, yacht maintenance, boat building insights, UAE fishing spots, marine industry news & water sports updates from Dubai & GCC region.">
-    <meta name="keywords" content="marine blog Dubai, fishing tips UAE, boat technology blog, yacht maintenance tips, aluminum boat news, fishing guide Dubai, diving blog UAE, boat building industry, marine technology news, UAE fishing spots, GCC marine news, boat maintenance guide, fishing techniques UAE, offshore fishing tips, boat innovation blog">
+    <meta name="keywords" content="marine blog Dubai, fishing tips UAE, boat technology blog, yacht maintenance tips, aluminum boat news, fishing guide Dubai, diving blog UAE, boat building industry, marine technology news, UAE fishing spots, GCC marine news, boat maintenance guide, fishing techniques UAE, offshore fishing tips, boat innovation blog, aluminum boat heat insulation, marine grade aluminum UAE, cool deck technology, GCC leisure boating, commercial dive boat Saudi Arabia, Red Sea diving vessel, aluminum boat ROI, NEOM tourism boats, plate boat fishing Dubai, offshore fishing Gulf of Oman, marine grade 5083, heavy duty fishing boats, galvanic corrosion prevention, sacrificial anodes Middle East, aluminum boat maintenance, saltwater boat care">
     <meta name="author" content="TideMaster Marine Technology">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.tidemaster.ae/blog-news.html">
@@ -26,6 +26,15 @@
     <meta name="twitter:title" content="Marine Blog & News - TideMaster Dubai">
     <meta name="twitter:description" content="Expert insights on boat technology, fishing tips & marine industry news from Dubai's leading boat manufacturer.">
     <meta name="twitter:image" content="https://www.tidemaster.ae/assets/images/blog/blog-hero.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/brand/TideMaster Metal logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/brand/TideMaster Metal logo.png">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -80,6 +89,21 @@
             transform: translateY(-2px);
         }
 
+        .btn-primary {
+            background-color: var(--primary-color);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
         .section-padding {
             padding: 6rem 0;
         }
@@ -100,6 +124,10 @@
             color: var(--text-gray);
             max-width: 700px;
             margin: 0 auto;
+        }
+
+        .text-center {
+            text-align: center;
         }
 
         /* Header Styles */
@@ -177,7 +205,7 @@
         }
         
         .blog-hero {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/blog/blog-hero.jpg');
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/products/cat-38ft/cat 38 cruising in Dubai.png');
         }
         
         .page-hero-content h1 {
@@ -192,7 +220,7 @@
             margin: 0 auto;
         }
         
-        /* 博客页面特定样式 */
+        /* Blog-specific styles */
         .blog-section {
             padding: 6rem 0;
         }
@@ -233,17 +261,23 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
         }
         
         .blog-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
         .blog-image {
             height: 200px;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, #1e3c8c 0%, #3a86ff 100%);
         }
         
         .blog-image img {
@@ -255,6 +289,19 @@
         
         .blog-card:hover .blog-image img {
             transform: scale(1.05);
+        }
+        
+        .blog-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-align: center;
+            padding: 2rem;
         }
         
         .blog-category {
@@ -270,7 +317,10 @@
         }
         
         .blog-content {
-            padding: 1.5rem;
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .blog-date {
@@ -283,6 +333,7 @@
             font-size: 1.3rem;
             margin-bottom: 1rem;
             line-height: 1.4;
+            font-weight: 700;
         }
         
         .blog-content h3 a {
@@ -299,6 +350,8 @@
             color: var(--text-gray);
             margin-bottom: 1.5rem;
             font-size: 0.95rem;
+            line-height: 1.6;
+            flex: 1;
         }
         
         .blog-meta {
@@ -307,6 +360,7 @@
             align-items: center;
             color: var(--text-gray);
             font-size: 0.9rem;
+            margin-top: auto;
         }
         
         .blog-author {
@@ -328,7 +382,7 @@
             object-fit: cover;
         }
         
-        /* 视频专区样式 */
+        /* Video section styles */
         .video-section {
             padding: 6rem 0;
             background-color: var(--light-bg);
@@ -345,11 +399,12 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
         
         .video-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
         
         .video-thumbnail {
@@ -357,6 +412,7 @@
             position: relative;
             cursor: pointer;
             overflow: hidden;
+            background: linear-gradient(135deg, #1e3c8c 0%, #3a86ff 100%);
         }
         
         .video-thumbnail img {
@@ -391,11 +447,14 @@
         
         .video-content {
             padding: 1.5rem;
+            background-color: white;
         }
         
         .video-content h3 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
         }
         
         .video-meta {
@@ -416,7 +475,7 @@
             color: var(--primary-color);
         }
         
-        /* 分页样式 */
+        /* Pagination styles */
         .pagination {
             display: flex;
             justify-content: center;
@@ -444,7 +503,7 @@
             color: white;
         }
         
-        /* 视频模态框 */
+        /* Video modal */
         .video-modal {
             position: fixed;
             top: 0;
@@ -498,7 +557,131 @@
             background: none;
             border: none;
         }
-
+        
+        /* Article Modal */
+        .article-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            overflow-y: auto;
+        }
+        
+        .article-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .article-modal-content {
+            width: 90%;
+            max-width: 900px;
+            background-color: white;
+            border-radius: 8px;
+            position: relative;
+            margin: 2rem auto;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .article-close {
+            position: sticky;
+            top: 10px;
+            right: 10px;
+            float: right;
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+        
+        .article-container {
+            padding: 3rem;
+            color: var(--text-dark);
+        }
+        
+        .article-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 2rem;
+        }
+        
+        .article-category-badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .article-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: var(--text-dark);
+        }
+        
+        .article-meta-info {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+        
+        .article-body {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .article-body h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: var(--primary-color);
+        }
+        
+        .article-body h3 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 1rem;
+            color: var(--text-dark);
+        }
+        
+        .article-body p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-body ul, .article-body ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        
+        .article-body li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .article-body strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
         /* Footer Styles */
         .compact-footer {
             background-color: var(--dark-bg);
@@ -623,14 +806,55 @@
         .footer-bottom p {
             opacity: 0.7;
         }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float i {
+            font-size: 28px;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
         
-        /* 返回顶部按钮 */
+        /* Back to Top Button */
         .back-to-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
+            bottom: 100px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
             background-color: var(--primary-color);
             color: white;
             border-radius: 50%;
@@ -638,21 +862,23 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
+            box-shadow: 0 4px 15px rgba(30, 60, 140, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 1000;
         }
-        
+
         .back-to-top.visible {
             opacity: 1;
             visibility: visible;
         }
-        
+
         .back-to-top:hover {
             background-color: var(--secondary-color);
+            transform: translateY(-3px);
         }
-        
+
         /* Responsive Design */
         @media (max-width: 992px) {
             .blog-grid {
@@ -661,6 +887,18 @@
             
             .video-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .footer-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .article-container {
+                padding: 2rem;
+            }
+
+            .article-header h1 {
+                font-size: 2rem;
             }
         }
         
@@ -673,29 +911,72 @@
                 display: block;
             }
             
+            .page-hero {
+                padding: 6rem 0 3rem;
+                min-height: 300px;
+            }
+            
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .page-hero p {
+                font-size: 1rem;
+            }
+            
             .blog-grid {
                 grid-template-columns: 1fr;
             }
             
+            .blog-section, .video-section {
+                padding: 4rem 0;
+            }
+
             .section-title h2 {
                 font-size: 2rem;
             }
-            
-            /* Hero Section Mobile Optimization */
-            .page-hero {
-                padding: 4rem 0 2rem !important;
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
             }
-            
-            .page-hero-content h1 {
-                font-size: 2rem !important;
+
+            .whatsapp-float i {
+                font-size: 24px;
             }
-            
-            .page-hero-content p {
-                font-size: 1rem !important;
+
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 85px;
+                right: 20px;
             }
-            
-            .footer-columns {
-                grid-template-columns: 1fr;
+
+            .article-modal-content {
+                width: 95%;
+                margin: 1rem auto;
+            }
+
+            .article-container {
+                padding: 1.5rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-body {
+                font-size: 1rem;
+            }
+
+            .article-body h2 {
+                font-size: 1.5rem;
+            }
+
+            .article-body h3 {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -716,8 +997,7 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="services-support.html">Services & Support</a></li>
-                    <!-- <li><a href="projects.html">Projects</a></li> -->
-                    <!-- <li class="active"><a href="blog-news.html">Blog & News</a></li> -->
+                    <li class="active"><a href="blog-news.html">News</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -761,24 +1041,124 @@
                 </div>
                 
                 <div class="blog-grid">
-                    <!-- Blog Post 1 -->
-                    <div class="blog-card" data-category="technology">
+                    <!-- Blog Post 1 - Heat Myth Article -->
+                    <div class="blog-card" data-category="technology" data-article="heat-myth" onclick="openArticle('heat-myth')" style="cursor: pointer;">
                         <div class="blog-image">
-                            <!-- Placeholder for blog image -->
-                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
-                                Next-Generation Materials
+                            <img src="assets/images/products/cat-38ft/cat 38 cruising in Dubai.png" alt="Aluminum Boat in Dubai Sun - Heat Insulation Technology">
+                            <span class="blog-category">Technology</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">January 28, 2026</div>
+                            <h3><a href="#" onclick="event.stopPropagation(); openArticle('heat-myth'); return false;">Defeating the "Heat Myth" – Why Aluminum Boats Excel in the Middle East Sun</a></h3>
+                            <p class="blog-excerpt">One common misconception in the Persian Gulf and Red Sea regions is that an aluminum boat acts like an oven under the 50°C summer sun. Discover why aluminum actually dissipates heat rapidly and excels in the sweltering climates of Dubai, Abu Dhabi, and Riyadh with innovative cool deck technology.</p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <div class="author-avatar">
+                                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; border-radius: 50%;">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <span>TideMaster Marine</span>
+                                </div>
+                                <div class="blog-comments">
+                                    <i class="fas fa-comment"></i> 42
+                                </div>
                             </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 2 - ROI Champion Article -->
+                    <div class="blog-card" data-category="industry" data-article="roi-champion" onclick="openArticle('roi-champion')" style="cursor: pointer;">
+                        <div class="blog-image">
+                            <img src="assets/images/products/hunter-28ft/hunter 28 masirah 1.jpg" alt="Commercial Dive Boat Red Sea - Aluminum ROI Champion">
+                            <span class="blog-category">Industry</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">January 25, 2026</div>
+                            <h3><a href="#" onclick="event.stopPropagation(); openArticle('roi-champion'); return false;">The ROI Champion – Why Red Sea Dive Resorts Are Switching to Aluminum</a></h3>
+                            <p class="blog-excerpt">Red Sea diving vessel operators are increasingly choosing aluminum for its unbeatable ROI. For dive centers in Hurghada, Sharm El-Sheikh, or the emerging luxury hubs like NEOM, operational uptime is everything. Discover why aluminum boats offer superior fuel economy and rugged reef access for commercial dive operations.</p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <div class="author-avatar">
+                                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; border-radius: 50%;">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <span>TideMaster Marine</span>
+                                </div>
+                                <div class="blog-comments">
+                                    <i class="fas fa-comment"></i> 38
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 3 - Offshore Power Article -->
+                    <div class="blog-card" data-category="guides" data-article="offshore-power" onclick="openArticle('offshore-power')" style="cursor: pointer;">
+                        <div class="blog-image">
+                            <img src="assets/images/products/ninja-18ft/Ninja 18 running.png" alt="Offshore Fishing Boat Gulf of Oman - Aluminum Plate Boat">
+                            <span class="blog-category">Guides</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">January 22, 2026</div>
+                            <h3><a href="#" onclick="event.stopPropagation(); openArticle('offshore-power'); return false;">Offshore Power – Why Aluminum Plate Boats Dominate Gulf Fishing</a></h3>
+                            <p class="blog-excerpt">Fishing in the Gulf of Oman or the Persian Gulf requires a vessel that can handle the "Shamal"—sudden, aggressive winds that create short, choppy waves. Learn why plate aluminum boats built from heavy-gauge 5083-H116 aluminum provide the rigidity and stability needed for serious offshore fishing in the region.</p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <div class="author-avatar">
+                                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; border-radius: 50%;">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <span>TideMaster Marine</span>
+                                </div>
+                                <div class="blog-comments">
+                                    <i class="fas fa-comment"></i> 55
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 4 - Longevity Article -->
+                    <div class="blog-card" data-category="guides" data-article="longevity" onclick="openArticle('longevity')" style="cursor: pointer;">
+                        <div class="blog-image">
+                            <img src="assets/images/products/cat-38ft/cat 38 hull front.jpg" alt="Aluminum Boat Maintenance GCC - Galvanic Corrosion Prevention">
+                            <span class="blog-category">Guides</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">January 20, 2026</div>
+                            <h3><a href="#" onclick="event.stopPropagation(); openArticle('longevity'); return false;">Longevity in Salt – Master the Science of Aluminum Maintenance in the GCC</a></h3>
+                            <p class="blog-excerpt">The fear of "corrosion" often keeps buyers away from aluminum boats in the Middle East. However, with modern engineering, an aluminum boat is often the longest-lasting asset in a marina. Learn about galvanic isolation, sacrificial anodes, and the sustainability advantages of aluminum in the hyper-saline waters of the GCC.</p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <div class="author-avatar">
+                                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; border-radius: 50%;">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <span>TideMaster Marine</span>
+                                </div>
+                                <div class="blog-comments">
+                                    <i class="fas fa-comment"></i> 47
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 5 - Original Post 1 -->
+                    <div class="blog-card" data-category="technology" data-article="materials" onclick="openArticle('materials')" style="cursor: pointer;">
+                        <div class="blog-image">
+                            <img src="assets/images/about/aluminum advantages.png" alt="Next-Generation Materials in Boat Construction">
                             <span class="blog-category">Technology</span>
                         </div>
                         <div class="blog-content">
                             <div class="blog-date">June 15, 2023</div>
-                            <h3><a href="blog-single.html">Next-Generation Materials in Boat Construction</a></h3>
+                            <h3><a href="#" onclick="event.stopPropagation(); openArticle('materials'); return false;">Next-Generation Materials in Boat Construction</a></h3>
                             <p class="blog-excerpt">Exploring the latest advancements in aluminum alloys and composite materials that are revolutionizing the boat manufacturing industry.</p>
                             <div class="blog-meta">
                                 <div class="blog-author">
                                     <div class="author-avatar">
-                                        <!-- Placeholder for author avatar -->
-                                        <div style="width: 100%; height: 100%; background: #3a86ff; display: flex; align-items: center; justify-content: center; color: white;">
+                                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; border-radius: 50%;">
                                             <i class="fas fa-user"></i>
                                         </div>
                                     </div>
@@ -791,24 +1171,20 @@
                         </div>
                     </div>
                     
-                    <!-- Blog Post 2 -->
-                    <div class="blog-card" data-category="company">
+                    <!-- Blog Post 6 - Original Post 2 -->
+                    <div class="blog-card" data-category="company" data-article="expansion" onclick="openArticle('expansion')" style="cursor: pointer;">
                         <div class="blog-image">
-                            <!-- Placeholder for blog image -->
-                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
-                                Regional Expansion
-                            </div>
+                            <img src="assets/images/brand/factory inside.jpg" alt="TideMaster Expands Operations to the Gulf Region">
                             <span class="blog-category">Company News</span>
                         </div>
                         <div class="blog-content">
                             <div class="blog-date">May 28, 2023</div>
-                            <h3><a href="blog-single.html">TideMaster Expands Operations to the Gulf Region</a></h3>
+                            <h3><a href="#" onclick="event.stopPropagation(); openArticle('expansion'); return false;">TideMaster Expands Operations to the Gulf Region</a></h3>
                             <p class="blog-excerpt">We're proud to announce our new manufacturing facility in Abu Dhabi, strengthening our commitment to serving the Middle Eastern market.</p>
                             <div class="blog-meta">
                                 <div class="blog-author">
                                     <div class="author-avatar">
-                                        <!-- Placeholder for author avatar -->
-                                        <div style="width: 100%; height: 100%; background: #3a86ff; display: flex; align-items: center; justify-content: center; color: white;">
+                                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; border-radius: 50%;">
                                             <i class="fas fa-user"></i>
                                         </div>
                                     </div>
@@ -821,24 +1197,20 @@
                         </div>
                     </div>
                     
-                    <!-- Blog Post 3 -->
-                    <div class="blog-card" data-category="guides">
+                    <!-- Blog Post 7 - Original Post 3 -->
+                    <div class="blog-card" data-category="guides" data-article="maintenance" onclick="openArticle('maintenance')" style="cursor: pointer;">
                         <div class="blog-image">
-                            <!-- Placeholder for blog image -->
-                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
-                                Maintenance Tips
-                            </div>
+                            <img src="assets/images/products/hunter-28ft/Hunter 28 port.JPG" alt="Essential Maintenance Tips for Aluminum Vessels">
                             <span class="blog-category">Guides</span>
                         </div>
                         <div class="blog-content">
                             <div class="blog-date">April 12, 2023</div>
-                            <h3><a href="blog-single.html">Essential Maintenance Tips for Aluminum Vessels</a></h3>
+                            <h3><a href="#" onclick="event.stopPropagation(); openArticle('maintenance'); return false;">Essential Maintenance Tips for Aluminum Vessels</a></h3>
                             <p class="blog-excerpt">A comprehensive guide to proper care and maintenance of aluminum boats to ensure longevity and optimal performance in marine environments.</p>
                             <div class="blog-meta">
                                 <div class="blog-author">
                                     <div class="author-avatar">
-                                        <!-- Placeholder for author avatar -->
-                                        <div style="width: 100%; height: 100%; background: #3a86ff; display: flex; align-items: center; justify-content: center; color: white;">
+                                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; border-radius: 50%;">
                                             <i class="fas fa-user"></i>
                                         </div>
                                     </div>
@@ -851,24 +1223,20 @@
                         </div>
                     </div>
                     
-                    <!-- Blog Post 4 -->
-                    <div class="blog-card" data-category="industry">
+                    <!-- Blog Post 8 - Original Post 4 -->
+                    <div class="blog-card" data-category="industry" data-article="sustainable" onclick="openArticle('sustainable')" style="cursor: pointer;">
                         <div class="blog-image">
-                            <!-- Placeholder for blog image -->
-                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
-                                Sustainability
-                            </div>
+                            <img src="assets/images/brand/boat building.jpg" alt="Sustainable Practices in Marine Manufacturing">
                             <span class="blog-category">Industry</span>
                         </div>
                         <div class="blog-content">
                             <div class="blog-date">March 5, 2023</div>
-                            <h3><a href="blog-single.html">Sustainable Practices in Marine Manufacturing</a></h3>
+                            <h3><a href="#" onclick="event.stopPropagation(); openArticle('sustainable'); return false;">Sustainable Practices in Marine Manufacturing</a></h3>
                             <p class="blog-excerpt">How the boating industry is adapting to environmental challenges with innovative green technologies and sustainable production methods.</p>
                             <div class="blog-meta">
                                 <div class="blog-author">
                                     <div class="author-avatar">
-                                        <!-- Placeholder for author avatar -->
-                                        <div style="width: 100%; height: 100%; background: #3a86ff; display: flex; align-items: center; justify-content: center; color: white;">
+                                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; border-radius: 50%;">
                                             <i class="fas fa-user"></i>
                                         </div>
                                     </div>
@@ -881,24 +1249,20 @@
                         </div>
                     </div>
                     
-                    <!-- Blog Post 5 -->
-                    <div class="blog-card" data-category="technology">
+                    <!-- Blog Post 9 - Original Post 5 -->
+                    <div class="blog-card" data-category="technology" data-article="navigation" onclick="openArticle('navigation')" style="cursor: pointer;">
                         <div class="blog-image">
-                            <!-- Placeholder for blog image -->
-                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
-                                Navigation Tech
-                            </div>
+                            <img src="assets/images/products/cat-38ft/Cat 38 console.jpg" alt="Navigation Technologies for Modern Vessels">
                             <span class="blog-category">Technology</span>
                         </div>
                         <div class="blog-content">
                             <div class="blog-date">February 18, 2023</div>
-                            <h3><a href="blog-single.html">Navigation Technologies for Modern Vessels</a></h3>
+                            <h3><a href="#" onclick="event.stopPropagation(); openArticle('navigation'); return false;">Navigation Technologies for Modern Vessels</a></h3>
                             <p class="blog-excerpt">An overview of cutting-edge navigation systems and how they're enhancing safety and efficiency in commercial and recreational boating.</p>
                             <div class="blog-meta">
                                 <div class="blog-author">
                                     <div class="author-avatar">
-                                        <!-- Placeholder for author avatar -->
-                                        <div style="width: 100%; height: 100%; background: #3a86ff; display: flex; align-items: center; justify-content: center; color: white;">
+                                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; border-radius: 50%;">
                                             <i class="fas fa-user"></i>
                                         </div>
                                     </div>
@@ -911,24 +1275,20 @@
                         </div>
                     </div>
                     
-                    <!-- Blog Post 6 -->
-                    <div class="blog-card" data-category="guides">
+                    <!-- Blog Post 10 - Original Post 6 -->
+                    <div class="blog-card" data-category="guides" data-article="workboat" onclick="openArticle('workboat')" style="cursor: pointer;">
                         <div class="blog-image">
-                            <!-- Placeholder for blog image -->
-                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
-                                Work Boat Selection
-                            </div>
+                            <img src="assets/images/products/lounge-48ft/lounge 48 saloon.JPG" alt="Selecting the Right Work Boat for Your Operation">
                             <span class="blog-category">Guides</span>
                         </div>
                         <div class="blog-content">
                             <div class="blog-date">January 29, 2023</div>
-                            <h3><a href="blog-single.html">Selecting the Right Work Boat for Your Operation</a></h3>
+                            <h3><a href="#" onclick="event.stopPropagation(); openArticle('workboat'); return false;">Selecting the Right Work Boat for Your Operation</a></h3>
                             <p class="blog-excerpt">Key factors to consider when choosing a commercial vessel, from operational requirements to environmental conditions and budget constraints.</p>
                             <div class="blog-meta">
                                 <div class="blog-author">
                                     <div class="author-avatar">
-                                        <!-- Placeholder for author avatar -->
-                                        <div style="width: 100%; height: 100%; background: #3a86ff; display: flex; align-items: center; justify-content: center; color: white;">
+                                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; border-radius: 50%;">
                                             <i class="fas fa-user"></i>
                                         </div>
                                     </div>
@@ -964,10 +1324,11 @@
                     <!-- Video 1 -->
                     <div class="video-card">
                         <div class="video-thumbnail" data-video="https://www.youtube.com/embed/NgMW6kWx5Ms">
-                            <!-- Placeholder for video thumbnail -->
-                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; cursor: pointer;">
-                                <i class="fas fa-play-circle" style="font-size: 3rem; margin-right: 1rem;"></i>
-                                Tidemaster Cat 38 hull design and inspiration
+                            <div class="blog-placeholder" style="cursor: pointer;">
+                                <div style="text-align: center;">
+                                    <i class="fas fa-play-circle" style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.9;"></i>
+                                    <p style="font-size: 1.2rem; font-weight: 600;">Tidemaster Cat 38</p>
+                                </div>
                             </div>
                         </div>
                         <div class="video-content">
@@ -983,10 +1344,11 @@
                     <!-- Video 2 -->
                     <div class="video-card">
                         <div class="video-thumbnail" data-video="https://www.youtube.com/embed/def456">
-                            <!-- Placeholder for video thumbnail -->
-                            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; cursor: pointer;">
-                                <i class="fas fa-play-circle" style="font-size: 3rem; margin-right: 1rem;"></i>
-                                Patrol Boat in Action
+                            <div class="blog-placeholder" style="cursor: pointer;">
+                                <div style="text-align: center;">
+                                    <i class="fas fa-play-circle" style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.9;"></i>
+                                    <p style="font-size: 1.2rem; font-weight: 600;">Patrol Boat in Action</p>
+                                </div>
                             </div>
                         </div>
                         <div class="video-content">
@@ -1011,45 +1373,30 @@
                 </div>
             </div>
         </div>
+
+        <!-- Article Modal -->
+        <div class="article-modal" id="articleModal">
+            <div class="article-modal-content">
+                <button class="article-close" onclick="closeArticle()"><i class="fas fa-times"></i></button>
+                <div class="article-container" id="articleContainer">
+                    <!-- Article content will be loaded here -->
+                </div>
+            </div>
+        </div>
     </main>
                  <!-- WhatsApp Floating Button -->
                  <a href="https://wa.me/971585088518?text=Hello%20TideMaster%2C%20I%20would%20like%20to%20get%20more%20information%20about%20your%20boats" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
 
-                <style>
-                    .whatsapp-float {
-                        position: fixed;
-                        right: 20px;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        width: 60px;
-                        height: 60px;
-                        background-color: #25D366;
-                        color: white;
-                        border-radius: 50%;
-                        text-align: center;
-                        font-size: 30px;
-                        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-                        z-index: 1000;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        transition: all 0.3s;
-                    }
-
-                    .whatsapp-float:hover {
-                        background-color: #1da851;
-                        transform: translateY(-50%) scale(1.1);
-                    }
-                </style>
+                <!-- Back to Top Button -->
+                <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
     <!-- 页脚 -->
     <footer class="compact-footer">
         <div class="container">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <!-- Placeholder for logo -->
-                    <div style="height: 40px; width: 200px; background-color: white; color: var(--dark-bg); display: flex; align-items: center; justify-content: center; font-weight: bold;">TIDEMASTER</div>
+                    <img src="assets/images/brand/TideMaster Metal logo.png" alt="TideMaster Logo">
                 </div>
                 <p class="footer-about">TideMaster specializes in high-quality aluminum boat design and manufacturing, serving commercial and recreational markets worldwide.</p>
                 <div class="social-links">
@@ -1069,8 +1416,7 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="products.html">Products</a></li>
                         <li><a href="services-support.html">Services</a></li>
-                        <!-- <li><a href="projects.html">Projects</a></li> -->
-                        <!-- <li><a href="blog-news.html">Blog</a></li> -->
+                        <li><a href="blog-news.html">News</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -1107,6 +1453,304 @@
 
     <!-- JavaScript -->
     <script>
+        // Article data
+        const articles = {
+            'heat-myth': {
+                category: 'Technology',
+                title: 'Defeating the "Heat Myth" – Why Aluminum Boats Excel in the Middle East Sun',
+                date: 'January 28, 2026',
+                author: 'TideMaster Marine',
+                content: `
+                    <h2>The Thermal Reality</h2>
+                    <p>One common misconception in the Persian Gulf and Red Sea regions is that an aluminum boat acts like an oven under the 50°C summer sun. While aluminum is a conductor, it also possesses a high thermal emissivity. Unlike fiberglass (FRP), which traps heat within its core for hours, aluminum dissipates heat rapidly once in contact with water or shade—critical for comfort in the sweltering climates of Dubai, Abu Dhabi, and Riyadh.</p>
+                    
+                    <h2>Middle East Specific Advantages</h2>
+                    <ul>
+                        <li><strong>Rapid Cooling:</strong> In the high-salinity waters of the Gulf, an aluminum hull acts as a heat sink, transferring interior heat to the cooler ocean water much faster than composite materials. This means less time waiting for the deck to cool down and more time enjoying barefoot leisure.</li>
+                        <li><strong>UV Degradation Resistance:</strong> The intense UV index in Saudi Arabia and the UAE causes "chalking" and structural brittleness in fiberglass, leading to costly repairs and reduced lifespan. Marine grade aluminum UAE is specially engineered to resist UV and high salinity, maintaining structural integrity for decades—even under year-round sun exposure.</li>
+                    </ul>
+                    
+                    <h2>The Innovation Edge</h2>
+                    <p>To ensure a "cool-to-the-touch" experience, modern aluminum vessels for the GCC market utilize Cool deck technology such as Ceramic Thermal Coatings and closed-cell EVA foam decking. Ceramic Thermal Coatings enhance aluminum boat heat insulation, making decks cool even in 50°C heat, eliminating the need for cumbersome mats or constant shade—perfect for family outings, leisure cruises, and charter operations. These features make aluminum boats the top choice for GCC leisure boating.</p>
+                `
+            },
+            'roi-champion': {
+                category: 'Industry',
+                title: 'The ROI Champion – Why Red Sea Dive Resorts Are Switching to Aluminum',
+                date: 'January 25, 2026',
+                author: 'TideMaster Marine',
+                content: `
+                    <h2>Efficiency for High-Frequency Operations</h2>
+                    <p>Red Sea diving vessel operators are increasingly choosing aluminum for its unbeatable ROI. For dive centers in Hurghada, Sharm El-Sheikh, or the emerging luxury hubs like NEOM, where NEOM tourism boats demand reliability, operational uptime is everything. Aluminum boats offer a strength-to-weight ratio that fiberglass cannot match, ensuring reliable performance even with daily, high-load use—critical for maintaining customer satisfaction and maximizing revenue. Aluminum boat ROI is unmatched, as fuel savings and low maintenance reduce long-term costs.</p>
+                    
+                    <h2>Regional Benefits for the Middle East</h2>
+                    <ul>
+                        <li><strong>Fuel Economy:</strong> Aluminum hulls are significantly lighter than fiberglass alternatives. For a dive operator running three trips a day, the 15-20% fuel saving translates directly into annual profit—especially valuable in a region where fuel costs are a major operational expense. A commercial dive boat Saudi Arabia built with aluminum ensures lower operational costs.</li>
+                        <li><strong>Rugged Reef Access:</strong> The Red Sea is famous for its sharp coral heads and shallow dive sites. An aluminum hull offers "impact-tolerance"—where fiberglass would crack or puncture, aluminum merely dents, allowing the boat to finish the excursion safely and avoid costly downtime for repairs.</li>
+                    </ul>
+                    
+                    <h2>Customization for Professional Divers</h2>
+                    <p>Middle Eastern dive operators require specific layouts: heavy-duty tank racks, widened swim platforms for tech-diving, and high-capacity desalination units. Aluminum's weldability makes these custom modifications faster and more cost-effective than creating new molds for composite boats, ensuring the vessel is tailored to the unique needs of the region's divers.</p>
+                `
+            },
+            'offshore-power': {
+                category: 'Guides',
+                title: 'Offshore Power – Why Aluminum Plate Boats Dominate Gulf Fishing',
+                date: 'January 22, 2026',
+                author: 'TideMaster Marine',
+                content: `
+                    <h2>Built for the "Shamal" Winds</h2>
+                    <p>Offshore fishing Gulf of Oman requires a durable vessel, and aluminum plate boats deliver. Fishing in the Gulf of Oman or the Persian Gulf requires a vessel that can handle the "Shamal"—sudden, aggressive winds that create short, choppy waves. Plate Aluminum Boats (built from 5mm+ heavy-gauge 5083-H116 aluminum) provide the rigidity needed to slice through these conditions without the hull-flexing common in mass-produced fiberglass boats, ensuring a stable and safe fishing experience. Plate boat fishing Dubai relies on aluminum's rigidity to handle sudden winds.</p>
+                    
+                    <h2>Middle East Performance Features</h2>
+                    <ul>
+                        <li><strong>Stability in Chops:</strong> The precision-engineered deep-V aluminum hulls provide a stable platform for casting, even when the Gulf gets restless. This stability is a game-changer for anglers targeting tuna, kingfish, and other offshore species in the region's unpredictable waters.</li>
+                        <li><strong>Low Maintenance in High Salinity:</strong> The Persian Gulf has some of the highest salinity levels in the world. Marine grade 5083's oxide layer resists this harsh environment better than the gelcoats of fiberglass boats, which often yellow and crack in the salty humidity. This means less time on maintenance and more time on the water.</li>
+                    </ul>
+                    
+                    <p>Aluminum plate boats are the best heavy duty fishing boats for Gulf waters, combining durability, stability, and efficiency to meet the demands of serious anglers and commercial operators alike.</p>
+                `
+            },
+            'longevity': {
+                category: 'Guides',
+                title: 'Longevity in Salt – Master the Science of Aluminum Maintenance in the GCC',
+                date: 'January 20, 2026',
+                author: 'TideMaster Marine',
+                content: `
+                    <h2>Science Over Superstition</h2>
+                    <p>The fear of "corrosion" often keeps buyers away from aluminum boats in the Middle East. However, with modern engineering, an aluminum boat is often the longest-lasting asset in a marina. In the hyper-saline waters of the GCC, the key is understanding Galvanic Isolation—a simple, effective way to protect the hull and extend its lifespan. Aluminum boat maintenance is simple with proper galvanic isolation, making these vessels a low-hassle choice for long-term ownership.</p>
+                    
+                    <h2>Engineering for the Gulf</h2>
+                    <ul>
+                        <li><strong>Sacrificial Anodes:</strong> By using high-quality Zinc or Magnesium anodes, any electrolytic action is directed away from the hull. Sacrificial anodes Middle East are designed to withstand warm, high-salinity waters; in the warm waters of the region, where chemical reactions happen faster, we recommend an "Oversized Anode Strategy" to ensure maximum protection year-round.</li>
+                        <li><strong>Electrical Isolation:</strong> Premium aluminum builds for the GCC market use specialized gaskets and isolation bushings for all stainless-steel fittings, ensuring no "dissimilar metal" contact occurs—eliminating a common cause of corrosion in saltwater environments. Galvanic corrosion prevention is achieved through oversized anodes and electrical isolation.</li>
+                    </ul>
+                    
+                    <h2>Sustainability Factor</h2>
+                    <p>As the Middle East shifts toward "Green Tourism" (e.g., Saudi Green Initiative, UAE's Net Zero 2050), aluminum stands out as the 100% recyclable choice. Unlike fiberglass hulls that end up in landfills, an aluminum boat remains a valuable material asset at the end of its long life—aligning with the region's growing focus on sustainability and eco-friendly tourism. These tips simplify saltwater boat care for aluminum vessels in the GCC, ensuring they remain reliable and sustainable for decades.</p>
+                `
+            },
+            'materials': {
+                category: 'Technology',
+                title: 'Next-Generation Materials in Boat Construction',
+                date: 'June 15, 2023',
+                author: 'Ahmed Hassan',
+                content: `
+                    <h2>Introduction</h2>
+                    <p>The marine industry is experiencing a revolution in materials technology. From advanced aluminum alloys to cutting-edge composite materials, boat construction has never been more sophisticated or efficient.</p>
+                    
+                    <h2>Advanced Aluminum Alloys</h2>
+                    <p>Modern marine-grade aluminum alloys, particularly the 5xxx series (5083 and 5086), offer exceptional corrosion resistance and strength-to-weight ratios. These materials are specially formulated to withstand the harsh marine environment, including high salinity, UV exposure, and constant moisture.</p>
+                    
+                    <h3>Key Advantages</h3>
+                    <ul>
+                        <li><strong>Superior Strength:</strong> Modern alloys provide structural integrity while maintaining lightweight properties</li>
+                        <li><strong>Corrosion Resistance:</strong> Natural oxide layer protects against saltwater degradation</li>
+                        <li><strong>Weldability:</strong> Easy to repair and customize for specific applications</li>
+                        <li><strong>Recyclability:</strong> 100% recyclable without loss of properties</li>
+                    </ul>
+                    
+                    <h2>The Future of Boat Building</h2>
+                    <p>As technology advances, we're seeing innovations in welding techniques, surface treatments, and hybrid construction methods that combine the best properties of different materials. The future of boat building is bright, sustainable, and performance-oriented.</p>
+                `
+            },
+            'expansion': {
+                category: 'Company News',
+                title: 'TideMaster Expands Operations to the Gulf Region',
+                date: 'May 28, 2023',
+                author: 'Sarah Johnson',
+                content: `
+                    <h2>A New Chapter in Marine Excellence</h2>
+                    <p>We're proud to announce our new manufacturing facility in Abu Dhabi, strengthening our commitment to serving the Middle Eastern market with world-class aluminum vessels.</p>
+                    
+                    <h2>Strategic Location</h2>
+                    <p>Our new facility in the UAE provides several strategic advantages:</p>
+                    <ul>
+                        <li><strong>Regional Expertise:</strong> Direct understanding of local marine conditions and customer needs</li>
+                        <li><strong>Faster Delivery:</strong> Reduced shipping times to GCC countries and surrounding regions</li>
+                        <li><strong>Local Support:</strong> On-site technical support and maintenance services</li>
+                        <li><strong>Customization:</strong> Ability to tailor designs specifically for Middle Eastern waters</li>
+                    </ul>
+                    
+                    <h2>Our Commitment</h2>
+                    <p>This expansion represents our long-term commitment to the region and confidence in the growing demand for high-quality, durable aluminum vessels in the Gulf. We look forward to serving our customers with even greater efficiency and expertise.</p>
+                `
+            },
+            'maintenance': {
+                category: 'Guides',
+                title: 'Essential Maintenance Tips for Aluminum Vessels',
+                date: 'April 12, 2023',
+                author: 'Mohammed Ali',
+                content: `
+                    <h2>Proper Care for Longevity</h2>
+                    <p>A comprehensive guide to proper care and maintenance of aluminum boats to ensure longevity and optimal performance in marine environments.</p>
+                    
+                    <h2>Regular Cleaning</h2>
+                    <h3>Freshwater Rinse</h3>
+                    <p>After each use in saltwater, rinse your vessel thoroughly with fresh water. Pay special attention to:</p>
+                    <ul>
+                        <li>Propeller and lower unit</li>
+                        <li>Trailer components</li>
+                        <li>Hardware and fittings</li>
+                        <li>Deck and hull surfaces</li>
+                    </ul>
+                    
+                    <h2>Anode Inspection</h2>
+                    <p>Check sacrificial anodes every 3-6 months, depending on usage. Replace them when they've eroded to 50% of their original size. In the high-salinity waters of the Gulf, more frequent checks may be necessary.</p>
+                    
+                    <h2>Surface Protection</h2>
+                    <ul>
+                        <li><strong>Anti-fouling:</strong> Apply appropriate marine-grade anti-fouling paint</li>
+                        <li><strong>Waxing:</strong> Use marine wax to protect against UV and oxidation</li>
+                        <li><strong>Inspection:</strong> Regular visual inspections for signs of wear or damage</li>
+                    </ul>
+                    
+                    <h2>Seasonal Maintenance</h2>
+                    <p>Perform comprehensive maintenance at least twice a year, including full hull inspection, electrical system check, and mechanical systems service.</p>
+                `
+            },
+            'sustainable': {
+                category: 'Industry',
+                title: 'Sustainable Practices in Marine Manufacturing',
+                date: 'March 5, 2023',
+                author: 'Lisa Chen',
+                content: `
+                    <h2>Green Innovation in Boating</h2>
+                    <p>How the boating industry is adapting to environmental challenges with innovative green technologies and sustainable production methods.</p>
+                    
+                    <h2>Aluminum's Environmental Advantage</h2>
+                    <p>Aluminum is inherently sustainable:</p>
+                    <ul>
+                        <li><strong>100% Recyclable:</strong> Can be recycled indefinitely without losing properties</li>
+                        <li><strong>Energy Efficiency:</strong> Recycling aluminum uses 95% less energy than primary production</li>
+                        <li><strong>Long Lifespan:</strong> Reduces replacement frequency and resource consumption</li>
+                        <li><strong>Lightweight:</strong> Lower fuel consumption throughout vessel's lifetime</li>
+                    </ul>
+                    
+                    <h2>Manufacturing Innovations</h2>
+                    <h3>Clean Energy</h3>
+                    <p>Modern boat manufacturing facilities are increasingly powered by renewable energy sources, reducing carbon footprint significantly.</p>
+                    
+                    <h3>Waste Reduction</h3>
+                    <p>Advanced cutting techniques and precision manufacturing minimize material waste. All aluminum scrap is collected and recycled back into the production stream.</p>
+                    
+                    <h2>The Future is Green</h2>
+                    <p>As the industry moves toward carbon neutrality, aluminum boats represent a sustainable choice that doesn't compromise on performance or durability. The GCC region's green initiatives align perfectly with aluminum's environmental benefits.</p>
+                `
+            },
+            'navigation': {
+                category: 'Technology',
+                title: 'Navigation Technologies for Modern Vessels',
+                date: 'February 18, 2023',
+                author: 'David Kumar',
+                content: `
+                    <h2>Cutting-Edge Navigation Systems</h2>
+                    <p>An overview of cutting-edge navigation systems and how they're enhancing safety and efficiency in commercial and recreational boating.</p>
+                    
+                    <h2>GPS and Chartplotters</h2>
+                    <p>Modern GPS systems offer unprecedented accuracy and reliability:</p>
+                    <ul>
+                        <li><strong>Multi-constellation support:</strong> GPS, GLONASS, Galileo, and BeiDou</li>
+                        <li><strong>Real-time updates:</strong> Live weather, traffic, and hazard information</li>
+                        <li><strong>Integration:</strong> Seamless connection with autopilot and other systems</li>
+                    </ul>
+                    
+                    <h2>Radar and AIS</h2>
+                    <h3>Advanced Radar</h3>
+                    <p>Solid-state radar technology provides clear images in all weather conditions, with features like target tracking, collision avoidance, and bird mode for fishing.</p>
+                    
+                    <h3>AIS (Automatic Identification System)</h3>
+                    <p>Track other vessels, receive navigational warnings, and enhance safety in busy shipping lanes—critical for Gulf waters.</p>
+                    
+                    <h2>Integrated Bridge Systems</h2>
+                    <p>Modern vessels benefit from fully integrated systems that combine navigation, communication, and vessel monitoring in a single, intuitive interface. These systems improve situational awareness and reduce operator workload.</p>
+                    
+                    <h2>Future Technologies</h2>
+                    <p>Autonomous navigation aids, AI-powered route optimization, and augmented reality displays are shaping the future of marine navigation.</p>
+                `
+            },
+            'workboat': {
+                category: 'Guides',
+                title: 'Selecting the Right Work Boat for Your Operation',
+                date: 'January 29, 2023',
+                author: 'Omar Farooq',
+                content: `
+                    <h2>Making the Right Choice</h2>
+                    <p>Key factors to consider when choosing a commercial vessel, from operational requirements to environmental conditions and budget constraints.</p>
+                    
+                    <h2>Define Your Mission Profile</h2>
+                    <h3>Operational Requirements</h3>
+                    <ul>
+                        <li><strong>Crew and Passenger Capacity:</strong> How many people will regularly operate on the vessel?</li>
+                        <li><strong>Cargo Needs:</strong> Weight and volume of equipment or materials to be transported</li>
+                        <li><strong>Range and Endurance:</strong> Distance and time at sea requirements</li>
+                        <li><strong>Speed Requirements:</strong> Transit and operational speeds needed</li>
+                    </ul>
+                    
+                    <h2>Environmental Considerations</h2>
+                    <p>The Gulf region presents unique challenges:</p>
+                    <ul>
+                        <li><strong>High Salinity:</strong> Requires corrosion-resistant materials</li>
+                        <li><strong>Extreme Heat:</strong> Cooling systems and heat-resistant materials essential</li>
+                        <li><strong>Sea Conditions:</strong> Vessel must handle Shamal winds and choppy waters</li>
+                        <li><strong>Shallow Waters:</strong> Draft limitations in many Gulf areas</li>
+                    </ul>
+                    
+                    <h2>Budget and ROI</h2>
+                    <h3>Initial Investment</h3>
+                    <p>Consider not just purchase price, but also delivery, customization, and setup costs.</p>
+                    
+                    <h3>Operating Costs</h3>
+                    <ul>
+                        <li>Fuel consumption</li>
+                        <li>Maintenance requirements</li>
+                        <li>Insurance premiums</li>
+                        <li>Crew training</li>
+                    </ul>
+                    
+                    <h2>Why Aluminum?</h2>
+                    <p>For most commercial operations in the Gulf, aluminum offers the best balance of initial cost, operating efficiency, durability, and maintenance requirements. Its strength-to-weight ratio translates directly into fuel savings and operational flexibility.</p>
+                `
+            }
+        };
+
+        // Open article modal
+        function openArticle(articleId) {
+            const article = articles[articleId];
+            if (!article) return;
+            
+            const container = document.getElementById('articleContainer');
+            container.innerHTML = `
+                <div class="article-header">
+                    <span class="article-category-badge">${article.category}</span>
+                    <h1>${article.title}</h1>
+                    <div class="article-meta-info">
+                        <span><i class="far fa-calendar-alt"></i> ${article.date}</span>
+                        <span><i class="fas fa-user"></i> ${article.author}</span>
+                    </div>
+                </div>
+                <div class="article-body">
+                    ${article.content}
+                </div>
+            `;
+            
+            document.getElementById('articleModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close article modal
+        function closeArticle() {
+            document.getElementById('articleModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('articleModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeArticle();
+            }
+        });
+
         // Simple mobile menu toggle functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
