@@ -1041,6 +1041,32 @@
                 </div>
                 
                 <div class="blog-grid">
+                    <!-- Blog Post 0 - Marine Insights Talkshow: Choosing Your Sport Fishing Boat in Dubai -->
+                    <div class="blog-card" data-category="guides" data-article="boat-choice-dubai" onclick="openArticle('boat-choice-dubai')" style="cursor: pointer;">
+                        <div class="blog-image">
+                            <img src="assets/images/products/cat-38ft/Fiberglass VS Aluminum.jpg" alt="Fiberglass vs Aluminum Sport Fishing Boat Dubai - Marine Insights Talkshow">
+                            <span class="blog-category">Guides</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">March 12, 2026</div>
+                            <h3><a href="#" onclick="event.stopPropagation(); openArticle('boat-choice-dubai'); return false;">Marine Insights: Choosing Your Sport Fishing Boat in Dubai – Aluminum vs Fiberglass</a></h3>
+                            <p class="blog-excerpt">Which hull wins in the Gulf? Industry experts Lina and Joey break down the real costs, performance, and long-term value of aluminum vs fiberglass for 11–12m sport fishing boats around AED 1,000,000 in Dubai. Complete with audio guide!</p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <div class="author-avatar">
+                                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1e3c8c, #3a86ff); display: flex; align-items: center; justify-content: center; color: white; border-radius: 50%;">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <span>TideMaster Marine</span>
+                                </div>
+                                <div class="blog-comments">
+                                    <i class="fas fa-headphones"></i> Audio Guide
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Blog Post 1 - Heat Myth Article -->
                     <div class="blog-card" data-category="technology" data-article="heat-myth" onclick="openArticle('heat-myth')" style="cursor: pointer;">
                         <div class="blog-image">
@@ -1714,8 +1740,12 @@
             }
         };
 
-        // Open article modal
+        // Special article: boat-choice-dubai (audio + image gallery)
         function openArticle(articleId) {
+            if (articleId === 'boat-choice-dubai') {
+                openBoatChoiceArticle();
+                return;
+            }
             const article = articles[articleId];
             if (!article) return;
             
@@ -1740,9 +1770,258 @@
 
         // Close article modal
         function closeArticle() {
+            // Stop audio if playing
+            const audio = document.getElementById('boatChoiceAudio');
+            if (audio) {
+                audio.pause();
+                audio.currentTime = 0;
+            }
             document.getElementById('articleModal').classList.remove('active');
             document.body.style.overflow = 'auto';
         }
+
+        // Open special boat-choice-dubai article with audio player + image gallery
+        function openBoatChoiceArticle() {
+            const images = [
+                { src: 'assets/images/products/cat-38ft/Fiberglass VS Aluminum.jpg', alt: 'Fiberglass vs Aluminum Boat Comparison Dubai' },
+                { src: 'assets/images/products/cat-38ft/Cat 38 Launched Back.jpg', alt: 'TideMaster Cat 38 Launched at Dubai Creek Marina - Stern' },
+                { src: 'assets/images/products/cat-38ft/Cat 38 Launched Port.jpg', alt: 'TideMaster Cat 38 at Dubai Creek Marina - Port Side' },
+                { src: 'assets/images/products/cat-38ft/Cat 38 Launched SB side.jpg', alt: 'TideMaster Cat 38 at Dubai Creek Marina - Starboard' },
+                { src: 'assets/images/products/cat-38ft/Cat 38 Launched seats.jpg', alt: 'TideMaster Cat 38 Seating Deck' }
+            ];
+
+            const container = document.getElementById('articleContainer');
+            container.innerHTML = `
+                <div class="article-header">
+                    <span class="article-category-badge">Guides</span>
+                    <h1>Marine Insights: Choosing Your Sport Fishing Boat in Dubai</h1>
+                    <div class="article-meta-info">
+                        <span><i class="far fa-calendar-alt"></i> March 12, 2026</span>
+                        <span><i class="fas fa-user"></i> TideMaster Marine</span>
+                        <span><i class="fas fa-headphones"></i> Audio Guide Available</span>
+                    </div>
+                </div>
+                <div class="article-body">
+
+                    <!-- Audio Player -->
+                    <div style="background: linear-gradient(135deg, #1e3c8c, #2563eb); border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem; color: white;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
+                            <div style="background: rgba(255,255,255,0.15); border-radius: 50%; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-podcast" style="font-size: 1.6rem;"></i>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.8rem; opacity: 0.75; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.2rem;">Marine Insights Podcast</div>
+                                <div style="font-weight: 700; font-size: 1.05rem; line-height: 1.3;">Choosing Your Sport Fishing Boat in Dubai</div>
+                                <div style="font-size: 0.85rem; opacity: 0.8; margin-top: 0.2rem;">Hosted by Lina &amp; Joey</div>
+                            </div>
+                        </div>
+
+                        <audio id="boatChoiceAudio" preload="auto" autoplay style="display:none;">
+                            <source src="assets/Sound/talkshow boat choice.wav" type="audio/wav">
+                        </audio>
+
+                        <!-- Custom Controls -->
+                        <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1rem;">
+                            <!-- Progress bar -->
+                            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                                <span id="audioCurrentTime" style="font-size: 0.8rem; opacity: 0.85; min-width: 38px;">0:00</span>
+                                <div id="audioProgressBar" onclick="seekAudio(event)" style="flex: 1; height: 6px; background: rgba(255,255,255,0.25); border-radius: 3px; cursor: pointer; position: relative;">
+                                    <div id="audioProgress" style="height: 100%; background: white; border-radius: 3px; width: 0%; pointer-events: none;"></div>
+                                </div>
+                                <span id="audioDuration" style="font-size: 0.8rem; opacity: 0.85; min-width: 38px; text-align: right;">--:--</span>
+                            </div>
+                            <!-- Buttons -->
+                            <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+                                <button onclick="toggleAudioPlay()" id="audioPlayBtn" style="background: white; color: #1e3c8c; border: none; border-radius: 50%; width: 48px; height: 48px; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.1s;">
+                                    <i class="fas fa-pause" id="audioPlayIcon"></i>
+                                </button>
+                                <button onclick="stopAudio()" style="background: rgba(255,255,255,0.2); color: white; border: none; border-radius: 25px; padding: 8px 16px; font-size: 0.85rem; cursor: pointer;">
+                                    <i class="fas fa-stop"></i> Stop
+                                </button>
+                                <button onclick="setAudioSpeed(1)" id="speed1x" style="background: rgba(255,255,255,0.35); color: white; border: none; border-radius: 25px; padding: 8px 14px; font-size: 0.85rem; cursor: pointer; font-weight: 600;">1x</button>
+                                <button onclick="setAudioSpeed(1.5)" id="speed1_5x" style="background: rgba(255,255,255,0.15); color: white; border: none; border-radius: 25px; padding: 8px 14px; font-size: 0.85rem; cursor: pointer;">1.5x</button>
+                                <button onclick="setAudioSpeed(2)" id="speed2x" style="background: rgba(255,255,255,0.15); color: white; border: none; border-radius: 25px; padding: 8px 14px; font-size: 0.85rem; cursor: pointer;">2x</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Gallery -->
+                    <div style="margin-bottom: 2rem;">
+                        <div id="galleryMain" style="border-radius: 12px; overflow: hidden; margin-bottom: 0.75rem; background: #f0f0f0; aspect-ratio: 16/9;">
+                            <img id="galleryMainImg" src="assets/images/products/cat-38ft/Fiberglass VS Aluminum.jpg" alt="Fiberglass vs Aluminum Boat Dubai" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem;">
+                            <img src="assets/images/products/cat-38ft/Fiberglass VS Aluminum.jpg"      onclick="setGalleryImg(this, 'Fiberglass vs Aluminum Boat Comparison Dubai')"     style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;cursor:pointer;border:3px solid #1e3c8c;opacity:1;">
+                            <img src="assets/images/products/cat-38ft/Cat 38 Launched Back.jpg"         onclick="setGalleryImg(this, 'Cat 38 Launched at Dubai Creek Marina - Stern')"       style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;cursor:pointer;border:3px solid transparent;opacity:0.7;">
+                            <img src="assets/images/products/cat-38ft/Cat 38 Launched Port.jpg"         onclick="setGalleryImg(this, 'Cat 38 at Dubai Creek Marina - Port Side')"            style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;cursor:pointer;border:3px solid transparent;opacity:0.7;">
+                            <img src="assets/images/products/cat-38ft/Cat 38 Launched SB side.jpg"      onclick="setGalleryImg(this, 'Cat 38 at Dubai Creek Marina - Starboard')"            style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;cursor:pointer;border:3px solid transparent;opacity:0.7;">
+                            <img src="assets/images/products/cat-38ft/Cat 38 Launched seats.jpg"        onclick="setGalleryImg(this, 'Cat 38 Seating Deck at Dubai Creek Marina')"           style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;cursor:pointer;border:3px solid transparent;opacity:0.7;">
+                        </div>
+                    </div>
+
+                    <h2>Episode Overview</h2>
+                    <p>This episode of <em>Marine Insights</em> focuses on mid-to-large sport fishing boats around <strong>AED 1,000,000</strong> in Dubai, hosted by Lina with industry guest Joey.</p>
+                    <p>Given that Dubai's standard recreational boat license covers vessels up to <strong>12 meters</strong>, the discussion centres on <strong>11–12m boats</strong> — the largest size owners can operate without a professional captain, ideal for family and personal use.</p>
+
+                    <h2>Key Points Covered</h2>
+
+                    <h3>1. Size Rationale</h3>
+                    <p>11–12m is the legal maximum for a personal license, offering good space, Gulf seaworthiness, and easy marina access across Dubai, Abu Dhabi, and the wider UAE coastline.</p>
+
+                    <h3>2. Hull Material Comparison — Aluminum vs Fiberglass</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0;">
+                        <div style="background: #fff3e0; border-radius: 10px; padding: 1.2rem; border-left: 4px solid #f57c00;">
+                            <h4 style="color: #f57c00; margin-bottom: 0.75rem;"><i class="fas fa-times-circle"></i> Fiberglass</h4>
+                            <ul style="padding-left: 1.2rem; color: #555;">
+                                <li>Lower upfront cost</li>
+                                <li>Higher long-term maintenance</li>
+                                <li>Poorer saltwater durability</li>
+                                <li>Faster depreciation</li>
+                                <li>More susceptible to osmosis & cracking</li>
+                            </ul>
+                        </div>
+                        <div style="background: #e8f5e9; border-radius: 10px; padding: 1.2rem; border-left: 4px solid #27ae60;">
+                            <h4 style="color: #27ae60; margin-bottom: 0.75rem;"><i class="fas fa-check-circle"></i> Aluminum</h4>
+                            <ul style="padding-left: 1.2rem; color: #555;">
+                                <li>Higher initial investment</li>
+                                <li>25–30% more fuel-efficient</li>
+                                <li>Extremely durable in saltwater</li>
+                                <li>Impact-resistant hull</li>
+                                <li>Only fresh-water rinse needed</li>
+                                <li>Stronger resale value</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>3. Running Costs in Dubai</h3>
+                    <div style="background: #f8f9fa; border-radius: 10px; padding: 1.2rem; margin: 1rem 0;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #e9ecef;">
+                            <span style="color: #555;">Annual mooring (prime marinas)</span>
+                            <span style="font-weight: 700; color: #1e3c8c;">AED 25,000 – 45,000</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0;">
+                            <span style="color: #555;">Annual insurance (AED 1M boat)</span>
+                            <span style="font-weight: 700; color: #1e3c8c;">AED 3,000 – 7,000</span>
+                        </div>
+                    </div>
+
+                    <h2>Final Recommendation</h2>
+                    <div style="background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border-radius: 12px; padding: 1.5rem; border-left: 4px solid #27ae60; margin: 1.5rem 0;">
+                        <p style="font-size: 1.05rem; font-weight: 600; color: #1b5e20; margin: 0;">For long-term ownership in Dubai, <strong>aluminum is the more practical and cost-effective choice</strong> for 11–12m, AED 1M sport fishing boats. Lower running costs, superior durability in Gulf conditions, and stronger resale value make aluminum the clear winner.</p>
+                    </div>
+
+                    <!-- SEO Tags -->
+                    <div style="margin-top: 2rem; padding: 1.2rem; background: #f8f9fa; border-radius: 8px;">
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background: #e3f2fd; color: #1976d2; padding: 4px 12px; border-radius: 15px; font-size: 0.83rem;">#DubaiSportFishing</span>
+                            <span style="background: #e8f5e9; color: #388e3c; padding: 4px 12px; border-radius: 15px; font-size: 0.83rem;">#AluminumVsFiberglass</span>
+                            <span style="background: #fff3e0; color: #f57c00; padding: 4px 12px; border-radius: 15px; font-size: 0.83rem;">#DubaiBoatBuying</span>
+                            <span style="background: #fce4ec; color: #c2185b; padding: 4px 12px; border-radius: 15px; font-size: 0.83rem;">#UAEFishingBoat</span>
+                            <span style="background: #f3e5f5; color: #7b1fa2; padding: 4px 12px; border-radius: 15px; font-size: 0.83rem;">#GulfSportFishing</span>
+                            <span style="background: #e1f5fe; color: #0277bd; padding: 4px 12px; border-radius: 15px; font-size: 0.83rem;">#AluminumBoatDubai</span>
+                            <span style="background: #f8f9fa; color: #555; border: 1px solid #dee2e6; padding: 4px 12px; border-radius: 15px; font-size: 0.83rem;">#MarineInsightsPodcast</span>
+                            <span style="background: #f8f9fa; color: #555; border: 1px solid #dee2e6; padding: 4px 12px; border-radius: 15px; font-size: 0.83rem;">#BoatLicenseDubai</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('articleModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Initialize audio player after DOM update
+            setTimeout(initBoatChoiceAudio, 100);
+        }
+
+        function initBoatChoiceAudio() {
+            const audio = document.getElementById('boatChoiceAudio');
+            if (!audio) return;
+
+            audio.addEventListener('timeupdate', function() {
+                if (!audio.duration) return;
+                const pct = (audio.currentTime / audio.duration) * 100;
+                document.getElementById('audioProgress').style.width = pct + '%';
+                document.getElementById('audioCurrentTime').textContent = formatTime(audio.currentTime);
+            });
+
+            audio.addEventListener('loadedmetadata', function() {
+                document.getElementById('audioDuration').textContent = formatTime(audio.duration);
+            });
+
+            audio.addEventListener('ended', function() {
+                document.getElementById('audioPlayIcon').className = 'fas fa-play';
+            });
+
+            // Autoplay
+            audio.play().catch(() => {
+                document.getElementById('audioPlayIcon').className = 'fas fa-play';
+            });
+        }
+
+        function formatTime(s) {
+            const m = Math.floor(s / 60);
+            const sec = Math.floor(s % 60);
+            return m + ':' + (sec < 10 ? '0' : '') + sec;
+        }
+
+        function toggleAudioPlay() {
+            const audio = document.getElementById('boatChoiceAudio');
+            if (!audio) return;
+            if (audio.paused) {
+                audio.play();
+                document.getElementById('audioPlayIcon').className = 'fas fa-pause';
+            } else {
+                audio.pause();
+                document.getElementById('audioPlayIcon').className = 'fas fa-play';
+            }
+        }
+
+        function stopAudio() {
+            const audio = document.getElementById('boatChoiceAudio');
+            if (!audio) return;
+            audio.pause();
+            audio.currentTime = 0;
+            document.getElementById('audioPlayIcon').className = 'fas fa-play';
+            document.getElementById('audioProgress').style.width = '0%';
+            document.getElementById('audioCurrentTime').textContent = '0:00';
+        }
+
+        function setAudioSpeed(speed) {
+            const audio = document.getElementById('boatChoiceAudio');
+            if (!audio) return;
+            audio.playbackRate = speed;
+            ['speed1x','speed1_5x','speed2x'].forEach(id => {
+                document.getElementById(id).style.background = 'rgba(255,255,255,0.15)';
+                document.getElementById(id).style.fontWeight = 'normal';
+            });
+            const map = {1: 'speed1x', 1.5: 'speed1_5x', 2: 'speed2x'};
+            if (map[speed]) {
+                document.getElementById(map[speed]).style.background = 'rgba(255,255,255,0.4)';
+                document.getElementById(map[speed]).style.fontWeight = '700';
+            }
+        }
+
+        function seekAudio(e) {
+            const audio = document.getElementById('boatChoiceAudio');
+            if (!audio || !audio.duration) return;
+            const bar = document.getElementById('audioProgressBar');
+            const rect = bar.getBoundingClientRect();
+            const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+            audio.currentTime = pct * audio.duration;
+        }
+
+        function setGalleryImg(el, alt) {
+            document.getElementById('galleryMainImg').src = el.src;
+            document.getElementById('galleryMainImg').alt = alt;
+            document.querySelectorAll('#articleContainer .article-body img[onclick]').forEach(img => {
+                img.style.border = '3px solid transparent';
+                img.style.opacity = '0.7';
+            });
+            el.style.border = '3px solid #1e3c8c';
+            el.style.opacity = '1';
+        }
+
+
 
         // Close modal when clicking outside
         document.getElementById('articleModal').addEventListener('click', function(e) {
